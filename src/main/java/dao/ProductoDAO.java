@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import javax.json.Json;
 import util.Conexion;
 import vo.ProductoVO;
@@ -15,8 +17,12 @@ public class ProductoDAO {
 
     private Connection conexion;
 
-    public ProductoDAO() throws URISyntaxException {
-        this.conexion = Conexion.getConnection();
+    public ProductoDAO() {
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean insertar(ProductoVO producto) {

@@ -24,10 +24,14 @@ public class EnviarMail {
     private String cod;
     private Connection conexion;
 
-    public EnviarMail() throws URISyntaxException {
+    public EnviarMail() {
         this.cod = Integer.toString((int) Math.floor(Math.random() * (1000000 - 100000 + 1) + (100000)));
         
-        this.conexion = Conexion.getConnection();
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(EnviarMail.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

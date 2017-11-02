@@ -14,8 +14,12 @@ import vo.VendedorVO;
 public class VendedorDAO {
      private Connection conexion;
 
-    public VendedorDAO() throws URISyntaxException {
-        this.conexion = Conexion.getConnection();
+    public VendedorDAO(){
+         try {
+             this.conexion = Conexion.getConnection();
+         } catch (URISyntaxException ex) {
+             Logger.getLogger(VendedorDAO.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
     public boolean insertar(VendedorVO vendedor) {

@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import util.Conexion;
 import vo.CarritoVO;
 import vo.ProductoVO;
@@ -25,8 +27,12 @@ public class CarritoDAO {
     private Connection conexion;
     private CarritoVO carritoVO = new CarritoVO();
 
-    public CarritoDAO() throws URISyntaxException {
-        this.conexion = Conexion.getConnection();
+    public CarritoDAO() {
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(CarritoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public ArrayList Agregar(ArrayList producto, ArrayList<ProductoVO> sesion) {

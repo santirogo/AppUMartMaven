@@ -13,8 +13,12 @@ import vo.UsuarioVO;
 public class UsuarioDAO {
      private Connection conexion;
 
-    public UsuarioDAO() throws URISyntaxException {
-        this.conexion = Conexion.getConnection();
+    public UsuarioDAO() {
+         try {
+             this.conexion = Conexion.getConnection();
+         } catch (URISyntaxException ex) {
+             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
     public boolean insertar(UsuarioVO usuario) {
