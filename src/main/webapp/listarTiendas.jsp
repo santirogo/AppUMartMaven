@@ -34,15 +34,16 @@
         <img src="Pictures/AppuMartTextoBorde.png"  class="background" style="filter:brightness(1); width: 20% ; height: 30%; top:80%; left:75%;">
         
             <div style="  
-    margin:auto;
-    margin-top:10px;
-    width:350px;
-    height:150px;">
+                margin:auto;
+                margin-top:10px;
+                width:350px;
+                height:150px;">
             </div>
-
+    
 
         
         
         <div id="div"></div>
+        <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
     </body>
 </html>
