@@ -20,23 +20,7 @@ function cierraSesion(){
     });
 }
 
-function cerrarSesion() {
-    console.log("Entooopoooo");
-    $.ajax({
-        url: 'CerrarSesionServlet',
-        type: 'get',
-        dataType: 'json',
-        success: function (data) {
-            console.log("holaaa");
-            window.location.href = "index.jsp";
-            
-        },
-        error: function () {
-        }
-    });
 
-
-};
 
 function cli (id){
     console.log("Holaaaaaa "+id);
@@ -140,3 +124,18 @@ $(document).ready(function () {
         }
     });
 });
+function cerrarSesion() {
+    console.log("Entooopoooo");
+    $.ajax({
+        url: 'CerrarSesionServlet',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+            console.log("holaaa");
+            window.location.href = "index.jsp";
+            
+        },
+        error: function () {
+        }
+    });
+};
