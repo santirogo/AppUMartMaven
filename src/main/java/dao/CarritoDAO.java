@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,9 +25,8 @@ public class CarritoDAO {
     private Connection conexion;
     private CarritoVO carritoVO = new CarritoVO();
 
-    public CarritoDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+    public CarritoDAO() throws URISyntaxException {
+        this.conexion = Conexion.getConnection();
     }
 
     public ArrayList Agregar(ArrayList producto, ArrayList<ProductoVO> sesion) {

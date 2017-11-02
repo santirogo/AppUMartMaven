@@ -22,9 +22,8 @@ public class TiendaDAO {
 
     private Connection conexion;
 
-    public TiendaDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+    public TiendaDAO() throws URISyntaxException {
+        this.conexion = Conexion.getConnection();
     }
 
     public boolean insertar(TiendaVO tienda) {

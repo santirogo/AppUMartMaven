@@ -1,55 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package util;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/**
- *
- * @author B106 PC-11
- */
 public class Conexion {
-    private static Conexion conexion= null;
-    //Gestional la conexion con la base de datos
-    private Connection connection = null; 
-        
-    private Conexion(){
-       try {
- //1. Cargar el Driver
-  Class.forName("com.mysql.jdbc.Driver");
- } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
- }
-       
-    try {
- //2. Obtener la conexion
- this.connection =
- //DriverManager.getConnection("jdbc:mysql://localhost:3306/AppuAlfa","root","mfc96050505666da");
-         DriverManager.getConnection("jdbc:mysql://localhost:3306/AppuAlfa","root","root");
- } 
-    catch (SQLException ex) {
-     Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
- }
-  
-}
+	
+	private static Connection CONEXION=null;
+    	public static Connection getConnection() throws URISyntaxException{
+            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+            String username = dbUri.getUserInfo().split(":")[0];
+            String password = dbUri.getUserInfo().split(":")[1];
+            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
     
-  public static Conexion getConexion(){
-       if(conexion == null){
-         conexion = new Conexion();
-       }
-       return conexion;
-   }
+		   if(CONEXION == null){
+			  	try {
+					CONEXION = DriverManager.getConnection(dbUrl, username, password);
+                        	} catch (SQLException e) {
+					System.out.println("Connection Failed! Check output console");
+					e.printStackTrace();
+				}
 
-    public Connection getConnection() {
-        return connection;
-    }
+				
+		   }
+		   return CONEXION;
+	}
+	
+	public static void closeConnection(){
+		 try {
+			 if(CONEXION!=null){
+				 CONEXION.close();
+				 CONEXION=null;
+			 }
+			 
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    
+	}
+	
 
-    
 }

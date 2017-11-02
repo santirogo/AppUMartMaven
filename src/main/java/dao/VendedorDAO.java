@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,9 +14,8 @@ import vo.VendedorVO;
 public class VendedorDAO {
      private Connection conexion;
 
-    public VendedorDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+    public VendedorDAO() throws URISyntaxException {
+        this.conexion = Conexion.getConnection();
     }
     
     public boolean insertar(VendedorVO vendedor) {

@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,10 +24,10 @@ public class EnviarMail {
     private String cod;
     private Connection conexion;
 
-    public EnviarMail() {
+    public EnviarMail() throws URISyntaxException {
         this.cod = Integer.toString((int) Math.floor(Math.random() * (1000000 - 100000 + 1) + (100000)));
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+        
+        this.conexion = Conexion.getConnection();
 
     }
 
