@@ -18,7 +18,9 @@ $(document).ready(function () {
         error: function () {
         }
     });
-    function cerrarSesion() {
+    
+});
+function cerrarSesion() {
     $.ajax({
         url: 'CerrarSesionServlet',
         type: 'get',
@@ -32,4 +34,3 @@ $(document).ready(function () {
         }
     });
 };
-});
