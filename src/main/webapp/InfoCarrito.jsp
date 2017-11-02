@@ -132,6 +132,7 @@
                 <!--<input class="submit" type="text" id="opcion1" value="3" onclick="form2.submit()" style="visibility:hidden"/><br>
                 <input class="btn" type="submit" id="Confirmar" value="Confirmar"/>-->
                 <button onclick="mifuncion()">Confirmar</button>
+                 <div id="map"></div>
                 <script>
                     
     
@@ -164,6 +165,7 @@
     <center><div id="llegada"></div></center>
     <center><div id="llegada2"></div></center>
     
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB78-OGRg5rcLtUs9caqE4lQVIlw-D7zA4&callback=initMap"></script>
    
     <!--<img src="Pictures/AppuMartTextoBorde.png">-->
 </body>
