@@ -23,6 +23,7 @@ $(document).ready(function () {
         }
     });
     function cerrarSesion() {
+        console.log("entroooo");
     $.ajax({
         url: 'CerrarSesionServlet',
         type: 'get',
