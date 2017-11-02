@@ -165,7 +165,7 @@
         
         <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
         
-        <a href="http://localhost:8080/AppuMart/editarComprador.jsp"><button>Editar comprador</button></a>
+        <a href="editarComprador.jsp"><button>Editar comprador</button></a>
         
 
         <div id="loader"><img src="Pictures/AppuMartLogo.png" style="position: absolute; top:50%; left: 50%; margin-top: -150px; margin-left: -150px;"></div>
