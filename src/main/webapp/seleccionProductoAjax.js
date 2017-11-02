@@ -20,7 +20,7 @@
 //    redirect;
 //});
 
-window.onbeforeunload = cierraSesion;
+//window.onbeforeunload = cierraSesion;
 
 function cierraSesion(){
     $.ajax({
