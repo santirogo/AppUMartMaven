@@ -22,7 +22,9 @@ $(document).ready(function () {
         error: function () {
         }
     });
-    function cerrarSesion() {
+    
+});
+function cerrarSesion() {
         console.log("entroooo");
     $.ajax({
         url: 'CerrarSesionServlet',
@@ -37,4 +39,3 @@ $(document).ready(function () {
         }
     });
 };
-});
