@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
 
-    //var opcion = $('#opcion').val();
+    var opcion = $('#opcion').val();
 
     $.ajax({
         url: 'MainMenuServlet',
         type: 'GET',
-        data: {},
+        data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-
+            console.log(data.nombre);
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
                 console.log(data.Productos[i].nombre);
@@ -54,6 +54,10 @@ $(document).ready(function () {
 
 });
 
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
 var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -91,3 +95,25 @@ var map;
                               'Error: El servicio de geolocalización falló.' :
                               'Error: Tu explorador no soporta la geolocalización.');
       }
+      
+      function mifuncion(){
+
+            var opcion1 = "3";
+            var comment =$('#comment').val();
+            var pos = map.getCenter();
+
+            $.ajax({
+                url:'InfoCheckOutServlet',
+                type:'GET',
+                data:{opcion1:opcion1, comment:comment, pos:pos},
+                dataType: 'json',
+                success: function(data) {
+                    console.log("Info enviada");
+
+                },
+                error: function(){
+                    console.log("Se jodio papá");
+                    $('#ack').val("ERROR FATAL");
+                }
+            });
+       }

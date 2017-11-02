@@ -4,8 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <!--<script type="text/javascript" src="InfoCarritoAjax.js"></script>-->
-        <script type="text/javascript" src="InfoCheckOut.js"></script>
+        <script type="text/javascript" src="InfoCarritoAjax.js"></script>
+       <!-- <script type="text/javascript" src="InfoCheckOut.js"></script>-->
         <script type="text/javascript" src="seleccionProductoAjax.js"></script>
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
@@ -96,6 +96,12 @@
             });
 
         </script>
+        <style>
+            #map {
+             height: 200px;
+             width: 400px;
+            }
+        </style>
     </head>
     <body>
         <% HttpSession mySession = request.getSession();
@@ -133,30 +139,10 @@
                 <input class="btn" type="submit" id="Confirmar" value="Confirmar"/>-->
                 <button onclick="mifuncion()">Confirmar</button>
                  <div id="map"></div>
-                <script>
-                    
-    
-    function mifuncion(){
-        
-        var opcion1 = "3";
-        var comment =$('#comment').val();
-        
-  
-        $.ajax({
-            url:'InfoCheckOutServlet',
-            type:'GET',
-            data:{opcion1:opcion1, comment:comment},
-            dataType: 'json',
-            success: function(data) {
-                console.log("Info enviada");
-
-            },
-            error: function(){
-                $('#ack').val("ERROR FATAL");
-            }
-        });
-        }
-        </script>
+                 
+                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB78-OGRg5rcLtUs9caqE4lQVIlw-D7zA4&callback=initMap"></script>
+                 
+               
             </center>
 
         </form>
@@ -165,7 +151,7 @@
     <center><div id="llegada"></div></center>
     <center><div id="llegada2"></div></center>
     
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB78-OGRg5rcLtUs9caqE4lQVIlw-D7zA4&callback=initMap"></script>
+        
    
     <!--<img src="Pictures/AppuMartTextoBorde.png">-->
 </body>
