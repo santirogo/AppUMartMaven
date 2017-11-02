@@ -21,6 +21,7 @@ function cierraSesion(){
 }
 
 function cerrarSesion() {
+    console.log("Entooopoooo");
     $.ajax({
         url: 'CerrarSesionServlet',
         type: 'get',
