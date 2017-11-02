@@ -4,21 +4,7 @@
  * and open the template in the editor.
  */
 
-//window.onbeforeunload=mylogic_function();
-//
-//function mylogic_function() {
-//    //window.location.href = "Prueba"; 
-//    alert("Quiere salir?");
-//} 
 
-//window.addEventListener("beforeunload", function (e) {
-//  var confirmationMessage = "\o/";
-//  
-////  (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-//  
-////  window.location.href = "Prueba";                            //Webkit, Safari, Chrome
-//    redirect;
-//});
 
 //window.onbeforeunload = cierraSesion;
 

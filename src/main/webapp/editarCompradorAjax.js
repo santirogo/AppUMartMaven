@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-window.onbeforeunload = cierraSesion;
+//window.onbeforeunload = cierraSesion;
 
 function cierraSesion(){
     $.ajax({

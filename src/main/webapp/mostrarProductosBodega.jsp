@@ -26,7 +26,7 @@
         <%}%>
     <div id="div"></div>
     <a href="agregarProducto.jsp"><button>Agregar un producto</button></a>
-
+    <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
     
     
     
