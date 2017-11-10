@@ -19,6 +19,7 @@ $(document).ready(function (){
                 success: function(data){
                     if (data.universidad === "si") {
                         if(data.confirmacion === "ok"){
+                            console.log("Entró para mostrar");
                             document.getElementById("confirmacion").style.display = 'block';
                         }
                     }else{
