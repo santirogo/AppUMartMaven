@@ -87,8 +87,8 @@
         <div style="position: absolute; left: 10%; top: 12%;"><img src="Pictures/Usuario.png"  width="487px" height="121"></div>
         
         <div style="margin-top: 17%;">
-            <a href="http://localhost:8080/AppuMart/loginUsuario.jsp"><div class="avatar" style="left: 15%; vertical-align: middle;"></div></a>
-            <a href="http://localhost:8080/AppuMart/loginVendedor.jsp"><div class="avatar2" style="right: 15%; vertical-align: middle;"></div></a>
+            <a href="loginUsuario.jsp"><div class="avatar" style="left: 15%; vertical-align: middle;"></div></a>
+            <a href="loginVendedor.jsp"><div class="avatar2" style="right: 15%; vertical-align: middle;"></div></a>
             <center><div style="position: relative; top: -50px"><img src="Pictures/AppuMartLogo.png"></div></center>
         </div>
         <div style="position: absolute; right: 10%; bottom: 12%"><img src="Pictures/Vendedor.png" width="487px" height="121"></div>
