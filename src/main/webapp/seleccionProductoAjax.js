@@ -20,7 +20,22 @@ function cierraSesion(){
     });
 }
 
+function cerrarSesion() {
+    $.ajax({
+        url: 'CerrarSesionServlet',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+            console.log("holaaa");
+            window.location.href = "index.jsp";
+            
+        },
+        error: function () {
+        }
+    });
 
+
+};
 
 function cli (id){
     console.log("Holaaaaaa "+id);
@@ -116,7 +131,7 @@ $(document).ready(function () {
                         "<img src='" + data.arreglo[i].ruta + "' alt='foto' width='100' height='100'>",
                         "<button class='btn' onclick='cli(" + i + ")' id=" + i + ">Añadir</button><br><br>"    overflow: hidden;        */
                     
-        "<div id='item' style='cursor:pointer; width:300px; overflow: hidden;'> <img style='padding:0px; margin-right: 10px; width: 150px; height: 200px' id='perfil' src=Pictures/" + data.arreglo[i].ruta + "><p class='titulo_uno' id='n"+ i +"'>"+ data.arreglo[i].nombre +"</p><p style='float: right; margin: 0px 20px 0px 0px;' class='descripcion2' id='p"+ i +"'>" +"$ "+ data.arreglo[i].precio + "<input id='c' type='text' class='pass' value='1'/><button style='border-radius:100%;  margin: 0px 0px 5px 5px; ' class='btn' onclick='cli(" + i + ")' id=" + i + ">+</button><br>" +"</div>"
+        "<div  id='item' style='cursor:pointer; width:300px; overflow: hidden;'> <img style='padding:0px; margin-right: 10px; width: 150px; height: 200px' id='perfil' src=Pictures/" + data.arreglo[i].ruta + "><p class='titulo_uno' id='n"+ i +"'>"+ data.arreglo[i].nombre +"</p><p style='float: right; margin: 0px 20px 0px 0px;' class='descripcion2' id='p"+ i +"'>" +"$ "+ data.arreglo[i].precio + "<input id='c"+ i +"' type='text' class='pass' value='1'/><button style='border-radius:100%;  margin: 0px 0px 5px 5px; ' class='btn' onclick='cli(" + i + ")' id=" + i + ">+</button><br>" +"</div>"
     
                         );
             }
@@ -124,18 +139,3 @@ $(document).ready(function () {
         }
     });
 });
-function cerrarSesion() {
-    console.log("Entooopoooo");
-    $.ajax({
-        url: 'CerrarSesionServlet',
-        type: 'get',
-        dataType: 'json',
-        success: function (data) {
-            console.log("holaaa");
-            window.location.href = "index.jsp";
-            
-        },
-        error: function () {
-        }
-    });
-};

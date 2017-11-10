@@ -1,49 +1,42 @@
 $(document).ready(function(){
     
-    function mifuncion(){
-        
-        var opcion1 = "3";
-        var comment =$('#comment').val();
-        
-  
-        $.ajax({
-            url:'InfoCheckOutServlet1',
-            type:'GET',
-            data:{opcion1:opcion1, comment:comment},
-            dataType: 'json',
-            success: function(data) {
-                console.log("Info enviada");
-//                var i=0;
-//               for ( i = 0; i < data.Productos.length; i++) {
-//                console.log(data.Productos[i].nombre);
-//                console.log(data.Productos[i].precio);
-//                $('#carlos').append(
-//                        //"<a href = 'seleccionProducto.jsp'><button class='btn' onclick='sendName(" + data.Productos[i].nombre + ")'>\n\"",
-//                        "<p>" + data.Productos[i].nombre + "</p>",
-//                        "<p>" + data.Productos[i].cantidad + "</p>",
-//                        "<p>" + data.Productos[i].precio + "</p><br>",
-//                        
-//                                
-//                        );
-//               
-//            }
-//            
-//                $('$carlos').append(
-//                    
-//                         "<p>"+ data.Productos[i].precio +"</p><br>",
-//                        );
-//                
-            },
-            error: function(){
-                $('#ack').val("ERROR FATAL");
+    var opcion = $('#opcion').val();
+
+    $.ajax({
+        url: 'MainMenuServlet',
+        type: 'GET',
+        data: {opcion:opcion},
+        dataType: 'json',
+        success: function (data) {
+            console.log(data.nombre);
+            var i = 0;
+            for (i = 0; i < data.Productos.length; i++) {
+                console.log(data.Productos[i].nombre);
+                console.log(data.Productos[i].precio);
+                $('#carlos').append(
+                        
+                        //"<a href = 'seleccionProducto.jsp'><button class='btn' onclick='sendName(" + data.Productos[i].nombre + ")'>\n\"",
+                        "<p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p><br>",
+                        "<form>",
+                        "<input type='text' id='opcion' value='2' style='display: none'>",
+                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
+                        "<input type='submit'>",
+                        "</form>"
+                        
+                        );
+
             }
-        });
+
+        },
+        error: function () {
+            $('#ack').val("ERROR FATAL");
         }
-        });
+    });
+    
+});
 
-
-
-var map;
+      var map;
+      var pos;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 4.714666, lng: -74.072115},
@@ -57,13 +50,13 @@ var map;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Tú Ubicación <3');
+            infoWindow.setContent('TÃº UbicaciÃ³n <3');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -77,6 +70,30 @@ var map;
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'Error: El servicio de geolocalización falló.' :
-                              'Error: Tu explorador no soporta la geolocalización.');
+                              'Error: El servicio de geolocalizaciÃ³n fallÃ³.' :
+                              'Error: Tu explorador no soporta la geolocalizaciÃ³n.');
       }
+      
+      function mifuncion(){
+
+            var opcion1 = "3";
+            var comment =$('#comment').val();
+            var lat = pos.lat;
+            var long = pos.lng;
+            console.log(lat+" "+long);
+
+            $.ajax({
+                url:'InfoCheckOutServlet',
+                type:'GET',
+                data:{opcion1:opcion1, comment:comment, latitud:lat, longitud:long},
+                dataType: 'json',
+                success: function(data) {
+                    console.log("Info enviada");
+                    $('#ack').val("TU ORDEN FUE ENVIADA EXITOSAMENTE!!!");
+                },
+                error: function(){
+                    console.log("Se jodio papÃ¡");
+                    $('#ack').val("ERROR FATAL");
+                }
+            });
+    };

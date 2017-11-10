@@ -25,6 +25,14 @@
         <%if (correo == null) {%>
         <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
         <%}%>
+
+        <div id="div"></div>
+        <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
+
+
+
+
+
             <!--<img src="tiendas_bg.jpg" class="background">-->
         <img src="Pictures/barraInf.png"  class="background">
     <center>
@@ -34,16 +42,15 @@
         <img src="Pictures/AppuMartTextoBorde.png"  class="background" style="filter:brightness(1); width: 20% ; height: 30%; top:80%; left:75%;">
         
             <div style="  
-                margin:auto;
-                margin-top:10px;
-                width:350px;
-                height:150px;">
+    margin:auto;
+    margin-top:10px;
+    width:350px;
+    height:150px;">
             </div>
-    
 
-        
-        
-        <div id="div"></div>
-        <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
-    </body>
+    <div id="div"></div>
+
+
+
+</body>
 </html>

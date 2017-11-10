@@ -10,7 +10,7 @@ $(document).ready(function () {
             for (var i = 0; i < data.productos.length; i++) {
                 
                 $('#div').append(
-                        "<a><img src=" + data.productos[i].imagen + " width='100' height='100'></button></a><br>",
+                        "<a><img src=" + data.productos[i].imagen + " width='100' height='100' class='avatar'></button></a><br>",
                         "<a>Producto: " + data.productos[i].nombre + "</a><br>",
                         "<a>Categoría: " + data.productos[i].categoria + "</a><br>",
                         "<a>Precio Unitario: " + data.productos[i].precio + "</a><br>",
@@ -22,10 +22,8 @@ $(document).ready(function () {
         error: function () {
         }
     });
-    
 });
 function cerrarSesion() {
-        console.log("entroooo");
     $.ajax({
         url: 'CerrarSesionServlet',
         type: 'get',
@@ -38,4 +36,6 @@ function cerrarSesion() {
         error: function () {
         }
     });
+
+
 };

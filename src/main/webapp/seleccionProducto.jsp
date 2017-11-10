@@ -7,6 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
         <script type="text/javascript" src="seleccionProductoAjax.js"></script>
+        <script type="text/javascript" src="InfoCarritoAjax.js"></script>
         <link href="StyleBody.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -165,7 +166,7 @@
         
         <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
         
-        <a href="editarComprador.jsp"><button>Editar comprador</button></a>
+        <a href="http://localhost:8080/AppuMart/editarComprador.jsp"><button>Editar comprador</button></a>
         
 
         <div id="loader"><img src="Pictures/AppuMartLogo.png" style="position: absolute; top:50%; left: 50%; margin-top: -150px; margin-left: -150px;"></div>
@@ -218,7 +219,7 @@
         <!-- Fin Modal-->
 
         <form>
-            <div id="prueba" style='position: absolute; top:20%; left: 43%'></div><br>
+            <div id="prueba" style='position: absolute; top:40%; left: 1%'></div><br>
             <div id="respuesta"></div>
             <div id="c"></div>
         </form>

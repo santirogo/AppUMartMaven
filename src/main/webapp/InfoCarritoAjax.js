@@ -78,7 +78,7 @@ var map;
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Tú Ubicación <3');
+            infoWindow.setContent('TÃº UbicaciÃ³n <3');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -92,8 +92,8 @@ var map;
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'Error: El servicio de geolocalización falló.' :
-                              'Error: Tu explorador no soporta la geolocalización.');
+                              'Error: El servicio de geolocalizaciÃ³n fallÃ³.' :
+                              'Error: Tu explorador no soporta la geolocalizaciÃ³n.');
       }
       
       function mifuncion(){
@@ -112,8 +112,8 @@ var map;
 
                 },
                 error: function(){
-                    console.log("Se jodio papá");
+                    console.log("Se jodio papÃ¡");
                     $('#ack').val("ERROR FATAL");
                 }
             });
-       }
+      }
