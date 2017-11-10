@@ -9,6 +9,8 @@ import dao.EnviarMail;
 import dao.VendedorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -132,7 +134,10 @@ public class RegistrarVendedorServlet extends HttpServlet {
                 json.put("sergista", "si");
 
                 sender = new EnviarMail();
-                sender.sendMail(correo);
+                String cod = sender.getCod();
+            try {
+                //session.setAttribute("codigo", cod);
+                EnviarMail.sendMail(correo,cod);
                 //if (request.getParameter("codigo") != null) {
                 //  System.out.println("I got the coooooode");
 
@@ -142,6 +147,9 @@ public class RegistrarVendedorServlet extends HttpServlet {
                 //} else {
                 //  json.put("registro", "fail");
                 //}
+            } catch (Exception ex) {
+                Logger.getLogger(RegistrarVendedorServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
             out.print(json);
 

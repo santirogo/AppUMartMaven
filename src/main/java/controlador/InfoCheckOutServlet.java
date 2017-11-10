@@ -107,8 +107,8 @@ public class InfoCheckOutServlet extends HttpServlet {
                         }
                     }
 
-                    String usuario="Cliente: "+mail.NombreComprador(correoSesion)+"\n";
-                    cadena.add(usuario);
+//                    String usuario="Cliente: "+mail.NombreComprador(correoSesion)+"\n";
+//                    cadena.add(usuario);
                     
                     for (int j = 0; j < prod.size(); j++) {
                         String orden = "Producto: " + prod.get(j).getNombre() + "<br>"+"Cantidad: " + Integer.toString(prod.get(j).getCantidad()) + "<br>"+"Precio: " + Integer.toString(prod.get(j).getPrecio())+ "<br>"+ "<br>";
@@ -120,7 +120,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                     cadena.add(comentario);
                     
                     System.out.println("idtienda:"+prod.get(i).getTienda());
-                    correo = mail.CorreoTienda(prod.get(i).getTienda());
+//                    correo = mail.CorreoTienda(prod.get(i).getTienda()); descomentarear después
                     //correo = mail.CorreoTienda(1);
                     System.out.println("Correo:"+correo);
                     String pedido="";
@@ -132,7 +132,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                     
                     String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
-                    mail.sendCheckOut(correo,map);
+//                    mail.sendCheckOut(correo,map);
                     
                     session.setAttribute("carrito", null);
                     System.out.println("-------------CORREO ENVIADO-------------");
