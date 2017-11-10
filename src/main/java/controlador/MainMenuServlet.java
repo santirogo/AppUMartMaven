@@ -46,9 +46,7 @@ public class MainMenuServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("application/json");
-        try (PrintWriter out = response.getWriter()) {
-
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,7 +61,7 @@ public class MainMenuServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             //processRequest(request, response);
             response.setContentType("application/json");
 
@@ -141,7 +139,7 @@ public class MainMenuServlet extends HttpServlet {
 
             }
 
-        }
+        
     }
 
     /**
@@ -155,10 +153,7 @@ public class MainMenuServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try (PrintWriter out = response.getWriter()) {
-            //processRequest(request, response);
-
-        }
+        
     }
 
     /**

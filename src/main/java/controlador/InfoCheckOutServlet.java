@@ -56,7 +56,7 @@ public class InfoCheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             /* TODO output your page here. You may use following sample code. */
 
             System.out.println("ENTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
@@ -92,7 +92,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                 for (int i = 0; i < Arreglo.size(); i++) {
                     System.out.println("------------------ENVIANDO CORREO--------------------");
                     String correo = "";
-                    ArrayList<String> cadena = new ArrayList<>();
+                    ArrayList<String> cadena = new ArrayList();
                     ArrayList<ProductoVO> prod = new ArrayList();
                     prod.add(Arreglo.get(i));
                     Arreglo.remove(i);
@@ -139,7 +139,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                 }
             }
 
-        }
+        
     }
 
     /**

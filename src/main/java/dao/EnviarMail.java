@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,10 +28,11 @@ public class EnviarMail {
     private Connection conexion;
 
     public EnviarMail() {
-        this.cod = Integer.toString((int) Math.floor(Math.random() * (1000000 - 100000 + 1) + (100000)));
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
-
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(CarritoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void sendMail(String toAdd) {

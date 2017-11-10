@@ -38,9 +38,7 @@ public class AgregarCarritoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -70,7 +68,7 @@ public class AgregarCarritoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try(PrintWriter out = response.getWriter()){
+        PrintWriter out = response.getWriter();
             response.setContentType("application/json");
             //processRequest(request, response);
         
@@ -113,7 +111,7 @@ public class AgregarCarritoServlet extends HttpServlet {
             sesion.setAttribute("carrito", Carro);
             //sesion.setAttribute("carrito", new Gson().toJson(Carro));
             
-        }
+        
         }
         
     }
