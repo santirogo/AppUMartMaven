@@ -61,7 +61,7 @@
 
     <center style="margin-top: 100px">
         <p>¿Eres nuevo?</p>
-        <p><a href="http://localhost:8080/AppuMart/registroUsuario.jsp">Regístrate</button></a></p> <!-- 8080-->
+        <p><a href="registroUsuario.jsp">Regístrate</button></a></p> <!-- 8080-->
     </center>
 </body>
 </html>
