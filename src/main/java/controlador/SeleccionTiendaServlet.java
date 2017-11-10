@@ -73,7 +73,7 @@ public class SeleccionTiendaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             this.producto = new ProductoDAO();
             this.tienda = new TiendaDAO();
@@ -105,7 +105,7 @@ public class SeleccionTiendaServlet extends HttpServlet {
             fin.put("logo", Logotienda);
             
             out.print(fin);
-        
+        }
         
     }
 

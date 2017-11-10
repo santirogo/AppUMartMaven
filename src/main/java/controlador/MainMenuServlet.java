@@ -46,6 +46,9 @@ public class MainMenuServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("application/json");
+        try (PrintWriter out = response.getWriter()) {
+
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -60,7 +63,7 @@ public class MainMenuServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             //processRequest(request, response);
             response.setContentType("application/json");
 
@@ -108,10 +111,11 @@ public class MainMenuServlet extends HttpServlet {
                         json.put("nombre", CarroSesion.get(i).getNombre());
                         json.put("cantidad", String.valueOf(CarroSesion.get(i).getCantidad()));
                         json.put("precio", String.valueOf(CarroSesion.get(i).getPrecio()));
+                        System.out.println("PRUEBA JSON NOMBRE: "+json.get("nombre"));
                         array.put(json);
 
                     }
-
+                       
                     //Envia Precio y cantidad
 //                    String x = Mateo.PrecioTotal(CarroSesion);
 //                    JSONObject total = new JSONObject();
@@ -137,6 +141,7 @@ public class MainMenuServlet extends HttpServlet {
 
             }
 
+        }
     }
 
     /**
@@ -150,9 +155,10 @@ public class MainMenuServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             //processRequest(request, response);
 
+        }
     }
 
     /**

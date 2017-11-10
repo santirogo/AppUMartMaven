@@ -56,9 +56,11 @@ public class InfoCheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
+            System.out.println("ENTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            
             CarritoDAO carrito = new CarritoDAO();
             ProductoVO productos = new ProductoVO();
             ArrayList<ProductoVO> Arreglo = new ArrayList();
@@ -69,6 +71,7 @@ public class InfoCheckOutServlet extends HttpServlet {
             HttpSession session = request.getSession();
             
             ArrayList<ProductoVO> CarroSesion = (ArrayList) session.getAttribute("carrito");
+            String correoSesion = (String) session.getAttribute("correo");
             // ArrayList<ProductoVO> Carro = new Gson().fromJson(CarroSesion, ArrayList.class);
 
             Arreglo = CarroSesion;
@@ -79,36 +82,17 @@ public class InfoCheckOutServlet extends HttpServlet {
             String opcion="";
 
             opcion = request.getParameter("opcion1");
-            String comentario = request.getParameter("comment");
+            String comentario = "Comentarios: "+request.getParameter("comment");
+            System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
+//            String pos = (String) request.getParameter("pos");
 
-//            for (int i = 0; i < Arreglo.size(); i++) {
-//                JSONObject json = new JSONObject();
-//                productos = (ProductoVO) Arreglo.get(i);
-//
-//                        //json.put("ID", "Papitas2");
-//                        json.put("nombre", "Papitas");
-//                        json.put("cantidad", "2");
-//                        json.put("precio", "100");
-//                        json.put("Comentario", comentario);
-//                        array.put(json);
-//            }
-//            coment.put("Comentario", comentario);
-//            array.put(coment);
-//            fin.put("Productos", array);
-//            out.print(fin);
             System.out.println(CarroSesion.get(0).getNombre());
             System.out.println("opcion1:"+opcion);
             if (opcion.equals("3")) {
-//                productos.setNombre("Papitas");
-//            productos.setCantidad(2);
-//            productos.setPrecio(100);
-//            productos.setID("Papitas1");
-//            productos.setTienda(1);
-//                
-//                Arreglo.add(productos);
                 for (int i = 0; i < Arreglo.size(); i++) {
+                    System.out.println("------------------ENVIANDO CORREO--------------------");
                     String correo = "";
-                    ArrayList<String> cadena = new ArrayList();
+                    ArrayList<String> cadena = new ArrayList<>();
                     ArrayList<ProductoVO> prod = new ArrayList();
                     prod.add(Arreglo.get(i));
                     Arreglo.remove(i);
@@ -123,30 +107,39 @@ public class InfoCheckOutServlet extends HttpServlet {
                         }
                     }
 
+                    String usuario="Cliente: "+mail.NombreComprador(correoSesion)+"\n";
+                    cadena.add(usuario);
                     
                     for (int j = 0; j < prod.size(); j++) {
-                        String orden = "\n"+"Producto: " + prod.get(i).getNombre() + "\n"+"Cantidad: " + Integer.toString(prod.get(i).getCantidad()) + "\n"+"Precio: " + Integer.toString(prod.get(i).getPrecio());
+                        String orden = "Producto: " + prod.get(j).getNombre() + "<br>"+"Cantidad: " + Integer.toString(prod.get(j).getCantidad()) + "<br>"+"Precio: " + Integer.toString(prod.get(j).getPrecio())+ "<br>"+ "<br>";
                         //String orden = "" + "Papitas" + "" + "2" + "" + "100";
+                        System.out.println("PRODUCTO "+j+": "+orden);
                         cadena.add(orden);
-                        cadena.add(comentario);
                     }
                     
-                    for (int j = 0; j < prod.size(); j++) {
-                        
-                    }
-                    
+                    cadena.add(comentario);
                     
                     System.out.println("idtienda:"+prod.get(i).getTienda());
                     correo = mail.CorreoTienda(prod.get(i).getTienda());
                     //correo = mail.CorreoTienda(1);
                     System.out.println("Correo:"+correo);
+                    String pedido="";
+                    for (int j = 0; j < cadena.size(); j++) {
+                        pedido=pedido+cadena.get(j);
+                    }
                     
-                    mail.sendCheckOut(correo, cadena);
+                    System.out.println("PEDIDOOOOO:"+pedido);
+                    
+                    String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
+"&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
+                    mail.sendCheckOut(correo,map);
                     
                     session.setAttribute("carrito", null);
-
+                    System.out.println("-------------CORREO ENVIADO-------------");
                 }
             }
+
+        }
     }
 
     /**
