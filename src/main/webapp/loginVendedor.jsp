@@ -58,7 +58,7 @@
 
     <center style="margin-top: 100px">
         <p>¿Eres nuevo?</p>
-        <p><a href="http://localhost:8080/AppuMart/registroUsuario.jsp">Regístrate</button></a></p> <!-- 8080-->
+        <p><a href="registrarVendedor.jsp">Regístrate</button></a></p> <!-- 8080-->
     </center>
 
     <img src="Pictures/Partner.png"  class="background" style="filter:brightness(1); width: 30% ; height: 15%; left: 49.5%; top: 80%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); position: absolute;">
