@@ -91,6 +91,7 @@ public class EnviarMail {
     }
     
     
+    
     public static void sendMailCheckout(String toEmail,String map) throws Exception {
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
@@ -116,7 +117,7 @@ public class EnviarMail {
         message.setContent(multipart);
 
         //message.setFrom(new InternetAddress("appumartsw@gmail.com"));
-        message.setFrom(new InternetAddress("tat0_1097@hotmail.com"));
+        message.setFrom(new InternetAddress("tato_1097@hotmail.com"));
         message.setSubject("¡¡Tienes un nuevo pepido!!");
 
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
