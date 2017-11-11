@@ -19,6 +19,7 @@ $(document).ready(function (){
                 data: {correo:correo},
                 dataType: 'json',
                 success: function(data){
+                    console.log("hola?");
                     if (data.universidad === "si") {
                         if(data.confirmacion === "ok"){
                             console.log("Entró para mostrar");
