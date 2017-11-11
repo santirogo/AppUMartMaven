@@ -73,15 +73,13 @@
                     <input id="pass" type="password" placeholder="Contraseña" class="pass"/>
                     <input id="pass2" type="password" placeholder="Confirma tu Contraseña" class="pass"/>
                     <input id="celular" type="text" class="pass" placeholder="Celular"/>
-                    <input type="submit" id="boton" class="btn" value="Sign Up"/>
+                    <button id="boton" class="btn">Sign Up</button>
 
                     <div id="confirmacion" style="display:none">
                         <p id="parrafo">Por favor digita el número de confirmación que fue enviado a tu correo</p>
                         <input type="text" class="btn" id="numero"><br> 
                         <input class="btn" type="button" value="Confirmar" id="confirmar">
                     </div>
-                    
-                    <input type="button" id="prueba" value="prueba">
                     
                 </form>
                 <!--<p id="ack"></p>-->

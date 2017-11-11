@@ -6,11 +6,8 @@
 
 $(document).ready(function (){
     
-    $("#prueba").click(function (){
-        console.log("Entro en prueba");
-    });
-    
     $("#boton").click(function (){
+        console.log("entrooooo");
         correo = $("#correo").val();
         pass = $("#pass").val();
         pass2 = $("#pass2").val();
@@ -40,7 +37,7 @@ $(document).ready(function (){
     });
     
     $("#confirmar").click(function () {
-
+        console.log("Entroooo en confirmar");
         numero = $("#numero").val();
         correo = $("#correo").val();
         nombre = $("#nombre").val();
