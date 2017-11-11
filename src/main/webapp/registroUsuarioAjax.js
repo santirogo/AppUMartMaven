@@ -5,6 +5,11 @@
  */
 
 $(document).ready(function (){
+    
+    $("#prueba").click(function (){
+        console.log("Entro en prueba");
+    });
+    
     $("#boton").click(function (){
         correo = $("#correo").val();
         pass = $("#pass").val();

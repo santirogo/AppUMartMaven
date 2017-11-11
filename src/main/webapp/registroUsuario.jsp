@@ -80,7 +80,9 @@
                         <input type="text" class="btn" id="numero"><br> 
                         <input class="btn" type="button" value="Confirmar" id="confirmar">
                     </div>
-
+                    
+                    <input type="button" id="prueba" value="prueba">
+                    
                 </form>
                 <!--<p id="ack"></p>-->
                 <div id="error"></div>
