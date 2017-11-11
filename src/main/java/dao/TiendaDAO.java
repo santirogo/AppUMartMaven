@@ -23,11 +23,8 @@ public class TiendaDAO {
     private Connection conexion;
 
     public TiendaDAO() {
-        try {
-            this.conexion = Conexion.getConnection();
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(TiendaDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Conexion db = Conexion.getConexion();
+        this.conexion = db.getConnection();
     }
 
     public boolean insertar(TiendaVO tienda) {
@@ -298,5 +295,45 @@ public class TiendaDAO {
         return null;
 
     }
+        
+        public String CorreoTienda(int id){
+        
+        String query="select vendedor from Tiendas where id="+id;
+        String Correo="";
+        String vendedor="";
+        
+        try {
+            
+            Statement st = this.conexion.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            
+            
+            while(rs.next()){
+            vendedor=rs.getString(1);
+                System.out.println("vendedor"+vendedor);
+           if (vendedor!=null) {
+               query="select correo from vendedores where celular='"+vendedor+"'";
+               ResultSet rs2 = st.executeQuery(query);
+                 while(rs2.next()){
+                Correo=rs2.getString(1);
+                     System.out.println(Correo);
+            }
+                 return Correo;
+            } 
+            }
+            
+            
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EnviarMail.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        
+        return null;
+    
+    }
+        
     
 }

@@ -96,5 +96,45 @@ public class EnviarMail {
     }
     
     
+    public static void sendMailCheckout(String toEmail,String map) throws Exception {
+        Properties props = new Properties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.host", SMTP_HOST_NAME);
+        props.put("mail.smtp.port", 587);
+        props.put("mail.smtp.auth", "true");
+
+        Authenticator auth = new SMTPAuthenticator();
+        System.out.println("aauuutth"+auth.toString());
+        Session mailSession = Session.getInstance(props, auth);
+        System.out.println("mail sessioooooon: "+mailSession.getProperty("mail.smtp.auth"));
+
+        Transport transport = mailSession.getTransport();
+
+        MimeMessage message = new MimeMessage(mailSession);
+
+        Multipart multipart = new MimeMultipart("alternative");
+
+        BodyPart bodyPart = new MimeBodyPart();
+        bodyPart.setContent(map, "text/html");
+        multipart.addBodyPart(bodyPart);
+
+        message.setContent(multipart);
+
+        message.setFrom(new InternetAddress("appumartsw@gmail.com"));
+        message.setSubject("¡¡Tienes un nuevo pepido!!");
+
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+
+ 
+
+        transport.connect(SMTP_AUTH_USER,SMTP_AUTH_PWD);
+
+        transport.sendMessage(message,
+
+        message.getRecipients(Message.RecipientType.TO));
+
+        transport.close();
+    }
+    
 }
 
