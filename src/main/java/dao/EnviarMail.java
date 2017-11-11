@@ -1,13 +1,8 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 import java.util.Properties;
-import java.util.Random;
+
 import javax.mail.Authenticator;
 import javax.mail.BodyPart;
 
@@ -56,7 +51,7 @@ public class EnviarMail {
         Multipart multipart = new MimeMultipart("alternative");
 
         BodyPart bodyPart = new MimeBodyPart();
-        bodyPart.setContent("Tu código:"+cod, "text/html");
+        bodyPart.setContent("Tu código:"+cod, "text/html;charset=UTF-8");
         multipart.addBodyPart(bodyPart);
 
         message.setContent(multipart);
@@ -125,8 +120,6 @@ public class EnviarMail {
         message.setSubject("¡¡Tienes un nuevo pepido!!");
 
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
-
- 
 
         transport.connect(SMTP_AUTH_USER,SMTP_AUTH_PWD);
 
