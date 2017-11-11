@@ -9,9 +9,13 @@ import com.google.gson.Gson;
 import dao.CarritoDAO;
 import dao.EnviarMail;
 import dao.ProductoDAO;
+import dao.TiendaDAO;
+import dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,17 +60,14 @@ public class InfoCheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
-            System.out.println("ENTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-            
             CarritoDAO carrito = new CarritoDAO();
             ProductoVO productos = new ProductoVO();
             ArrayList<ProductoVO> Arreglo = new ArrayList();
-            JSONArray array = new JSONArray();
-            JSONObject coment = new JSONObject();
-            JSONObject fin = new JSONObject();
+            UsuarioDAO user = new UsuarioDAO();
+            TiendaDAO tienda = new TiendaDAO();
             EnviarMail mail = new EnviarMail();
             HttpSession session = request.getSession();
             
@@ -82,36 +83,36 @@ public class InfoCheckOutServlet extends HttpServlet {
             String opcion="";
 
             opcion = request.getParameter("opcion1");
-            String comentario = "Comentarios: "+request.getParameter("comment");
+            String comentario = request.getParameter("comment");
             System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
+            
+            
 //            String pos = (String) request.getParameter("pos");
 
             System.out.println(CarroSesion.get(0).getNombre());
             System.out.println("opcion1:"+opcion);
+            
+            
             if (opcion.equals("3")) {
-                for (int i = 0; i < Arreglo.size(); i++) {
+                
                     System.out.println("------------------ENVIANDO CORREO--------------------");
                     String correo = "";
-                    ArrayList<String> cadena = new ArrayList();
+                    ArrayList<String> cadena = new ArrayList<>();
                     ArrayList<ProductoVO> prod = new ArrayList();
-                    prod.add(Arreglo.get(i));
-                    Arreglo.remove(i);
+                   // prod.add(Arreglo.get(i));
+                    //Arreglo.remove(i);
 
-                    for (int j = 0; j < Arreglo.size(); j++) {
-
-                        if (Arreglo.get(j) != null) {
-                            if (Arreglo.get(i).getTienda() == Arreglo.get(j).getTienda()) {
-                                prod.add(Arreglo.get(j));
-                                Arreglo.remove(j);
-                            }
-                        }
+                    for (int i = 0; i < Arreglo.size(); i++) {
+                        prod.add(Arreglo.get(i));
                     }
+                    
+                    String usuario="Cliente: "+user.NombreComprador(correoSesion)+"\n";
 
-//                    String usuario="Cliente: "+mail.NombreComprador(correoSesion)+"\n";
-//                    cadena.add(usuario);
+                    
+                    cadena.add(usuario);
                     
                     for (int j = 0; j < prod.size(); j++) {
-                        String orden = "Producto: " + prod.get(j).getNombre() + "<br>"+"Cantidad: " + Integer.toString(prod.get(j).getCantidad()) + "<br>"+"Precio: " + Integer.toString(prod.get(j).getPrecio())+ "<br>"+ "<br>";
+                        String orden = "| "+"Producto: " + prod.get(j).getNombre() + " | "+"Cantidad: " + Integer.toString(prod.get(j).getCantidad()) + " | "+"Precio: " + Integer.toString(prod.get(j).getPrecio())+ " | ";
                         //String orden = "" + "Papitas" + "" + "2" + "" + "100";
                         System.out.println("PRODUCTO "+j+": "+orden);
                         cadena.add(orden);
@@ -119,8 +120,8 @@ public class InfoCheckOutServlet extends HttpServlet {
                     
                     cadena.add(comentario);
                     
-                    System.out.println("idtienda:"+prod.get(i).getTienda());
-//                    correo = mail.CorreoTienda(prod.get(i).getTienda()); descomentarear después
+                    System.out.println("idtienda:"+prod.get(0).getTienda());
+                    correo = tienda.CorreoTienda(prod.get(0).getTienda());
                     //correo = mail.CorreoTienda(1);
                     System.out.println("Correo:"+correo);
                     String pedido="";
@@ -132,14 +133,16 @@ public class InfoCheckOutServlet extends HttpServlet {
                     
                     String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
-//                    mail.sendCheckOut(correo,map);
+                    mail.sendMailCheckout(correo,map);
                     
                     session.setAttribute("carrito", null);
                     System.out.println("-------------CORREO ENVIADO-------------");
-                }
+                
             }
 
-        
+        } catch (Exception ex) {
+            Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

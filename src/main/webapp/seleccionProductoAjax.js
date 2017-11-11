@@ -96,7 +96,7 @@ function main(){
                         "<form>",
                         "<input type='text' id='opcion' value='2' style='display: none'>",
                         "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-                        "<input type='submit'>",
+                        "<input type='submit' value='x'>",
                         "</form>"
                         
                         );
@@ -106,7 +106,7 @@ function main(){
                         }
                     });
                     
-                    location = 'InfoCarrito.jsp';
+                    //location = 'InfoCarrito.jsp';
 }
 
 

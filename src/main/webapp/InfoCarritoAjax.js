@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    var opcion = $('#opcion').val();
+    var opcion = 0;
 
     $.ajax({
         url: 'MainMenuServlet',
@@ -9,24 +9,24 @@ $(document).ready(function () {
         data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-            console.log(data.nombre);
-            var i = 0;
-            for (i = 0; i < data.Productos.length; i++) {
-                console.log(data.Productos[i].nombre);
-                console.log(data.Productos[i].precio);
-                $('#carlos').append(
-                        
-                        //"<a href = 'seleccionProducto.jsp'><button class='btn' onclick='sendName(" + data.Productos[i].nombre + ")'>\n\"",
-                        "<p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p><br>",
-                        "<form>",
-                        "<input type='text' id='opcion' value='2' style='display: none'>",
-                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-                        "<input type='submit'>",
-                        "</form>"
-                        
-                        );
-
-            }
+//            console.log(data.nombre);
+//            var i = 0;
+//            for (i = 0; i < data.Productos.length; i++) {
+//                console.log(data.Productos[i].nombre);
+//                console.log(data.Productos[i].precio);
+//                $('#carlos').append(
+//                        
+//                        //"<a href = 'seleccionProducto.jsp'><button class='btn' onclick='sendName(" + data.Productos[i].nombre + ")'>\n\"",
+//                        "<p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p><br>",
+//                        "<form>",
+//                        "<input type='text' id='opcion' value='2' style='display: none'>",
+//                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
+//                        "<input type='submit'>",
+//                        "</form>"
+//                        
+//                        );
+//
+//            }
 
 //            $('#carlos').append(
 //                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
@@ -96,24 +96,4 @@ var map;
                               'Error: Tu explorador no soporta la geolocalización.');
       }
       
-      function mifuncion(){
-
-            var opcion1 = "3";
-            var comment =$('#comment').val();
-            var pos = map.getCenter();
-
-            $.ajax({
-                url:'InfoCheckOutServlet',
-                type:'GET',
-                data:{opcion1:opcion1, comment:comment, pos:pos},
-                dataType: 'json',
-                success: function(data) {
-                    console.log("Info enviada");
-
-                },
-                error: function(){
-                    console.log("Se jodio papá");
-                    $('#ack').val("ERROR FATAL");
-                }
-            });
-      }
+      
