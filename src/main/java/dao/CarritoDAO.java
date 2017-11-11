@@ -5,12 +5,15 @@
  */
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import util.Conexion;
 import vo.CarritoVO;
 import vo.ProductoVO;
@@ -25,8 +28,11 @@ public class CarritoDAO {
     private CarritoVO carritoVO = new CarritoVO();
 
     public CarritoDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(CarritoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public ArrayList Agregar(ArrayList producto, ArrayList<ProductoVO> sesion) {

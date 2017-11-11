@@ -23,8 +23,11 @@ public class TiendaDAO {
     private Connection conexion;
 
     public TiendaDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(TiendaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean insertar(TiendaVO tienda) {

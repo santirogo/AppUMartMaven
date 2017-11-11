@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,8 +15,11 @@ public class UsuarioDAO {
      private Connection conexion;
 
     public UsuarioDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+         try {
+             this.conexion = Conexion.getConnection();
+         } catch (URISyntaxException ex) {
+             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
     public boolean insertar(UsuarioVO usuario) {
