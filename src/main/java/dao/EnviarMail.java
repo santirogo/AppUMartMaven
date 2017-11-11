@@ -117,7 +117,7 @@ public class EnviarMail {
         message.setContent(multipart);
 
         //message.setFrom(new InternetAddress("appumartsw@gmail.com"));
-        message.setFrom(new InternetAddress("tato_1097@hotmail.com"));
+        message.setFrom(new InternetAddress("appumartsw@gmail.com"));
         message.setSubject("¡¡Tienes un nuevo pepido!!");
 
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
