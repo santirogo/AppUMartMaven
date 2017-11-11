@@ -78,7 +78,7 @@
                     <div id="confirmacion" style="display:none">
                         <p id="parrafo">Por favor digita el número de confirmación que fue enviado a tu correo</p>
                         <input type="text" class="btn" id="numero"><br> 
-                        <input class="btn" type="button" value="Confirmar" id="confirmar">
+                        <button class="btn" id="confirmar">Confirmar</button>
                     </div>
                     
                 </form>
