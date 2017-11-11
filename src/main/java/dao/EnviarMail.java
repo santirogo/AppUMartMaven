@@ -51,13 +51,13 @@ public class EnviarMail {
         Multipart multipart = new MimeMultipart("alternative");
 
         BodyPart bodyPart = new MimeBodyPart();
-        bodyPart.setContent("Tu código:"+cod, "text/html;charset=UTF-8");
+        bodyPart.setContent("Tu cÃ³digo:"+cod, "text/html");
         multipart.addBodyPart(bodyPart);
 
         message.setContent(multipart);
 
         message.setFrom(new InternetAddress("appumartsw@gmail.com"));
-        message.setSubject("Confirmación de correo");
+        message.setSubject("ConfirmaciÃ³n de correo");
 
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
 
@@ -88,7 +88,6 @@ public class EnviarMail {
     public String getCod() {
 
         return cod;
-
     }
     
     
@@ -117,7 +116,7 @@ public class EnviarMail {
         message.setContent(multipart);
 
         message.setFrom(new InternetAddress("appumartsw@gmail.com"));
-        message.setSubject("¡¡Tienes un nuevo pepido!!");
+        message.setSubject("Â¡Â¡Tienes un nuevo pepido!!");
 
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
 
