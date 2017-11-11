@@ -25,6 +25,7 @@ import javax.mail.internet.MimeMultipart;
 public class EnviarMail {
 
     private String cod;
+    
     private static final String SMTP_HOST_NAME = "smtp.sendgrid.net";
 
     private static final String SMTP_AUTH_USER = System.getenv("SENDGRID_USERNAME");
