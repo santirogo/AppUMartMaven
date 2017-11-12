@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function infocarro () {
 
 
     var opcion = 0;
@@ -11,6 +11,7 @@ $(document).ready(function () {
         success: function (data) {
             console.log("no hago nada");
             
+            if(opcion!==0){
             
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
@@ -34,6 +35,7 @@ $(document).ready(function () {
                 
 
             }
+        }
             
 
 //            $('#carlos').append(
