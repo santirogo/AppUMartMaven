@@ -101,7 +101,7 @@ public class MainMenuServlet extends HttpServlet {
                 } else if (CarroSesion != null) {
                     ProductoVO productos = new ProductoVO();
                         System.out.println("No esta nulo");
-                        String x = Mateo.PrecioTotal(CarroSesion);
+                        String x = "Precio total: "+Mateo.PrecioTotal(CarroSesion);
                     for (int i = 0; i < CarroSesion.size(); i++) {
                         System.out.println(CarroSesion.get(i));
                         JSONObject json = new JSONObject();
