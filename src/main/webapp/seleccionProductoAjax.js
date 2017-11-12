@@ -37,6 +37,7 @@ function cerrarSesion() {
 
 };
 
+
 function cli (id){
     console.log("Holaaaaaa "+id);
     nombre = $("#n"+id).text();
