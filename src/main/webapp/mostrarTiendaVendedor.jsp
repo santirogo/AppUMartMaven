@@ -1,91 +1,72 @@
 <%@page import="vo.VendedorVO"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title id="titulo"></title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
         <script type="text/javascript" src="mostrarTiendaVendedorAjax.js"></script>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+
+        <style>
+            @font-face
+            {
+                font-family: 'carrito.ttf';
+                src: url('Pictures/carrito.ttf');
+            }
+            body{
+                background-color: #B4B4B4;
+                /*background-color: #f1f1f1;*/
+                /*font-family: 'carrito.ttf';*/
+            }
+            
+            .avatar{
+                width:150px;
+                height:150px;
+                border-radius:100%;
+                border:#fff 3px solid;
+                box-shadow:rgba(0,0,0,0.4) 0px 2px 4px, inset rgba(0,0,0,0.4) 0px 3px 2px;
+                overflow:hidden;
+                background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
+                background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
+                background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
+                background-size: auto, 100%;
+                z-index: 2000;
+                margin-bottom: 20px;
+                position: absolute;
+                margin: auto;
+                margin-left: -33px;
+                margin-top: -30px;
+            }
+
+
+            .div-img .img {
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                transform: scale(1);
+                -ms-transform: scale(1);
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -o-transform: scale(1);
+                -webkit-transition: all 500ms ease-in-out;
+                -moz-transition: all 500ms ease-in-out;
+                -ms-transition: all 500ms ease-in-out;
+                -o-transition: all 500ms ease-in-out;
+            }
+            
+            #nombre2{
+                font-family: 'carrito.ttf';
+            }
+            
+        </style>
     </head>
-    <style>
-
-        @font-face
-        {
-            font-family: 'carrito.ttf';
-            src: url('Pictures/carrito.ttf');
-        }
-
-        *{
-            font-family: 'carrito.ttf';
-        }
-
-        .avatar{
-            width:150px;
-            height:150px;
-            border-radius:100%;
-            border:#fff 3px solid;
-            box-shadow:rgba(0,0,0,0.4) 0px 2px 4px, inset rgba(0,0,0,0.4) 0px 3px 2px;
-            overflow:hidden;
-            background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
-            background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
-            background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
-            background-size: auto, 100%;
-            z-index: 2000;
-        }
-
-
-        .div-img .img {
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-            transform: scale(1);
-            -ms-transform: scale(1);
-            -moz-transform: scale(1);
-            -webkit-transform: scale(1);
-            -o-transform: scale(1);
-            -webkit-transition: all 500ms ease-in-out;
-            -moz-transition: all 500ms ease-in-out;
-            -ms-transition: all 500ms ease-in-out;
-            -o-transition: all 500ms ease-in-out;
-        }
-
-        .div-img:hover .img {
-            transform: scale(0.8);
-            -ms-transform: scale(0.8);
-            -moz-transform: scale(0.8);
-            -webkit-transform: scale(0.8);
-            -o-transform: scale(0.8);
-        }
-
-
-
-        .div-img2 .img {
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-            transform: scale(1);
-            -ms-transform: scale(1);
-            -moz-transform: scale(1);
-            -webkit-transform: scale(1);
-            -o-transform: scale(1);
-            -webkit-transition: all 500ms ease-in-out;
-            -moz-transition: all 500ms ease-in-out;
-            -ms-transition: all 500ms ease-in-out;
-            -o-transition: all 500ms ease-in-out;
-        }
-        .div-img2:hover .img {
-            transform: scale(0.8);
-            -ms-transform: scale(0.8);
-            -moz-transform: scale(0.8);
-            -webkit-transform: scale(0.8);
-            -o-transform: scale(0.8);
-        }
-
-
-    </style>
-    <body style="background-color: #F1F3F5;">
+    <body>
+        
         <%HttpSession mySession = request.getSession();
             VendedorVO vo = (VendedorVO) mySession.getAttribute("vendedor");
         %>
@@ -94,28 +75,43 @@
         <%if (vo == null) {%>
         <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
         <%}%>
+        
+        <!-- Wrapper -->
+        <div id="wrapper" style="padding-bottom: 0px">
 
-        <div id="div"></div>
-        <a href="mostrarProductosBodega.jsp"><button>Ver mis productos</button></a>
-        <a href="editarTienda.jsp"><button>Editar mi tienda</button></a>
-        <button id="out" onclick='cerrarSesion()'>Cerrar Sesión</button>
+            <!-- Header -->
+            <header id="header">
+                <div class="logo" id="div"></div>
+                <div class="content">
+                    <div class="inner" style="padding-bottom: 20px;">
+                        <div id="nombre"></div>
+                        <div id="punt"></div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="mostrarProductosBodega.jsp">Ver Mis Productos</a></li>
+                        <li><a href="editarTienda.jsp">Editar Mi Tienda</a></li>
+                        <li><div onclick='cerrarSesion()' style="cursor: pointer" id="out"><a>Cerrar Sesion</a></div></li>
+                    </ul>
+                </nav>
+            </header>
 
-    <center>
-        <div id="div" style="position: absolute; top: 35%;left: 45%"></div>
-        <!--<a href="mostrarProductosBodega.jsp"><button>Ver mis productos</button></a>
-        <a href="editarTienda.jsp"><button>Editar mi tienda</button></a>-->
-    </center>
+            <!-- Footer -->
+            <footer id="footer" style="margin-top: 0px;">
+                <!--<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>-->
+                <img id='my' src="Pictures/AppuMartLogo.png" style=" width: 100px; height: 100px;">
+            </footer>
+        </div>
 
+        <!-- BG -->
+        <!--<div id="bg"></div>-->
 
-    <div class="div-img" >
-        <a href="mostrarProductosBodega.jsp"><img class="img" src="Pictures/MisProductos.png" style="width: 450px; height: 150px; position: absolute; top: 5%; left: 5%"></a>
-    </div>
-    <div class="div-img" >
-        <a href="editarTienda.jsp"> <img class="img" src="Pictures/EditarTienda.png" style="width: 450px; height: 150px; position: absolute; top: 5%; left: 60%"></a>
-    </div>
-    
-    
-    <img src="Pictures/AppuMartTextoBorde.png" style="position: absolute; bottom: -10%; left: 39%; width: 300px; height: 200px">
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
-</body>
+    </body>
 </html>

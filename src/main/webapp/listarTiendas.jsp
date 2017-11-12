@@ -9,59 +9,101 @@
 
 
         <style>
+            @media screen and (max-width:560px) {
+                #res {
+                    width: 70%;
+                    margin: auto;
+                    float: none;
+                }
+                #logo{
+                    padding-top: 10px;
+                    padding-bottom: 20px;
+                }
+                #tiendas{
+                }
+            }
+
             @font-face
             {
                 font-family: 'carrito.ttf';
                 src: url('Pictures/carrito.ttf');
             }
+
             * {
                 box-sizing: border-box;
                 font-family: 'carrito.ttf';
             }
+
             body {
                 background-color: #f1f1f1;
+                /*background-color: #4686a0;*/
+                /*background-image: url(Pictures/bg.jpg);*/
+                /*background: #1b1f22;*/
+                /*background-color: #4686a0;
+                color: rgba(255, 255, 255, 0.75);
+                background-attachment: fixed,	fixed, fixed;
+                background-image: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);*/
+
+
                 padding: 10px;
                 font-family: Arial;
             }
+
+            /*body {
+                background-color: rgb(147, 93, 140);
+                background-image: linear-gradient(45deg, rgb(227, 118, 130) 15%, rgb(95, 77, 147) 85%);
+
+            }*/
+
             /* Center website */
             .main {
                 max-width: 800px;
                 margin: auto;
             }
+
             h1 {
                 font-size: 50px;
                 word-break: break-all;
                 font-family: 'font.ttf';
             }
+
             .row {
                 margin: 10px -16px;
             }
+
             /* Add padding BETWEEN each column */
             .row,
             .row > .column {
-                padding: 5px;
+                padding: 20px;
             }
+
             /* Create three equal columns that floats next to each other */
             .column {
                 float: left;
+                /*margin: auto;*/
                 width: 33.33%;
-                /*display: none;*/ /* Hide all elements by default */
+                /*width: 60%;*/
             }
+
             /* Clear floats after rows */ 
             .row:after {
                 content: "";
                 display: table;
                 clear: both;
             }
+
             /* Content */
             .content {
                 border-radius: 5px;
                 background-color: white;
+                box-shadow: 2px 2px 5px #999;
                 padding: 0px;
+                
             }
             .content2 {
                 padding: 5px;
             }
+
             /* The "show" class is added to the filtered elements */
             .show {
                 display: block;
@@ -69,6 +111,7 @@
             img {
                 border-radius: 5px 5px 0 0;
             }
+
             .footer {
                 position: fixed;
                 left: 0;
@@ -91,12 +134,16 @@
                 font-size: 10px
             }
             .puntuacion{
+                padding-top: 5px;
                 color: #298cda;
-                font-size: 15px
+                /*font-size: 15px*/
             }
             .empresa{
-                font-size: 25px;
+                /*font-size: 25px;*/
                 color: black;
+                margin-top: 0px;
+                margin-bottom: 0px;
+
             }
             a:link   
             {   
@@ -147,11 +194,11 @@
 
             <!--<h1 class="sticky" >AppuMart</h1>-->
             <!--<center><div><img src="Pictures/AppuTexto.png"></div></center>-->
-            <center><div><img src="Pictures/AppuMartLogo.png" style="width: 30%; height: 30%; margin-top: -45px; margin-bottom: -40px;"></div></center>
+            <center><div id="logo"><img src="Pictures/AppuMartLogo.png" style="width: 30%; height: 30%; margin-top: -45px; margin-bottom: -40px;"></div></center>
             <hr>
 
             <!--<h2>Nuestras Tiendas</h2>-->
-            <center><div><img src="Pictures/Tiendas2.png" style="width: 50%; height: 50%; padding: 20px"></div></center>
+            <center><div id="tiendas"><img src="Pictures/Tiendas2.png" style="width: 50%; height: 50%; padding: 20px"></div></center>
             <!--<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
             <input type="radio" onclick="filterSelection('nature')" name="category"> Nature
             <input type="radio" onclick="filterSelection('cars')" name="category"> Cars
@@ -165,6 +212,7 @@
                         <img src="Pictures/fondo1.png" alt="Mountains" style="width:100%; ">
                         <div class="content2">
                             <h4>McDonalds</h4>
+
                             <p class="puntuacion">Puntuacion: 5.0</p>
                             <p class="vendedor">Vendedor: 3203837680</p>
                         </div>
@@ -188,6 +236,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="column cars">
                     <div class="content">
                         <img src="Pictures/fondo4.gif" alt="Car" style="width:100%">
@@ -215,6 +264,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="column people">
                     <div class="content">
                         <img src="Pictures/fondo7.jpg" alt="Car" style="width:100%">
@@ -247,7 +297,7 @@
                 <!-- END GRID -->
             </div>
             <p id="na" style="text-align: center;"><i class="fa fa-exclamation-circle"></i> No hay mas tiendas por mostrar <i class="fa fa-exclamation-circle"></i></p>
-            
+
             <hr style="margin-top: 20px">
             <div class="footer">
                 <!--<p>Footer</p>-->
@@ -270,6 +320,7 @@
                         AgregarClase(x[i], "show");
                 }
             }
+
             function AgregarClase(element, name) {
                 var i, arr1, arr2;
                 arr1 = element.className.split(" ");
@@ -280,6 +331,7 @@
                     }
                 }
             }
+
             function QuitarClase(element, name) {
                 var i, arr1, arr2;
                 arr1 = element.className.split(" ");

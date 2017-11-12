@@ -1,98 +1,223 @@
-<%@page import="vo.VendedorVO"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Agregar Producto</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+        <title id="titulo">Agregar Producto</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="agregarProductoAjax.js"></script>
-        <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+
+        <style>
+            
+            @media screen and (max-width: 480px) {
+
+			div .content {
+				
+				padding-bottom: 200px;
+			}
+                        #header .content .inner {
+				-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				-moz-transition-delay: 0.25s;
+				-webkit-transition-delay: 0.25s;
+				-ms-transition-delay: 0.25s;
+				transition-delay: 0.25s;
+				padding: 3rem 2rem;
+				max-height: 40rem;
+				overflow: visible;
+			}
+                        
+            }
+            
+            @font-face
+            {
+                font-family: 'carrito.ttf';
+                src: url('Pictures/carrito.ttf');
+            }
+            body{
+                background-color: #B4B4B4;
+            }
+
+            .avatar{
+                width:150px;
+                height:150px;
+                border-radius:100%;
+                border:#fff 3px solid;
+                box-shadow:rgba(0,0,0,0.4) 0px 2px 4px, inset rgba(0,0,0,0.4) 0px 3px 2px;
+                overflow:hidden;
+                background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
+                background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
+                background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("Pictures/AppuMartLogo.png");
+                background-size: auto, 100%;
+                z-index: 2000;
+                margin-bottom: 20px;
+                position: absolute;
+                margin: auto;
+                margin-left: -33px;
+                margin-top: -30px;
+            }
+
+
+            .div-img .img {
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                transform: scale(1);
+                -ms-transform: scale(1);
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -o-transform: scale(1);
+                -webkit-transition: all 500ms ease-in-out;
+                -moz-transition: all 500ms ease-in-out;
+                -ms-transition: all 500ms ease-in-out;
+                -o-transition: all 500ms ease-in-out;
+            }
+
+            #nombre2{
+                font-family: 'carrito.ttf';
+            }
+            #div{
+                margin-bottom: 500px;
+            }
+
+
+            .row {
+                margin: 10px -16px;
+            }
+
+            /* Add padding BETWEEN each column */
+            .row,
+            .row > .column {
+                padding: 20px;
+            }
+
+            /* Create three equal columns that floats next to each other */
+            .column {
+                float: left;
+                width: 33.33%;
+            }
+
+            /* Clear floats after rows */ 
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Content */
+            .content1 {
+                border-radius: 5px;
+                background-color: transparent;                
+                margin: 20px;
+            }
+            .content2 {
+                padding: 5px;
+                color: #000000;
+                background-color: #fff;
+            }
+
+            /* The "show" class is added to the filtered elements */
+            .show {
+                display: block;
+            }
+            img {
+                border-radius: 5px 5px 0 0;
+            }
+
+        </style>
     </head>
-    <style>
-        @font-face
-        {
-            font-family: 'carrito.ttf';
-            src: url('Pictures/carrito.ttf');
-        }
+    <body>
 
-        *{
-            font-family: 'carrito.ttf';
-        }
-            .btn {
-                -webkit-border-radius: 15px;
-                -moz-border-radius: 15px;
-                border-radius: 15px;
-                color: #2485e5;
-                font-weight: light;
-                border: 1px solid #CCC;
-                padding: 5px 15px;
-                -webkit-transition-duration: 0.4s; /* Safari */
-                transition-duration: 0.4s;
-                cursor: pointer
-            }
-
-            .btn:hover {
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,ad1283+50,de47ac+100;Pink+3D */
-                background: rgb(203,96,179); /* Old browsers */
-                background: -moz-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(173,18,131,1) 50%, rgba(222,71,172,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(top, rgba(203,96,179,1) 0%,rgba(173,18,131,1) 50%,rgba(222,71,172,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to bottom, rgba(203,96,179,1) 0%,rgba(173,18,131,1) 50%,rgba(222,71,172,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac',GradientType=0 ); /* IE6-9 */
-                color: white
-            }
-
-
-    </style>
-    <body style="background-color: #F1F3F5;">
-        <!--<img src="carrito_bg.jpg" class="background">-->
-        <%HttpSession mySession = request.getSession();
-            VendedorVO vo = (VendedorVO) mySession.getAttribute("vendedor");
+        <%//HttpSession mySession = request.getSession();
+            // VendedorVO vo = (VendedorVO) mySession.getAttribute("vendedor");
         %>
 
 
-        <%if (vo == null) {%>
-        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
-        <%}%>
-        <!--<center>
-        <form>
-            NOMBRE: <input type="text" id="nombre"><br><br>
-            CATEGORIA:<select id="combobox">
-            </select><br><br>
-            PRECIO: <input type="text" id="precio"><br><br>
-            CANTIDAD: <input type="text" id="cantidad"><br><br>
-            RUTA DE LA IMAGEN: <input type="text" id="imagen"><br><br>
+        <%//if (vo == null) {%>
+        <!--<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">-->
+        <%//}%>
 
-            <input type="button" id="boton" value="AGREGAR" class="btn">
-        </form>
-        <a href="mostrarTiendaVendedor.jsp" ><button>Volver a mi tienda</button></a>
-    </center>-->
+        <!-- Wrapper -->
+        <div id="wrapper" style="padding-bottom: 0px">
+
+            <!-- Header -->
+            <div><img src="Pictures/AppuTexto.png" style="width: 300px; height: 100px;"></div>
+            <header id="header">
+                <div class="content">
+                    <div class="inner" id="in">
+                        <div id="nombre" style="margin-bottom: 50px;"><h1>Registro Producto</h1></div>
+
+                        <!-- Contact -->
+                        <article id="contact">
+                            <!--<h2 class="major">Producto Nuevo</h2>-->
+                            <form style="z-index: 2000">
+                                <div class="field half first">
+                                    <label for="name">Nombre Del Producto</label>
+                                    <input type="text" name="name" id="nombre"/>
+                                </div>
+                                <div class="field half">
+                                    <label for="price">Precio Unitario</label>
+                                    <input type="text" name="email" id="precio" />
+                                </div>
+
+                                <div class="field half first">
+                                    <label for="qnt">Cantidad En Bodega</label>
+                                    <input type="text" name="cantidad" id="cantidad" />
+                                </div>
+
+                                <div class="field half">
+                                    <label for="cat">Categoria Perteneciente</label>
+                                    <select id="combobox">
+                                        <option value="" disabled selected>--Seleccione Una--</option>
+                                        <!--<option>--Seleccione Dos--</option>
+                                        <option>--Seleccione Tres--</option>-->
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="route">Direccion De La Imagen a Mostrar</label>
+                                    <textarea name="ruta" id="imagen" rows="2"></textarea>
+                                </div>
+                                <ul class="actions">
+                                    <li><input type="submit" value="Agregar Producto" class="special" id="boton"/></li>
+                                    <li><input type="reset" value="Reset" /></li>
+                                </ul>
+                            </form>
+                        </article>
 
 
-
-        <div class="login-wrap">
-            <div class="login">
-                <div class="avatar">
+                    </div>
                 </div>
+                <nav>
+                    <ul>
+                        <li><a href="mostrarTiendaVendedor.jsp"><i class="fa fa-arrow-circle-o-left"></i> Menu Principal</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!--Header-->
 
-                <form id="loginn" class="login-form">
-                    <input id="nombre" type="text" class="pass" placeholder="Nombre"/>
-                    <select id="combobox">
-                        <option value="" disabled selected>Categoria</option>
-                    </select>
-                    <input id="precio" type="text" placeholder="Precio" class="pass"/>
-                    <input id="cantidad" type="text" placeholder="Cantidad" class="pass"/>
-                    <input id="imagen" type="text" placeholder="Ruta Imagen" class="pass"/>
-                    <input type="button" id="boton" value="Agregar" class="btn">
-                </form>
-                <p id="ack"></p>
-            </div>
+
+            <!-- Footer -->
+            <footer id="footer" style="margin-top: 0px;">
+                <!--<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>-->
+                <img id='my' src="Pictures/AppuMartLogo.png" style=" width: 100px; height: 100px;">
+            </footer>
         </div>
 
-        <a href="mostrarTiendaVendedor.jsp"><img src="Pictures/AppuMartTextoBorde.png" style="position: absolute; bottom: -10%; left: 69%; width: 300px; height: 200px"></a>
+        <!-- BG -->
+        <!--<div id="bg"></div>-->
 
-
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
     </body>
 </html>
