@@ -96,7 +96,7 @@
             $('#llegada2').append('<a href="listarTiendas.jsp"><img src="Pictures/AppuMartTextoBorde.png"></a>');
             $('#llegada').append('<img src="Pictures/checkout.png">');
             }
-            });
+            );
                 
                 var btnNotificacion = document.getElementById("buttonN"),
                 btnPermiso = document.getElementById("buttonP")

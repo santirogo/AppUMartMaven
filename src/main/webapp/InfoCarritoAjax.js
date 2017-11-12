@@ -18,7 +18,7 @@ $(document).ready(function infocarro (op) {
                 
                 console.log(data.Productos[i].nombre);
                 console.log(data.Productos[i].precio);
-                $('#carlos').append(
+                $("#carlos").append(
                         
 
                         "<div><p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p></div><br>",
