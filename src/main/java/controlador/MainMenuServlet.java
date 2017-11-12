@@ -101,6 +101,7 @@ public class MainMenuServlet extends HttpServlet {
                 } else if (CarroSesion != null) {
                     ProductoVO productos = new ProductoVO();
                         System.out.println("No esta nulo");
+                        String x = Mateo.PrecioTotal(CarroSesion);
                     for (int i = 0; i < CarroSesion.size(); i++) {
                         System.out.println(CarroSesion.get(i));
                         JSONObject json = new JSONObject();
@@ -109,18 +110,12 @@ public class MainMenuServlet extends HttpServlet {
                         json.put("nombre", CarroSesion.get(i).getNombre());
                         json.put("cantidad", String.valueOf(CarroSesion.get(i).getCantidad()));
                         json.put("precio", String.valueOf(CarroSesion.get(i).getPrecio()));
+                        json.put("Total", x);
                         System.out.println("PRUEBA JSON NOMBRE: "+json.get("nombre"));
                         array.put(json);
 
                     }
                        
-                    //Envia Precio 
-                    String x = Mateo.PrecioTotal(CarroSesion);
-                    JSONObject total = new JSONObject();
-
-                    total.put("Total", x);
-
-                    array.put(total);
 
                     JSONObject fin = new JSONObject();
                     fin.put("Productos", array);
