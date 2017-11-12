@@ -107,7 +107,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                     }
                     
                     String usuario="Cliente: "+user.NombreComprador(correoSesion)+"\n";
-
+                    String precioTotal ="Precio Total : "+ carrito.PrecioTotal(CarroSesion);
                     
                     cadena.add(usuario);
                     
@@ -118,6 +118,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                         cadena.add(orden);
                     }
                     
+                    cadena.add(precioTotal);
                     cadena.add(comentario);
                     
                     System.out.println("idtienda:"+prod.get(0).getTienda());

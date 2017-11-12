@@ -144,15 +144,18 @@
                 </script>
     </head>
     <body>
-            <% //HttpSession mySession = request.getSession();
-                //String correo = (String) mySession.getAttribute("correo");
-    //            String correo = "diego@correo.usa.edu.co";
+            <% HttpSession mySession = request.getSession();
+                String correo = (String) mySession.getAttribute("correo");
+    //           String correo = "diego@correo.usa.edu.co";
             %>
 
-            <%//if (correo == null) {%>
+            <%if (correo == null) {%>
             <!--<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">-->
-            <%//}%>
+            <%}%>
             <!--<img src="carrito_bg.jpg" class="background">-->
+            
+        <center><div id="carlos"></div></center>
+            
         <form name="form1">
             <center>
                 <br><br><br>
@@ -165,7 +168,7 @@
                 <!--<textarea rows="4" cols="50" name="comment" id="comment">Ingresa Los Comentarios Del Pedido Aqui...</textarea><br>
                 <input class="btn" type="submit" id="Confirmar" value="Confirmar"/>-->
             </center>
-            <center><div id="carlos"></div></center>
+            
         </form>
         <form name="form2">
             <center>

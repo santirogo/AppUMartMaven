@@ -88,18 +88,6 @@ function main(){
             for (i = 0; i < data.Productos.length; i++) {
                 console.log(data.Productos[i].nombre);
                 console.log(data.Productos[i].precio);
-                $('#carlos').append(
-                        
-                        
-                        //"<a href = 'seleccionProducto.jsp'><button class='btn' onclick='sendName(" + data.Productos[i].nombre + ")'>\n\"",
-                        "<p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p><br>",
-                        "<form>",
-                        "<input type='text' id='opcion' value='2' style='display: none'>",
-                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-                        "<input type='submit' value='x'>",
-                        "</form>"
-                        
-                        );
 
             }
                            // $("#respuesta").append("<b>Se agregÃ³ el producto </b>"+data.nombre+" <b>satisfactoriamente</b>");
