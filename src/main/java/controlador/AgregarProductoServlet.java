@@ -47,7 +47,7 @@ public class AgregarProductoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             
             this.producto = new ProductoDAO();
             /* TODO output your page here. You may use following sample code. */
@@ -84,7 +84,7 @@ public class AgregarProductoServlet extends HttpServlet {
             productoVO.setTienda(idTienda);
             productoVO.setRutaImagen(imag);
 
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -100,7 +100,7 @@ public class AgregarProductoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             this.producto = new ProductoDAO();
             this.categorias = producto.getCategorias();
 
@@ -117,7 +117,7 @@ public class AgregarProductoServlet extends HttpServlet {
             mainJson.put("categorias", array);
 
             out.print(mainJson);
-        }
+        
 
     }
 
@@ -135,7 +135,7 @@ public class AgregarProductoServlet extends HttpServlet {
 //        processRequest(request, response);
 
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             System.out.println("PPPOOOOOOOOOOSSSSSSSSSTTTTTT");
             this.producto = new ProductoDAO();
             /* TODO output your page here. You may use following sample code. */
@@ -185,7 +185,7 @@ public class AgregarProductoServlet extends HttpServlet {
 
             out.print(json);
 
-        }
+        
 
     }
 
