@@ -112,7 +112,7 @@ var map;
           $.ajax({
         url: 'MainMenuServlet',
         type: 'GET',
-        data: {opcion:opcion},
+        data: {opcion:opcion, idprod:idprod},
         dataType: 'json',
         success: function (data) {
             
