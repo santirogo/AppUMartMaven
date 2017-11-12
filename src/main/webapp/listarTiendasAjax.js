@@ -58,7 +58,7 @@ $(document).ready(function () {
                 console.log(data.tiendas[i].nombre);
                 $('#div').append(
 
-                            "<div id='item' style='cursor:pointer' onclick='sendName(" + data.tiendas[i].id + ")'><a href ='seleccionProducto.jsp'><img id='perfil' src=Pictures/" + data.tiendas[i].idfondo + "><p id='titulo_uno'>" + data.tiendas[i].nombre + "</p><p id='descripcion'>Vendedor: " + data.tiendas[i].vendedor + "</p><p id='descripcion2'>Puntuación: " + data.tiendas[i].puntuacion + "</p></a></div>",
+                            "<div id='item' style='cursor:pointer' onclick='sendName(" + data.tiendas[i].id + ")'><a href ='seleccionProducto2.jsp'><img id='perfil' src=Pictures/" + data.tiendas[i].idfondo + "><p id='titulo_uno'>" + data.tiendas[i].nombre + "</p><p id='descripcion'>Vendedor: " + data.tiendas[i].vendedor + "</p><p id='descripcion2'>Puntuación: " + data.tiendas[i].puntuacion + "</p></a></div>",
                             );
             }
         },
@@ -75,8 +75,9 @@ function sendName(idTienda) {
         data: {nombre: idTienda},
         dataType: 'json',
         success: function (data) {
-            console.log("Nombresito de tienda enviado");
+            console.log("Nombresito de tienda enviado :v");
             window.location.href = "seleccionProducto.jsp";
+            
         },
         error: function () {
             console.log("Error en el ajax");
