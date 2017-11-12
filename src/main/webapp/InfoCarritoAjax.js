@@ -11,6 +11,30 @@ $(document).ready(function () {
         success: function (data) {
             console.log("no hago nada");
             
+            
+            var i = 0;
+            for (i = 0; i < data.Productos.length; i++) {
+                
+                console.log(data.Productos[i].nombre);
+                console.log(data.Productos[i].precio);
+                $('#carlos').append(
+                        
+
+                        "<div><p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p></div><br>",
+                        "<form>",
+                        "<input type='text' id='opcion' value='2' style='display: none'>",
+                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
+                        "<input type='submit' value='x'>",
+                        "</form>"
+                        
+                        );
+
+            
+        
+                
+
+            }
+            
 
 //            $('#carlos').append(
 //                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
@@ -92,28 +116,28 @@ var map;
                         dataType: 'json',
                         success: function(data){
                             
-                            var i = 0;
-            for (i = 0; i < data.Productos.length; i++) {
-                
-                console.log(data.Productos[i].nombre);
-                console.log(data.Productos[i].precio);
-                $('#carlos').append(
-                        
-
-                        "<div><p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p></div><br>",
-                        "<form>",
-                        "<input type='text' id='opcion' value='2' style='display: none'>",
-                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-                        "<input type='submit' value='x'>",
-                        "</form>"
-                        
-                        );
-
-            
-        
-                
-
-            }
+//                            var i = 0;
+//            for (i = 0; i < data.Productos.length; i++) {
+//                
+//                console.log(data.Productos[i].nombre);
+//                console.log(data.Productos[i].precio);
+//                $('#carlos').append(
+//                        
+//
+//                        "<div><p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p></div><br>",
+//                        "<form>",
+//                        "<input type='text' id='opcion' value='2' style='display: none'>",
+//                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
+//                        "<input type='submit' value='x'>",
+//                        "</form>"
+//                        
+//                        );
+//
+//            
+//        
+//                
+//
+//            }
                            // $("#respuesta").append("<b>Se agregÃ³ el producto </b>"+data.nombre+" <b>satisfactoriamente</b>");
                         }
                     });
