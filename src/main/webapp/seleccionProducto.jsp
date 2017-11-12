@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
         <script type="text/javascript" src="seleccionProductoAjax.js"></script>
-        <script type="text/javascript" src="InfoCarritoAjax.js"></script>
+        <!--<script type="text/javascript" src="InfoCarritoAjax.js"></script>-->
         <link href="StyleBody.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -204,7 +204,7 @@
                         </div>
                         <div class="modal-body">
                             <p style="font-family: 'carrito.ttf'; font-size: 20px">Productos en el Carrito:</p>
-                            <center><iframe src="InfoCarrito.jsp" width="500px" height="200px" scrolling="no" frameborder="0"></iframe></center>
+                            <!--<center><iframe src="InfoCarrito.jsp" width="500px" height="200px" scrolling="no" frameborder="0"></iframe></center>-->
 
                         </div>
                         <img src="Pictures/CarroMedio.png" class="carro">
