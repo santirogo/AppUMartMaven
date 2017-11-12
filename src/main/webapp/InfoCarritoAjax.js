@@ -19,12 +19,13 @@ $(document).ready(function () {
                 console.log(data.Productos[i].precio);
                 $("#carlos").append(
 
-                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p>",
-                        "<form>",
-                        "<input type='text' id='opcion' value='2' style='display: none'>",
-                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-                        "<input type='submit' value='x'>",
-                        "</form></div>"
+                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar("+data.Productos[i].ID+ ")>x</button></div>"
+//                        "<form>",
+//                        "<input type='text' id='opcion' value='2' style='display: none'>",
+//                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
+//                        "<input type='submit' value='x'>",
+//                        "</form></div>"
+                         
                         
                         );
 
@@ -35,9 +36,9 @@ $(document).ready(function () {
             }
             
 
-//            $('#carlos').append(
-//                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
-//                    );
+            $("#carlos").append(
+                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
+                    );
 
         },
         error: function () {
@@ -103,4 +104,29 @@ var map;
                               'Error: Tu explorador no soporta la geolocalizaciÃ³n.');
       }
       
-      
+      function borrar(id){
+          
+          var opcion="2";
+          var idprod=id;
+          
+          $.ajax({
+        url: 'MainMenuServlet',
+        type: 'GET',
+        data: {opcion:opcion},
+        dataType: 'json',
+        success: function (data) {
+            
+            console.log("borrando prod");
+
+//            $('#carlos').append(
+//                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
+//                    );
+
+        },
+        error: function () {
+            $('#ack').val("ERROR FATAL");
+        }
+    });
+          
+          
+      }

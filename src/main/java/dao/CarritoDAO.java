@@ -169,7 +169,7 @@ public class CarritoDAO {
 
     }
 
-    public void borrar(String ID, ArrayList<ProductoVO> CarroSesion) {
+    public ArrayList<ProductoVO> borrar(String ID, ArrayList<ProductoVO> CarroSesion) {
         for (int i = 0; i < CarroSesion.size(); i++) {
             this.carritoVO.agregarProducto(CarroSesion.get(i));
         }
@@ -182,6 +182,7 @@ public class CarritoDAO {
             }
 
         }
+        return carritoVO.getProductos();
 
     }
 
