@@ -114,7 +114,7 @@ public class MainMenuServlet extends HttpServlet {
 
                     }
                        
-                    //Envia Precio y cantidad
+                    //Envia Precio 
 //                    String x = Mateo.PrecioTotal(CarroSesion);
 //                    JSONObject total = new JSONObject();
 //
@@ -130,12 +130,14 @@ public class MainMenuServlet extends HttpServlet {
             }
 
             if (P.equals("2")) {
+                CarroSesion = (ArrayList) sesion.getAttribute("carrito");
                 ArrayList<ProductoVO> Arreglo = new ArrayList();
 
                 //Arreglo = CarroSesion;
                 String ID = request.getParameter("idprod");
 
-                Mateo.borrar(ID, CarroSesion);
+                Arreglo=Mateo.borrar(ID, CarroSesion);
+                sesion.setAttribute("carrito", Arreglo);
 
             }
 
