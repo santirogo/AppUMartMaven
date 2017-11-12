@@ -136,6 +136,8 @@ public class CarritoDAO {
         ProductoVO productos = new ProductoVO();
         ArrayList<ProductoVO> productosVO = carritoVO.getProductos();
         int x = 0;
+        
+        
         for (int i = 0; i < productosVO.size(); i++) {
             productos = productosVO.get(i);
             x = productos.getPrecio() + x;
