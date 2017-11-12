@@ -1,4 +1,4 @@
-$(document).ready(function infocarro () {
+$(document).ready(function infocarro (op) {
 
 
     var opcion = 0;
@@ -11,7 +11,7 @@ $(document).ready(function infocarro () {
         success: function (data) {
             console.log("no hago nada");
             
-            if(opcion!==0){
+            if(op!==null){
             
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
@@ -117,6 +117,8 @@ var map;
                         data: {opcion:opcion},
                         dataType: 'json',
                         success: function(data){
+                            var op ="1";
+                            infocarro(op);
                             
 //                            var i = 0;
 //            for (i = 0; i < data.Productos.length; i++) {
