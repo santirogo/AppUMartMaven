@@ -144,7 +144,7 @@
                 float: left;
                 -webkit-transition:all 500ms ease;
                 -o-transition:all 500ms ease;
-                transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+                transition:all 500ms ease; /* Establecemos una transiciÃ³n a todas las propiedades */
                 /*position: absolute;
                 top: 5%;*/
             }
@@ -267,13 +267,13 @@
             /*Mensaje*/
             /*Carrito*/
             .social {
-                position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+                position: fixed; /* Hacemos que la posiciÃ³n en pantalla sea fija para que siempre se muestre en pantalla*/
                 right: 40px; /* Establecemos la barra en la izquierda */
                 top: 40%; /* Bajamos la barra 200px de arriba a abajo */
                 /*left: 95%;*/
                 transform: translate(40%, 40%); 
                 -webkit-transform: translate(40%, 40%);
-                z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+                z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algÃºn otro elemento como sliders, galerÃ­as, etc */
             }
             .social ul {
                 list-style: none;
@@ -287,7 +287,7 @@
                 text-decoration: none;
                 -webkit-transition:all 500ms ease;
                 -o-transition:all 500ms ease;
-                transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+                transition:all 500ms ease; /* Establecemos una transiciÃ³n a todas las propiedades */
             }
             .social ul li .icon-carrito {
                 background:#3b5998;  
@@ -323,7 +323,7 @@
         <div class="social">
             <ul>
                 <li>
-                    <a href="infocarrito2.jsp" target="_blank" onclick="main()"><img src="Pictures/Carrito.png" style="width: 100px; height: 100px"></a>
+                    <a href="infocarrito2.jsp" target="_blank"><img src="Pictures/Carrito.png" style="width: 100px; height: 100px"></a>
                 </li>
             </ul>
         </div>
