@@ -19,7 +19,7 @@ $(document).ready(function () {
                 console.log(data.Productos[i].precio);
                 $("#carlos").append(
 
-                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar("+data.Productos[i].ID+ ")>x</button></div>"
+                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar('"+data.Productos[i].ID+ "')>x</button></div>"
 //                        "<form>",
 //                        "<input type='text' id='opcion' value='2' style='display: none'>",
 //                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
