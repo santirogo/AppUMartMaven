@@ -11,7 +11,7 @@ $(document).ready(function infocarro (op) {
         success: function (data) {
             console.log("no hago nada");
             
-            if(op!==null){
+            if(op==="1"){
             
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
