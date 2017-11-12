@@ -9,7 +9,7 @@ $(document).ready(function () {
         data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-            
+            console.log("no hago nada");
             
 
 //            $('#carlos').append(
@@ -94,20 +94,13 @@ var map;
                             
                             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
-                console.log(data.Productos[i].nombre);
-                console.log(data.Productos[i].precio);
                 
-                
-                if (data !== null){
-//            console.log(data.nombre);
-            var i = 0;
-            for (i = 0; i < data.Productos.length; i++) {
                 console.log(data.Productos[i].nombre);
                 console.log(data.Productos[i].precio);
                 $('#carlos').append(
                         
 
-                        "<p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p><br>",
+                        "<div><p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p></div><br>",
                         "<form>",
                         "<input type='text' id='opcion' value='2' style='display: none'>",
                         "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
@@ -116,8 +109,8 @@ var map;
                         
                         );
 
-            }
-        }
+            
+        
                 
 
             }
