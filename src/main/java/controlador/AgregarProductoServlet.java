@@ -47,15 +47,16 @@ public class AgregarProductoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             
             this.producto = new ProductoDAO();
             /* TODO output your page here. You may use following sample code. */
             String nombre = request.getParameter("nombre"); 
             String categoria = request.getParameter("categoria");
             int precio = Integer.parseInt(request.getParameter("precio"));
-            int tienda = Integer.parseInt(request.getParameter("cantidad"));
+            int cant = Integer.parseInt(request.getParameter("cantidad"));
             int idTienda = Integer.parseInt(request.getParameter("tienda"));
+            String imag = request.getParameter("imagen");
             
             ProductoVO productoVO = new ProductoVO();
             JSONObject json = new JSONObject();
@@ -79,11 +80,11 @@ public class AgregarProductoServlet extends HttpServlet {
             }
             
             out.print(json);
-            productoVO.setCantidad(tienda);
+            productoVO.setCantidad(cant);
             productoVO.setTienda(idTienda);
-            productoVO.setRutaImagen("margarita.jpg");
+            productoVO.setRutaImagen(imag);
 
-        
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -99,7 +100,7 @@ public class AgregarProductoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             this.producto = new ProductoDAO();
             this.categorias = producto.getCategorias();
 
@@ -116,7 +117,7 @@ public class AgregarProductoServlet extends HttpServlet {
             mainJson.put("categorias", array);
 
             out.print(mainJson);
-        
+        }
 
     }
 
@@ -134,7 +135,7 @@ public class AgregarProductoServlet extends HttpServlet {
 //        processRequest(request, response);
 
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             System.out.println("PPPOOOOOOOOOOSSSSSSSSSTTTTTT");
             this.producto = new ProductoDAO();
             /* TODO output your page here. You may use following sample code. */
@@ -183,6 +184,8 @@ public class AgregarProductoServlet extends HttpServlet {
             }
 
             out.print(json);
+
+        }
 
     }
 
