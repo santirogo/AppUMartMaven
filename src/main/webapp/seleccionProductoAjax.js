@@ -72,30 +72,7 @@ function cli (id){
     //}
 }
 
-function main(){
-    var opcion = "1";
-    console.log("Entro a funcion main");
-    
-    
-    $.ajax({
-                        url: 'MainMenuServlet',
-                        type: 'GET',
-                        data: {opcion:opcion},
-                        dataType: 'json',
-                        success: function(data){
-                            
-                            var i = 0;
-            for (i = 0; i < data.Productos.length; i++) {
-                console.log(data.Productos[i].nombre);
-                console.log(data.Productos[i].precio);
 
-            }
-                           // $("#respuesta").append("<b>Se agregÃ³ el producto </b>"+data.nombre+" <b>satisfactoriamente</b>");
-                        }
-                    });
-                    
-                    location = 'InfoCarrito.jsp';
-}
 
 
 

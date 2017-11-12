@@ -1,17 +1,16 @@
 $(document).ready(function () {
 
 
-        var opcion1 = "3";
-        var comment =$('#comment').val();
+        var opcion1 = "0";
         
   
         $.ajax({
-            url: 'noseutiliza',
+            url: 'InfoCheckOutServlet',
             type: 'GET',
-            data: {opcion1: opcion1, comment: comment},
+            data: {opcion1: opcion1},
             dataType: 'json',
             success: function(data) {
-                console.log("Info enviada");
+                
      
             },
             error: function(){
@@ -36,12 +35,14 @@ function mifuncion() {
         success: function (data) {
             console.log("Info enviada");
             mostrarNotificacion();
-            location = 'listarTiendas.jsp';
+            
         },
         error: function () {
             $('#ack').val("ERROR FATAL");
         }
     });
+    
+    location = 'listarTiendas.jsp';
     
     
     
