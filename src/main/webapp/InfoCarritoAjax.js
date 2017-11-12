@@ -19,12 +19,12 @@ $(document).ready(function () {
                 console.log(data.Productos[i].precio);
                 $("#carlos").append(
 
-                        "<div><p>" + data.Productos[i].nombre + "</p><p>" + data.Productos[i].cantidad + "</p><p>" + data.Productos[i].precio + "</p></div><br>"
-//                        "<form>",
-//                        "<input type='text' id='opcion' value='2' style='display: none'>",
-//                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-//                        "<input type='submit' value='x'>",
-//                        "</form>"
+                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p>",
+                        "<form>",
+                        "<input type='text' id='opcion' value='2' style='display: none'>",
+                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
+                        "<input type='submit' value='x'>",
+                        "</form></div>"
                         
                         );
 

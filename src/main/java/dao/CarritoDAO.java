@@ -162,7 +162,7 @@ public class CarritoDAO {
         }
         int x = 0;
         for (int i = 0; i < carritoVO.getProductos().size(); i++) {
-            x = x + carritoVO.getProductos().get(i).getCantidad();
+            x = x + (carritoVO.getProductos().get(i).getCantidad() * carritoVO.getProductos().get(i).getPrecio());
         }
         String xs = Integer.toString(x);
         return xs;
