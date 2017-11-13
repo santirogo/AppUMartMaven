@@ -42,6 +42,8 @@ function cli(id) {
         // alert("La cantidad tiene que ser un número");
         //}else{
         console.log("cantidad: " + cantidad);
+        console.log("nombre: "+nombre);
+        console.log("tienda: "+tienda);
         $.ajax({
             url: 'AgregarCarritoServlet',
             type: 'POST',
