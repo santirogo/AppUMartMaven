@@ -25,6 +25,8 @@ $(document).ready(function(){
         var opcion = 1;
         var nombre = $('#nombre').val();
         var celular = $('#celular').val();
+        console.log("nombre: "+nombre);
+        console.log("celular: "+celular);
         $.ajax({
             url:'EditarTiendaServlet',
             type:'post',
