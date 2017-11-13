@@ -141,7 +141,7 @@
                             <form>
                                 <div class="field half first">
                                     <label for="name">Nuevo Nombre De La Tienda</label>
-                                    <input type="text" name="name" id="nombre"/>
+                                    <input type="text" name="name" id="nombree"/>
                                 </div>
                                 <div class="field half" style="margin-bottom: 60px; margin-top: 52px;">
                                     <input type="submit" value="Cambiar Nombre" class="special" id="bNombre"/>
