@@ -41,9 +41,9 @@ function cli(id) {
         //if(isNaN(cantidad)){
         // alert("La cantidad tiene que ser un número");
         //}else{
-        console.log("cantidad: " + cantidad);
         console.log("nombre: "+nombre);
         console.log("tienda: "+tienda);
+        console.log("cantidad: " + cantidad);
         $.ajax({
             url: 'AgregarCarritoServlet',
             type: 'POST',
@@ -98,7 +98,7 @@ $(document).ready(function () {
                          "<button class='btn' onclick='cli(" + i + ")' id=" + i + ">Añadir</button><br><br>"    overflow: hidden;        */
 
                         //"<div  id='item' style='cursor:pointer; width:300px; overflow: hidden;'> <img style='padding:0px; margin-right: 10px; width: 150px; height: 200px' id='perfil' src=Pictures/" + data.arreglo[i].ruta + "><p class='titulo_uno' id='n" + i + "'>" + data.arreglo[i].nombre + "</p><p style='float: right; margin: 0px 20px 0px 0px;' class='descripcion2' id='p" + i + "'>" + "$ " + data.arreglo[i].precio + "<input id='c' type='text' class='pass' value='1'/><button style='border-radius:100%;  margin: 0px 0px 5px 5px; ' class='btn' onclick='cli(" + i + ")' id=" + i + ">+</button><br>" + "</div>",
-                        "<div class='column nature' id='res'><div class='content'> <center><img src=Pictures/Prod/" + data.arreglo[i].ruta + " alt='Imagen Sin Ruta' style='width:100%;'></center> <div class='content2'> <center><p class='empresa' id='n" + i + ">" + data.arreglo[i].nombre + "</p> </center><center><p class='puntuacion' id='p" + i + "'>" + "$ " + data.arreglo[i].precio + "<input id='c"+i+"' type='text' class='pass' value='1'/><button style='border-radius:100%;  margin: 0px 0px 5px 5px;  height: 30px; width: 30px; cursor:pointer'' onclick='cli(" + i + ")' id=" + i + ">+</button></center></p></div></div></div>",
+                        "<div class='column nature' id='res'><div class='content'> <center><img src=Pictures/Prod/" + data.arreglo[i].ruta + " alt='Imagen Sin Ruta' style='width:100%;'></center> <div class='content2'> <center><p class='empresa' id='n" + i + "'>" + data.arreglo[i].nombre + "</p> </center><center><p class='puntuacion' id='p" + i + "'>" + "$ " + data.arreglo[i].precio + "<input id='c"+i+"' type='text' class='pass' value='1'/><button style='border-radius:100%;  margin: 0px 0px 5px 5px;  height: 30px; width: 30px; cursor:pointer'' onclick='cli(" + i + ")' id=" + i + ">+</button></center></p></div></div></div>",
                         );
             }
 
