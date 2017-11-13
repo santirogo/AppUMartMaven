@@ -23,7 +23,7 @@ $(document).ready(function(){
     
     $('#bNombre').click(function(){
         var opcion = 1;
-        var nombre = $('#nombre').val();
+        var nombre = $('#nombree').val();
         var celular = $('#celular').val();
         console.log("nombre: "+nombre);
         console.log("celular: "+celular);
