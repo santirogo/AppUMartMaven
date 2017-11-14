@@ -11,6 +11,7 @@ $(document).ready(function (){
         correo = $("#correo").val();
         pass = $("#pass").val();
         pass2 = $("#pass2").val();
+        console.log(correo+pass+pass2)
         if(pass === pass2){
             $("#error").html("");
             $.ajax({
