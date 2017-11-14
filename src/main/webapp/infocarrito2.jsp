@@ -208,9 +208,9 @@
             }
             /*Mensaje*/
         </style>
-        <script async defer
+        <!--<script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8&callback=initMap">
-        </script>
+        </script>-->
         <style>
             #map {
                 height: 200px;
