@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="registroUsuarioAjax.js"></script>
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
@@ -55,7 +55,7 @@
                 <input type="button" value="Registrarse" class="btn" id="boton">
 
                 <div id="confirmacion" style="display:none">
-                    <p id="parrafo">Por favor digita el número de confirmación que te enviamos al correo</p>
+                    <p id="parrafo">Por favor digita el nÃºmero de confirmaciÃ³n que te enviamos al correo</p>
                     <input type="text" class="btn" id="numero"><br> <input class="btn" type="button" value="Confirmar" id="confirmar">
                 </div>
             </form><br>
@@ -70,13 +70,13 @@
                 <form id="loginn" class="login-form">
                     <input id="correo" type="text" class="pass" placeholder="Correo"/>
                     <input id="nombre" type="text" class="pass" placeholder="Nombre"/>
-                    <input id="pass" type="password" placeholder="Contraseña" class="pass"/>
-                    <input id="pass2" type="password" placeholder="Confirma tu Contraseña" class="pass"/>
+                    <input id="pass" type="password" placeholder="ContraseÃ±a" class="pass"/>
+                    <input id="pass2" type="password" placeholder="Confirma tu ContraseÃ±a" class="pass"/>
                     <input id="celular" type="text" class="pass" placeholder="Celular"/>
                     <button id="boton" class="btn">Sign Up</button>
 
                     <div id="confirmacion" style="display:none">
-                        <p id="parrafo">Por favor digita el número de confirmación que fue enviado a tu correo</p>
+                        <p id="parrafo">Por favor digita el nÃºmero de confirmaciÃ³n que fue enviado a tu correo</p>
                         <input type="text" class="btn" id="numero"><br> 
                         <button class="btn" id="confirmar">Confirmar</button>
                     </div>
