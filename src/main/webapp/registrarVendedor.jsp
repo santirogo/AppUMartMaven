@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="registrarVendedorAjax.js"></script>
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
@@ -77,7 +77,7 @@
             <div class="avatar">
             </div>
 
-            <form id="loginn" class="login-form">
+            <div id="loginn" class="login-form">
                 <input id="correo" type="text" class="pass" placeholder="Correo"/>
                 <input id="nombre" type="text" class="pass" placeholder="Nombre"/>
                 <input id="password" type="password" placeholder="Contrase�a" class="pass"/>
@@ -91,7 +91,7 @@
                     <p>Ingresa el c�digo que enviamos a tu correo: </p><input type='text' class="btn" id ='codigo'>
                     <input type='button' id ='confirmar' value ='confirmar'></div><br>
                 <div id="oculto2">
-                    <a href="http://localhost:8080/AppuMart/loginVendedor.jsp"><button><p>�Registrarme!</p></button></a>
+                    <a href="loginVendedor.jsp"><button><p>�Registrarme!</p></button></a>
                 </div>
-
+            </div>        
 </html>

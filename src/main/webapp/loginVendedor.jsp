@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="ajaxLogInVendedor.js"></script>
         <!--<link href="styles.css" rel='stylesheet' type='text/css'>-->
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
@@ -47,11 +47,11 @@
                 <div class="avatar">
                 </div>
 
-                <form id="loginn" class="login-form">
+                <div id="loginn" class="login-form">
                     <input id="correo" type="text" class="pass" placeholder="Correo"/>
                     <input id="password" type="password" placeholder="Contraseña" class="pass"/><span class="arrow">&rarr;</span>
                     <input type="submit" id="loginboton" class="btn" value="Entrar"/>
-                </form>
+                </div>
                 <p id="ack"></p>
             </div>
         </div>
