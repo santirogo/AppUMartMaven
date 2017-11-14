@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="listarTiendasAjax.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <title>Tiendas AppuMart</title>
@@ -292,7 +292,7 @@
                         </div>
                     </div>
                 </div>-->
-                <!--<div class='column nature'> <div class='content'> <img src='Pictures/fondo1.png' alt='Lights' style='width:100%'> <div class='content2'> <h4>" Hola1 "</h4> <p class='puntuacion'>Puntuación: " Hola2"</p> <p class='vendedor'>" Hola3"</p>  </div> </div> </div>
+                <!--<div class='column nature'> <div class='content'> <img src='Pictures/fondo1.png' alt='Lights' style='width:100%'> <div class='content2'> <h4>" Hola1 "</h4> <p class='puntuacion'>PuntuaciÃ³n: " Hola2"</p> <p class='vendedor'>" Hola3"</p>  </div> </div> </div>
                 -->
                 <!-- END GRID -->
             </div>
