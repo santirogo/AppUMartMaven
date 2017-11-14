@@ -67,7 +67,7 @@
                 <div class="avatar">
                 </div>
 
-                <form id="loginn" class="login-form">
+                <div id="loginn" class="login-form">
                     <input id="correo" type="text" class="pass" placeholder="Correo"/>
                     <input id="nombre" type="text" class="pass" placeholder="Nombre"/>
                     <input id="pass" type="password" placeholder="Contraseña" class="pass"/>
@@ -81,7 +81,7 @@
                         <button class="btn" id="confirmar">Confirmar</button>
                     </div>
                     
-                </form>
+                </div>
                 <!--<p id="ack"></p>-->
                 <div id="error"></div>
                 
