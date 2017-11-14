@@ -221,7 +221,7 @@
                 jQuery("#loader").fadeOut("slow");
                 var Ancho = screen.width;
                 var Alto = screen.height;
-                alert(Ancho + " Y " + Alto);
+                //alert(Ancho + " Y " + Alto);
                 //form1.submit();
                 
     });

@@ -112,7 +112,7 @@ var map;
         data: {opcion:opcion, idprod:idprod},
         dataType: 'json',
         success: function (data) {
-            
+            window.location.href = "infocarrito2.jsp";
             console.log("borrando prod");
 
 //            $('#carlos').append(
