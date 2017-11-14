@@ -28,6 +28,9 @@ $(document).ready(function (){
                     }else{
                         alert("El correo debe ser de la universidad");
                     }
+                },
+                error: function(data){
+                    alert("FALLÓ");
                 }
             });
         }else{
