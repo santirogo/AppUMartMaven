@@ -3,14 +3,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>
         <script type="text/javascript" src="InfoCarritoAjax.js"></script>
         <script type="text/javascript" src="InfoCheckOut.js"></script>
         <!--<script type="text/javascript" src="seleccionProductoAjax.js"></script>-->
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
-        <title>Tú Carrito</title>
+        <title>TÃº Carrito</title>
         <style>
             @font-face
             {
@@ -145,7 +145,7 @@
                 float: left;
                 -webkit-transition:all 500ms ease;
                 -o-transition:all 500ms ease;
-                transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+                transition:all 500ms ease; /* Establecemos una transiciÃ³n a todas las propiedades */
                 /*position: absolute;
                 top: 5%;*/
             }
@@ -241,9 +241,9 @@
                             n.close()
                         }, 10000)
                     } else if (Notification.permission == "default") {
-                        alert("Primero da los permisos de notificación");
+                        alert("Primero da los permisos de notificaciÃ³n");
                     } else {
-                        alert("Bloqueaste los permisos de notificación");
+                        alert("Bloqueaste los permisos de notificaciÃ³n");
                     }
                 }
             }
