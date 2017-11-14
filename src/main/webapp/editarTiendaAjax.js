@@ -42,6 +42,8 @@ $(document).ready(function(){
         var opcion = 2;
         var fondo = $('#fondo').val();
         var celular = $('#celular').val();
+        console.log("fondo: "+fondo);
+        console.log("celular: "+celular);
         $.ajax({
             url:'EditarTiendaServlet',
             type:'post',
