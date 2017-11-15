@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
 
@@ -33,9 +35,18 @@ function mifuncion() {
         data: {opcion1: opcion1, comment: comment},
         dataType: 'json',
         success: function (data) {
+            document.write('<script type="text/javascript" src="push.min.js"></script>');
             console.log("Info enviada");
             
-            mostrarNotificacion();
+            Push.create("Appu-Noti",{
+			body: "Tienes pedidos pendientes!",
+			icon: "checkout.png",
+			timeout: 10000,
+			onClick: function () {
+				window.location="https://mail.google.com/mail/u/1/#inbox";
+				this.close();
+			}
+		});
             
         },
         error: function () {
