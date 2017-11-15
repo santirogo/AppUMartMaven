@@ -2,16 +2,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="listarTiendasAjax.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="Botones.css" />
         <title>Tiendas AppuMart</title>
-
-
         <style>
             @media screen and (max-width:560px) {
                 #res {
-                    width: 70%;
+                    width: 90%;
                     margin: auto;
                     float: none;
                 }
@@ -20,6 +19,24 @@
                     padding-bottom: 20px;
                 }
                 #tiendas{
+                }
+            }
+
+            @media screen and (max-width:662px) {
+                div#bandera{
+                    width: 100%;
+                    height: 39px; 
+                    z-index: 2000;
+                    border: 2px solid #ffffff; /*Blanco*/
+                    border-radius: 3px;
+                    margin-top: 30px;
+                    display: none;
+                }
+            }
+
+            @media screen and (min-width:662px) {
+                div#bandera2{
+                    display: none;
                 }
             }
 
@@ -35,7 +52,7 @@
             }
 
             body {
-                background-color: #f1f1f1;
+                /*background-color: #f1f1f1;*/
                 /*background-color: #4686a0;*/
                 /*background-image: url(Pictures/bg.jpg);*/
                 /*background: #1b1f22;*/
@@ -43,17 +60,20 @@
                 color: rgba(255, 255, 255, 0.75);
                 background-attachment: fixed,	fixed, fixed;
                 background-image: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);*/
-
+                background-color: #B4B4B4;  /*Gris*/
+                background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+                background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+                background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+                background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%); /*Ovalo Mitad*/
 
                 padding: 10px;
-                font-family: Arial;
             }
 
             /*body {
                 background-color: rgb(147, 93, 140);
                 background-image: linear-gradient(45deg, rgb(227, 118, 130) 15%, rgb(95, 77, 147) 85%);
 
-            }*/
+            }*//*Instagram*/
 
             /* Center website */
             .main {
@@ -62,9 +82,16 @@
             }
 
             h1 {
-                font-size: 50px;
                 word-break: break-all;
-                font-family: 'font.ttf';
+                font-family: 'carrito.ttf';
+                opacity: 1;
+                font-size: 1.75rem;
+                line-height: 1.4;
+                /*letter-spacing: 0.2rem;*/
+                /*color: #999;*/
+                color: #555;
+                text-align: center;
+                margin: auto;
             }
 
             .row {
@@ -74,7 +101,7 @@
             /* Add padding BETWEEN each column */
             .row,
             .row > .column {
-                padding: 20px;
+                padding: 40px;
             }
 
             /* Create three equal columns that floats next to each other */
@@ -98,7 +125,6 @@
                 background-color: white;
                 box-shadow: 2px 2px 5px #999;
                 padding: 0px;
-                
             }
             .content2 {
                 padding: 5px;
@@ -112,7 +138,7 @@
                 border-radius: 5px 5px 0 0;
             }
 
-            .footer {
+            /*.footer {
                 position: fixed;
                 left: 0;
                 bottom: 0;
@@ -120,15 +146,22 @@
                 background-color: red;
                 color: white;
                 text-align: center;
-            }
+            }*/
             .sticky {
                 position: -webkit-sticky;
                 position: sticky;
                 top: 0px;
                 padding: 5px;
                 text-align: center;
-                background-color: #cae8ca;
-                border: 2px solid #4CAF50;
+                /*background-color: #cae8ca;*/ /*Verde Claro*/
+                background-color: #087eac;
+                /*background-color: #24a0d0;*/ /*Azul Claro*/
+                /*background-color: #106383;*/ /*Azul Oscuro*/
+                /*border: 2px solid #4CAF50;*/ /*Verde Medio*/
+                border: 2px solid #ffffff; /*Blanco*/
+                border-radius: 3px;
+                opacity: 0.8;
+                /*height: 40px;*/
             }
             .vendedor{
                 font-size: 10px
@@ -171,6 +204,61 @@
                 text-align: center;
                 margin-top: 50px;
             }
+            #bg {
+                background: rgba(19, 21, 25, 0.5);
+            }
+            div#bandera{
+                width: 100%;
+                height: 39px; 
+                z-index: 2000;
+                border: 2px solid #ffffff; /*Blanco*/
+                border-radius: 3px;
+                margin-top: 30px;
+            }
+            div#rojo{
+                float: left;
+                width: 33.33%;
+                height: 100%;
+                background-color: #e30020;
+            }
+            div#blanco{
+                float: left;
+                width: 33.33%;
+                height: 100%;
+                background-color: #ffffff;
+            }
+            div#azul{
+                float: left;
+                width: 33.33%;
+                height: 100%;
+                background-color: #087eac;
+            }
+            div#bandera2{
+                width: 100%;
+                height: 117px; 
+                z-index: 2000;
+                border: 2px solid #ffffff; /*Blanco*/
+                border-radius: 3px;
+                margin-top: 30px;
+            }
+            div#rojo2{
+                float: left;
+                width: 100%;
+                height: 33.33%;
+                background-color: #e30020;
+            }
+            div#blanco2{
+                float: left;
+                width: 100%;
+                height: 33.33%;
+                background-color: #ffffff;
+            }
+            div#azul2{
+                float: left;
+                width: 100%;
+                height: 33.33%;
+                background-color: #087eac;
+            }
         </style>
         <script>
             jQuery(document).ready(function () {
@@ -186,127 +274,61 @@
                 });
             });
         </script>
+        <script>
+            function cerrarSesion() {
+                $.ajax({
+                    url: 'CerrarSesionServlet',
+                    type: 'get',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log("Cerrando Sesion");
+                        window.location.href = "index.jsp";
+                    },
+                    error: function () {
+                    }
+                });
+
+
+            }
+            ;
+        </script>
     </head>
     <body>
 
         <!-- MAIN (Center website) -->
         <div class="main">
-
-            <!--<h1 class="sticky" >AppuMart</h1>-->
-            <!--<center><div><img src="Pictures/AppuTexto.png"></div></center>-->
             <center><div id="logo"><img src="Pictures/AppuMartLogo.png" style="width: 30%; height: 30%; margin-top: -45px; margin-bottom: -40px;"></div></center>
+
             <hr>
 
-            <!--<h2>Nuestras Tiendas</h2>-->
-            <center><div id="tiendas"><img src="Pictures/Tiendas2.png" style="width: 50%; height: 50%; padding: 20px"></div></center>
-            <!--<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
-            <input type="radio" onclick="filterSelection('nature')" name="category"> Nature
-            <input type="radio" onclick="filterSelection('cars')" name="category"> Cars
-            <input type="radio" onclick="filterSelection('people')" name="category"> People-->
-
-
-            <div class="row" id="div">
-                <!-- Portfolio Gallery Grid -->
-                <!--<div class="column nature">
-                    <div class="content">
-                        <img src="Pictures/fondo1.png" alt="Mountains" style="width:100%; ">
-                        <div class="content2">
-                            <h4>McDonalds</h4>
-
-                            <p class="puntuacion">Puntuacion: 5.0</p>
-                            <p class="vendedor">Vendedor: 3203837680</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column nature">
-                    <div class="content">
-                        <img src="Pictures/fondo2.png" alt="Lights" style="width:100%">
-                        <div class="content2">
-                            <h4>Lights</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column nature">
-                    <div class="content">
-                        <img src="Pictures/fondo3.jpg" alt="Nature" style="width:100%;">
-                        <div class="content2">
-                            <h4>Forest</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column cars">
-                    <div class="content">
-                        <img src="Pictures/fondo4.gif" alt="Car" style="width:100%">
-                        <div class="content2">
-                            <h4>Retro</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column cars">
-                    <div class="content">
-                        <img src="Pictures/fondo5.jpg" alt="Car" style="width:100%">
-                        <div class="content2">
-                            <h4>Fast</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column cars">
-                    <div class="content">
-                        <img src="Pictures/fondo6.jpg" alt="Car" style="width:100%">
-                        <div class="content2">
-                            <h4>Classic</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column people">
-                    <div class="content">
-                        <img src="Pictures/fondo7.jpg" alt="Car" style="width:100%">
-                        <div class="content2">
-                            <h4>Girl</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column people">
-                    <div class="content">
-                        <img src="Pictures/fondo8.png" alt="Car" style="width:100%">
-                        <div class="content2">
-                            <h4>Man</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column people">
-                    <div class="content">
-                        <img src="Pictures/fondo9.gif" alt="Car" style="width:100%">
-                        <div class="content2">
-                            <h4>Woman</h4>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                    </div>
-                </div>-->
-                <!--<div class='column nature'> <div class='content'> <img src='Pictures/fondo1.png' alt='Lights' style='width:100%'> <div class='content2'> <h4>" Hola1 "</h4> <p class='puntuacion'>Puntuación: " Hola2"</p> <p class='vendedor'>" Hola3"</p>  </div> </div> </div>
-                -->
-                <!-- END GRID -->
+            <div id="bandera">
+                <div id="azul"></div>
+                <!--<div id="blanco"><center><img src="Pictures/AppuTexto.png" style="width: 45%"></center></div>-->
+                <div id="blanco"><h1>Nuestras Tiendas</h1></div>
+                <div id="rojo"></div>  
             </div>
-            <p id="na" style="text-align: center;"><i class="fa fa-exclamation-circle"></i> No hay mas tiendas por mostrar <i class="fa fa-exclamation-circle"></i></p>
+            <!--<center><button style="width: 100%;">Nuestras Tiendas</button></center>-->
+            <div id="bandera2">
+                <div id="azul2"></div>
+                <!--<div id="blanco"><center><img src="Pictures/AppuTexto.png" style="width: 45%"></center></div>-->
+                <div id="blanco2"><h1>Nuestras Tiendas</h1></div>
+                <div id="rojo2"></div>  
+            </div>
 
+            <div class="row" id="div"></div>
+            <!--<p id="na" style="text-align: center;"><i class="fa fa-exclamation-circle"></i> No hay mas tiendas por mostrar <i class="fa fa-exclamation-circle"></i></p>-->
+
+            <!--<div id="bg"></div>-->
             <hr style="margin-top: 20px">
+
             <div class="footer">
                 <!--<p>Footer</p>-->
                 <img src="Pictures/AppuTexto.png" style="width: 30%; height: 30%; padding-top: 8px;">
             </div>
 
+            <center><button style="margin-top: 20px; background-color: #e30020; cursor: alias;" onclick="cerrarSesion()"><i class="fa fa-power-off"></i> Cerrar Sesion</button></center>
             <!-- END MAIN -->
         </div>
-
         <script>
             filterSelection("all")
             function filterSelection(c) {
