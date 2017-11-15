@@ -5,12 +5,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>
-        <script type="text/javascript" src="InfoCheckOut.js"></script>
-        <!--<script type="text/javascript" src="seleccionProductoAjax.js"></script>-->
-        <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="InfoCheckOut.js" charset="UTF-8"></script>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+        <link rel="stylesheet" href="MuestraCarro.css" />
+        <link rel="stylesheet" href="Botones.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <title>Tú Carrito</title>
         <style>
+            @media screen and (max-width:560px) {
+                #perfilres{
+                    float: none;
+                    margin: auto;
+                }
+            }
             @font-face
             {
                 font-family: 'carrito.ttf';
@@ -25,10 +32,26 @@
                 box-sizing: border-box;
                 font-family: 'carrito.ttf';
             }
-            body {
+            /*body {
                 background-color: #f1f1f1;
                 padding: 10px;
                 font-family: Arial;
+            }*/
+            body {
+                /*background-color: #f1f1f1;*/
+                /*background-color: #4686a0;*/
+                /*background-image: url(Pictures/bg.jpg);*/
+                /*background: #1b1f22;*/
+                /*background-color: #4686a0;
+                color: rgba(255, 255, 255, 0.75);
+                background-attachment: fixed,	fixed, fixed;
+                background-image: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);*/
+                background-color: #B4B4B4;  /*Gris*/
+                /*  background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+                background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+                background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+                background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);*/ /*Ovalo Mitad*/
+                padding: 10px;
             }
             /* Center website */
             .main {
@@ -39,58 +62,6 @@
                 font-size: 50px;
                 word-break: break-all;
                 font-family: 'font.ttf';
-            }
-            .row {
-                margin: 10px -16px;
-            }
-            /* Add padding BETWEEN each column */
-            .row,
-            .row > .column {
-                padding: 5px;
-            }
-            /* Create three equal columns that floats next to each other */
-            .column {
-                float: left;
-                width: 33.33%;
-                /*display: none;*/ /* Hide all elements by default */
-            }
-            /* Clear floats after rows */ 
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            /* Content */
-            .content {
-                border-radius: 50px 50px 10px 10px;
-                background-color: white;
-                padding: 0px;
-            }
-            .content2 {
-                padding: 0 0 0 0;
-            }
-            /* The "show" class is added to the filtered elements */
-            .show {
-                display: block;
-            }
-            img {
-                border-radius: 50px 50px 0 0;
-            }
-            .footer {
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: red;
-                color: white;
-                text-align: center;
-            }
-            .vendedor{
-                font-size: 10px
-            }
-            .puntuacion{
-                color: #298cda;
-                font-size: 30px
             }
             .empresa{
                 font-size: 25px;
@@ -123,15 +94,6 @@
                 text-align: center;
                 margin-top: 50px;
             }
-            .sticky {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 0px;
-                padding: 5px;
-                text-align: center;
-                /*background-color: #cae8ca;
-                border: 2px solid #4CAF50;*/
-            }
             .perfil{
                 /*display:block;*/
                 /*margin-left: 3%;*/
@@ -158,17 +120,6 @@
             .TituloEmpresa{
                 font-size: 80px;
             }
-            .pass{
-                display: inline-table;
-                margin-left: 80px;
-                padding-bottom: 0px;
-                width:30px;
-                height: 30px;
-                border-radius:3px;
-                border:#CCC 1px solid;
-                text-align: center;
-                /*onclick='this.value""'*/
-            } 
             /*Mensaje*/
             .tooltip {
                 position: relative;
@@ -206,10 +157,20 @@
                 opacity: 1;
             }
             /*Mensaje*/
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            tr:hover{background-color:#f5f5f5}
         </style>
-        <!--<script async defer
+        <script async defer 
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8&callback=initMap">
-        </script>-->
+        </script>
         <style>
             #map {
                 height: 200px;
@@ -221,10 +182,9 @@
                 jQuery("#loader").fadeOut("slow");
                 var Ancho = screen.width;
                 var Alto = screen.height;
-                //alert(Ancho + " Y " + Alto);
+                alert(Ancho + " Y " + Alto);
                 //form1.submit();
-                
-    });
+            });
             var btnNotificacion = document.getElementById("buttonN"),
                     btnPermiso = document.getElementById("buttonP")
             titulo = "Oder Checkout",
@@ -242,27 +202,23 @@
                     } else if (Notification.permission == "default") {
                         alert("Primero da los permisos de notificación");
                     } else {
-                        alert("Bloqueaste los permisos de notificación");
+                        alert("Bloqueaste los permisos de notifica                ción");
                     }
                 }
             }
             ;
-            function check() {
+            funct                ion check() {
                 if (Notification.permission == "granted") {
                     alert("Notificaciones Activas");
                     mostrarNotificacion();
                 }
                 if (Notification.permission == "default") {
-                alert("Notificaciones Sin Responder");
-                        permiso();
+                    alert("Notificaciones Sin Responder");
+                    permiso();
                 }
                 if (Notification.permission == "denied") {
-                alert("Notificicaciones Denegadas");
+                    alert("Notificicaciones Denegadas");
                 }
-            }
-            ;
-            function clear(element) {
-                element.value = '';
             }
             ;
         </script>
@@ -278,11 +234,61 @@
         <%//}%>
         <div class="main">
             <div>
-                <div id='Perfil'><div class='perfil' style='background-image:-webkit-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%),url(Pictures/checkout.png); background-image:-moz-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%),url(Pictures/checkout.png); background-image:linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%),url(Pictures/checkout.png); background-size: auto, 100%;'></div></div>
+                <div><div class='perfil' id='#perfilres' style='background-image:-webkit-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%),url(Pictures/checkout.png); background-image:-moz-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%),url(Pictures/checkout.png); background-image:linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%),url(Pictures/checkout.png); background-size: auto, 100%;'></div></div>
                 <center><div id="encabezado" class="TituloEmpresa">Checkout</div></center>
             </div>
             <hr style="margin-bottom: 150px;">
             <div class="row" id="carlos">
+                <center>
+                    <table>
+                        <tr>
+                            <th>Nombre Producto</th>
+                            <th>Cantidad Agregada</th>
+                            <th>Precio Unitario</th>
+                        </tr>
+                        <tr>
+                            <td>Peter</td>
+                            <td>Griffin</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr>
+                            <td>Lois</td>
+                            <td>Griffin</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <td>Joe</td>
+                            <td>Swanson</td>
+                            <td>$300</td>
+                        </tr>
+                        <tr>
+                            <td>Cleveland</td>
+                            <td>Brown</td>
+                            <td>$250</td>
+                        </tr>
+                    </table>
+                </center>   
+                <!--Nombre, Cantidad, Precio Unitario, Boton(ProductoId)-->
+                <div class="event">
+                    <span>X</span>
+                    <div class="info">
+                        MAY 21, 2013 <br />
+                        A Non Ymous
+                    </div>
+                    <div class="price">
+                        $6,500
+                    </div>
+                </div>
+                <div class="event">
+                    <span>#002</span>
+                    <div class="info">
+                        MAY 24, 2013 <br />
+                        John Doe
+                    </div>
+                    <div class="price">
+                        $650
+                    </div>
+                </div>
             </div>
             <form name="form1">
                 <center>
