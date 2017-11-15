@@ -7,7 +7,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="InfoCarritoAjax.js"></script>
         <script type="text/javascript" src="InfoCheckOut.js"></script>
-        <script src="push.min.js"></script>
+        <script src="js/push.min.js"></script>
         <!--<script type="text/javascript" src="seleccionProductoAjax.js"></script>-->
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
