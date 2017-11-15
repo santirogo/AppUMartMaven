@@ -223,7 +223,7 @@
 		Push.create("Appu-Noti",{
 			body: "Tienes pedidos pendientes!",
 			icon: "checkout.png",
-			timeout: 1000,
+			timeout: 10000,
 			onClick: function () {
 				window.location="https://mail.google.com/mail/u/1/#inbox";
 				this.close();
