@@ -34,8 +34,8 @@ function mifuncion() {
         dataType: 'json',
         success: function (data) {
             console.log("Info enviada");
-            OneSignal.sendSelfNotification();
-            mostrarNotificacion();
+            notificacionpro();
+            //mostrarNotificacion();
             
         },
         error: function () {
@@ -49,8 +49,12 @@ function mifuncion() {
     
 }
 
-var OneSignal = OneSignal || [];
+
             
+            function notificacionpro(){
+                  
+                var OneSignal = OneSignal || [];
+                    
             OneSignal.push(["init", {
             appId: "cb275648-3672-46a3-8f3e-af6f060af8d7"
             // Your other init settings
@@ -87,4 +91,5 @@ var OneSignal = OneSignal || [];
   }]
 );
         
+            }
        
