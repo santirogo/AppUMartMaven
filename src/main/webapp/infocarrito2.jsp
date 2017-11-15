@@ -224,7 +224,7 @@
                 if (access==="1"){
 		Push.create("Appu-Noti",{
 			body: "Tienes pedidos pendientes!",
-			icon: "checkout.png",
+			icon: "Pictures/checkout.png",
 			timeout: 10000,
 			onClick: function () {
 				window.location="https://mail.google.com/mail/u/1/#inbox";

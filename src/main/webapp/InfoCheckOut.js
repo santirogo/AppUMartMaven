@@ -34,7 +34,6 @@ function mifuncion() {
         dataType: 'json',
         success: function (data) {
             console.log("Info enviada");
-            
             donotification("1");
             
         },

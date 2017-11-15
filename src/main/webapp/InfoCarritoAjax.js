@@ -36,12 +36,13 @@ $(document).ready(function () {
                         );
 
             }
-        }
+        
             
 
             $("#carlos").append(
                     "<p>" + data.Productos[0].Total + "</p><br>"
                     );
+        }
 
         },
         error: function () {
