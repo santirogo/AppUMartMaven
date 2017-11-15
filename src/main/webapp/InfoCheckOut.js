@@ -34,8 +34,8 @@ function mifuncion() {
         dataType: 'json',
         success: function (data) {
             console.log("Info enviada");
-            notificacionpro();
-            //mostrarNotificacion();
+            
+            mostrarNotificacion();
             
         },
         error: function () {
