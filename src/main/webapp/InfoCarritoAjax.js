@@ -9,8 +9,14 @@ $(document).ready(function () {
         data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-            console.log("no hago nada");
-            
+           
+            if (data===null){
+                 console.log("Carro vacio");
+                
+                $("#carlos").append(
+                    "<p>" + "No tienes producto en el carrito" + "</p><br>"
+                    );
+            }else{
             
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
@@ -30,6 +36,7 @@ $(document).ready(function () {
                         );
 
             }
+        }
             
 
             $("#carlos").append(
