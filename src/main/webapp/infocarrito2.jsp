@@ -168,9 +168,9 @@
             }
             tr:hover{background-color:#f5f5f5}
         </style>
-        <script async defer 
+        <!--<script async defer 
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8&callback=initMap">
-        </script>
+        </script>-->
         <style>
             #map {
                 height: 200px;
@@ -182,7 +182,7 @@
                 jQuery("#loader").fadeOut("slow");
                 var Ancho = screen.width;
                 var Alto = screen.height;
-                alert(Ancho + " Y " + Alto);
+                //alert(Ancho + " Y " + Alto);
                 //form1.submit();
             });
             var btnNotificacion = document.getElementById("buttonN"),
@@ -202,12 +202,12 @@
                     } else if (Notification.permission == "default") {
                         alert("Primero da los permisos de notificación");
                     } else {
-                        alert("Bloqueaste los permisos de notifica                ción");
+                        alert("Bloqueaste los permisos de notificación");
                     }
                 }
             }
             ;
-            funct                ion check() {
+            function check() {
                 if (Notification.permission == "granted") {
                     alert("Notificaciones Activas");
                     mostrarNotificacion();
