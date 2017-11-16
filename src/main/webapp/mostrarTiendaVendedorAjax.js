@@ -9,6 +9,7 @@ $(document).ready(function () {
             console.log("Fondo: " + data.idfondo);
             console.log("Nombre: " + data.nombre);
             console.log("Puntuacion: " + data.puntuacion);
+            console.log("Valor boolean: "+ data.boolean);
 
             $('#div').append(
                     //"<div class='perfil'><img src=" + data.idfondo + " width='100' height='100'></div><br>",-->
