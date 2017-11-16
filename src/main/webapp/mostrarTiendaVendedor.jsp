@@ -20,8 +20,8 @@
 		Push.create("AppuNoti",
                 {
 			body: "Tienes pedidos pendientes!",
-			icon: "checkout.png",
-			timeout: 4000,
+			icon: "Pictures/checkout.png",
+			timeout: 9000,
 			onClick: function () {
                                 setBooleanFalse();
 				window.location="https://mail.google.com/mail/u/1/#inbox";
