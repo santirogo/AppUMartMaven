@@ -26,6 +26,7 @@ $(document).ready(function () {
                     );
             
             if(data.boolean==="true"){
+                console.log("Entro porque es true");
                    donotification("1");        
             }
             
