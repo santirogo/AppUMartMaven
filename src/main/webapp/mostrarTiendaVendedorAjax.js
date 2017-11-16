@@ -1,13 +1,16 @@
 $(document).ready(function () {
-
+    var boolean = "1";
     $.ajax({
         url: 'MostrarTiendaServlet',
         type: 'get',
+        data: {boolean:boolean},
         dataType: 'json',
         success: function (data) {
             console.log("Fondo: " + data.idfondo);
             console.log("Nombre: " + data.nombre);
             console.log("Puntuacion: " + data.puntuacion);
+            console.log("Valor boolean: "+ data.boolean);
+            console.log("Correo: "+ data.correo);
 
             $('#div').append(
                     //"<div class='perfil'><img src=" + data.idfondo + " width='100' height='100'></div><br>",-->
@@ -22,6 +25,11 @@ $(document).ready(function () {
             $('#titulo').append(
                     data.nombre
                     );
+            
+            if(data.boolean==="true"){
+                console.log("Entro porque es true");
+                   donotification("1");        
+            }
             
         },
         error: function () {
@@ -51,3 +59,27 @@ function cerrarSesion() {
 }
 ;
 
+
+function setBooleanFalse(){
+    
+    var boolean = "false";
+    
+    $.ajax({
+        url: 'MostrarTiendaServlet',
+        type: 'get',
+        data: {boolean:boolean},
+        dataType: 'json',
+        success: function () {
+
+            console.log("enviando false");
+        
+        },
+        error: function () {
+        }
+    });
+    
+    
+    
+    
+    
+}
