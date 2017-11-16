@@ -159,7 +159,7 @@ public class VendedorDAO {
     
     public void notiVendedor(boolean noti, String correo){
     
-            String query = "UPDATE Users SET noti=" + noti + " where correo='" + correo + "'";
+            String query = "UPDATE vendedores SET noti=" + noti + " where correo='" + correo + "'";
         PreparedStatement preparedStmt = null;
         try {         
                     preparedStmt = this.conexion.prepareStatement(query);

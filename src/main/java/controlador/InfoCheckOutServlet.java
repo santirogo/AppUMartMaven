@@ -84,10 +84,10 @@ public class InfoCheckOutServlet extends HttpServlet {
             
             
             String opcion="";
-            boolean noti=false;
+            String noti="";
 
             opcion = request.getParameter("opcion1");
-            noti = Boolean.valueOf(request.getParameter("boolean"));
+            noti = request.getParameter("boolean");
             String comentario = request.getParameter("comment");
             System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
             
@@ -140,11 +140,16 @@ public class InfoCheckOutServlet extends HttpServlet {
                     String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
                     
-                    mail.sendMailCheckout(correo,map);
+                    EnviarMail.sendMailCheckout(correo,map);
                     
-                    vendedorDao.notiVendedor(noti, correo);
+                    if(noti.equals("true")){
+                        vendedorDao.notiVendedor(true, correo);
+                    }else {
+                        vendedorDao.notiVendedor(false, correo);
+                    }
                     
                     session.setAttribute("carrito", null);
+                    
                     System.out.println("-------------CORREO ENVIADO-------------");
                 
             }

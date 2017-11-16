@@ -25,7 +25,7 @@ function mifuncion() {
 
     var opcion1 = "3";
     var comment = $('#comment').val();
-    var boolean = true;
+    var boolean = "true";
 
 
     $.ajax({
