@@ -26,12 +26,6 @@ $(document).ready(function () {
                 $("#carlos").append(
 
                         "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar('"+data.Productos[i].ID+ "')>x</button></div>"
-//                        "<form>",
-//                        "<input type='text' id='opcion' value='2' style='display: none'>",
-//                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-//                        "<input type='submit' value='x'>",
-//                        "</form></div>"
-                         
                         
                         );
 
@@ -122,10 +116,6 @@ var map;
         success: function (data) {
             
             console.log("borrando prod");
-
-//            $('#carlos').append(
-//                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
-//                    );
 
         },
         error: function () {

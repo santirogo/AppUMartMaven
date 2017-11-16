@@ -25,16 +25,18 @@ function mifuncion() {
 
     var opcion1 = "3";
     var comment = $('#comment').val();
+    var boolean = true;
 
 
     $.ajax({
         url: 'InfoCheckOutServlet',
         type: 'GET',
-        data: {opcion1: opcion1, comment: comment},
+        data: {opcion1: opcion1, comment: comment, boolean:boolean},
         dataType: 'json',
-        success: function (data) {
+        success: function () {
             console.log("Info enviada");
-            donotification("1");
+            
+            //location = 'listarTiendas.jsp';
             
         },
         error: function () {
@@ -42,7 +44,7 @@ function mifuncion() {
         }
     });
     
-    location = 'listarTiendas.jsp';
+    
     
     
     

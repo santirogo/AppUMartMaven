@@ -46,10 +46,14 @@ public class MostrarTiendaServlet extends HttpServlet {
             
             HttpSession mySession = request.getSession();
             String correo = (String)mySession.getAttribute("correo");
+            String buleano= request.getParameter("boolean");
+            
             VendedorDAO vDAO = new VendedorDAO();
             String celular = vDAO.buscarCelVendedor(correo);
             System.out.println("ceeeelluuuullaaarr de vendeeedoorr"+celular);
             this.vo = t.mostrarPorVendedor(celular);
+            
+           
             
             json = new JSONObject();
             
@@ -61,7 +65,18 @@ public class MostrarTiendaServlet extends HttpServlet {
             json.put("puntuacion", punt);
             json.put("idfondo",vo.getIdFondo());
             
+            if( vDAO.checkBoolean(correo)){
+                json.put("boolean", "true");
+            }else{
+                json.put("boolean", "false");
+            }
+            
             out.print(json);
+            
+            if(buleano.equals("false")){ 
+                boolean noti = false;
+                vDAO.notiVendedor(noti, correo);
+            }
         
     }
 

@@ -1,8 +1,9 @@
 $(document).ready(function () {
-
+    var boolean = "1";
     $.ajax({
         url: 'MostrarTiendaServlet',
         type: 'get',
+        data: {boolean:boolean},
         dataType: 'json',
         success: function (data) {
             console.log("Fondo: " + data.idfondo);
@@ -22,6 +23,10 @@ $(document).ready(function () {
             $('#titulo').append(
                     data.nombre
                     );
+            
+            if(data.boolean==="true"){
+                   donotification("1");        
+            }
             
         },
         error: function () {
@@ -50,4 +55,29 @@ function cerrarSesion() {
 
 }
 ;
+
+
+function setBooleanFalse(){
+    
+    var boolean = "false";
+    
+    $.ajax({
+        url: 'MostrarTiendaServlet',
+        type: 'get',
+        data: {boolean:boolean},
+        dataType: 'json',
+        success: function () {
+
+            console.log("enviando false");
+        
+        },
+        error: function () {
+        }
+    });
+    
+    
+    
+    
+    
+}
 

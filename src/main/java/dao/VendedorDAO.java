@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import util.Conexion;
@@ -153,6 +154,39 @@ public class VendedorDAO {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    
+    public void notiVendedor(boolean noti, String correo){
+    
+            String query = "UPDATE Users SET noti=" + noti + " where correo='" + correo + "'";
+        PreparedStatement preparedStmt = null;
+        try {         
+                    preparedStmt = this.conexion.prepareStatement(query);
+                    preparedStmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+            
+    
+    }
+    
+    public boolean checkBoolean(String correo){
+         
+       try {
+            String consulta = "SELECT noti FROM Vendedores WHERE Correo = '"+correo+"'";
+            Statement st = this.conexion.createStatement();
+            ResultSet rs = st.executeQuery(consulta);
+            
+            return rs.getBoolean(1);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return false;
+    
     }
     
 }
