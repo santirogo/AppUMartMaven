@@ -65,6 +65,9 @@ public class MostrarTiendaServlet extends HttpServlet {
             json.put("puntuacion", punt);
             json.put("idfondo",vo.getIdFondo());
             
+            json.put("correo",correo);
+            
+            
             boolean check = vDAO.checkBoolean(correo);
             
 //            if( true == check){

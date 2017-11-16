@@ -10,6 +10,7 @@ $(document).ready(function () {
             console.log("Nombre: " + data.nombre);
             console.log("Puntuacion: " + data.puntuacion);
             console.log("Valor boolean: "+ data.boolean);
+            console.log("Correo: "+ data.correo);
 
             $('#div').append(
                     //"<div class='perfil'><img src=" + data.idfondo + " width='100' height='100'></div><br>",-->
@@ -27,7 +28,7 @@ $(document).ready(function () {
             
             if(data.boolean==="true"){
                 console.log("Entro porque es true");
-                   //donotification("1");        
+                   donotification("1");        
             }
             
         },

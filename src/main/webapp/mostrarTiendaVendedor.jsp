@@ -15,23 +15,23 @@
 
         
         <script>
-            //function donotification(access){
-               // if (access==="1"){
+            function donotification(access){
+                if (access==="1"){
 		Push.create("AppuNoti",
                 {
 			body: "Tienes pedidos pendientes!",
 			icon: "checkout.png",
 			timeout: 4000,
 			onClick: function () {
-                                //setBooleanFalse();
+                                setBooleanFalse();
 				window.location="https://mail.google.com/mail/u/1/#inbox";
 				this.close();
 			}
 		});
-            //}else{
-                //console.log("no hay permiso para la notificacion");
-            //}
-            //}
+            }else{
+                console.log("no hay permiso para la notificacion");
+            }
+            }
 	</script>
         
         <style>
