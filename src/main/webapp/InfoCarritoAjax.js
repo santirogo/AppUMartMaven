@@ -6,36 +6,44 @@ $(document).ready(function () {
     $.ajax({
         url: 'MainMenuServlet',
         type: 'GET',
-        data: {opcion: opcion},
+        data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-            console.log("no hago nada");
-
-
+           
+            if (data===null){
+                 console.log("Carro vacio");
+                
+                $("#carlos").append(
+                    "<p>" + "No tienes producto en el carrito" + "</p><br>"
+                    );
+            }else{
+            
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
-
+                
                 console.log(data.Productos[i].nombre);
                 console.log(data.Productos[i].precio);
                 $("#carlos").append(
-                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar('" + data.Productos[i].ID + "')>x</button></div>"
-                        );
-                $("#carlos2").append(
-                        "<tr><th>" + data.Productos[i].nombre + "</th>" + "<th>" + data.Productos[i].cantidad + "</th>" + "<th>"+data.Productos[i].precio + "</th> <th><button onclick=borrar('" + data.Productos[i].ID + "')>x</button> </th></tr>"
+
+                        "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar('"+data.Productos[i].ID+ "')>x</button></div>"
+                        
                         );
 
             }
-
+        
+            
 
             $("#carlos").append(
                     "<p>" + data.Productos[0].Total + "</p><br>"
                     );
+        }
 
         },
         error: function () {
             $('#ack').val("ERROR FATAL");
         }
     });
+
 
 
     $('.btn').click(function () {
@@ -106,12 +114,8 @@ var map;
         data: {opcion:opcion, idprod:idprod},
         dataType: 'json',
         success: function (data) {
-            window.location.href = "infocarrito2.jsp";
+            
             console.log("borrando prod");
-
-//            $('#carlos').append(
-//                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
-//                    );
 
         },
         error: function () {
