@@ -35,6 +35,10 @@ public class CerrarSesionServlet extends HttpServlet {
         
           HttpSession mySession = request.getSession();  
           mySession.invalidate();
+          PrintWriter out = response.getWriter();
+          JSONObject json = new JSONObject();
+          json.put("datos", "ok");
+          out.print(json);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
