@@ -294,7 +294,13 @@
         </script>
     </head>
     <body>
-
+        <% HttpSession mySession = request.getSession();
+            String correo = (String) mySession.getAttribute("correo");
+        %>
+        
+        <% if(correo==null){%>
+            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        <%}%>
         <!-- MAIN (Center website) -->
         <div class="main">
             <center><div id="logo"><img src="Pictures/AppuMartLogo.png" style="width: 30%; height: 30%; margin-top: -45px; margin-bottom: -40px;"></div></center>
