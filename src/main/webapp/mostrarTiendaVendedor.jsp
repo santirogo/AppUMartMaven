@@ -15,8 +15,8 @@
 
         
         <script>
-            function donotification(access){
-                if (access==="1"){
+            //function donotification(access){
+               // if (access==="1"){
 		Push.create("Appu-Noti",{
 			body: "Tienes pedidos pendientes!",
 			icon: "checkout.png",
@@ -27,10 +27,10 @@
 				this.close();
 			}
 		});
-            }else{
-                console.log("no hay permiso para la notificacion");
-            }
-            }
+            //}else{
+                //console.log("no hay permiso para la notificacion");
+            //}
+            //}
 	</script>
         
         <style>
