@@ -70,11 +70,11 @@ public class MostrarTiendaServlet extends HttpServlet {
             
             boolean check = vDAO.checkBoolean(correo);
             
-//            if( true == check){
+            if( check == true){
                 json.put("boolean", "true");
-//            }else{
-//                json.put("boolean", "false");
-//            }
+            }else{
+                json.put("boolean", "false");
+            }
             
             out.print(json);
             

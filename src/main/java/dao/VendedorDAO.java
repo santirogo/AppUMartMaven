@@ -175,18 +175,27 @@ public class VendedorDAO {
     public boolean checkBoolean(String correo){
          
        try {
-            String consulta = "SELECT noti FROM Vendedores WHERE Correo = '"+correo+"'";
-            Statement st = this.conexion.createStatement();
-            ResultSet rs = st.executeQuery(consulta);
-            
-            return rs.getBoolean(1);
+            String query = "SELECT noti from Vendedores where correo=?";
 
+             PreparedStatement stmt = null;
+
+            stmt = this.conexion.prepareStatement(query);
+            
+            stmt.setString(1, correo);
+            ResultSet res = stmt.executeQuery();
+            
+
+            if(res.next()){
+                return res.getBoolean("noti");
+            }else{
+                return false;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        return false;
-    
+         
+       return false;
+
     }
     
 }
