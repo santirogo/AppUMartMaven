@@ -12,7 +12,7 @@
         <script type="text/javascript" src="mostrarTiendaVendedorAjax.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
 
-	<script>
+	<!--<script>
             function donotification(access){
                 if (access==="1"){
 			Push.create("AppuNoti",
@@ -30,7 +30,7 @@
 			console.log("no hay permiso para la notificacion");
 		}
             }
-	</script>
+	</script>-->
 	    
         <style>
             @font-face
