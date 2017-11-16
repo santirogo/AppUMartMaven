@@ -31,11 +31,12 @@ $(document).ready(function () {
                             );
 
                 }
+                $("#carlos").append(
+                    "<p>" + data.Productos[0].Total + "</p><br>"
+                );
             }
 
-            $("#carlos").append(
-                    "<p>" + data.Productos[0].Total + "</p><br>"
-                    );
+            
 
         },
         error: function () {
@@ -115,7 +116,7 @@ function borrar(id) {
         success: function (data) {
 
             console.log("borrando prod");
-
+            window.location.href = "infocarrito2.jsp"
 //            $('#carlos').append(
 //                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
 //                    );
