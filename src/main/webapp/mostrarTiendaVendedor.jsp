@@ -22,7 +22,7 @@
 			icon: "checkout.png",
 			timeout: 10000,
 			onClick: function () {
-                                setBooleanFalse();
+                                //setBooleanFalse();
 				window.location="https://mail.google.com/mail/u/1/#inbox";
 				this.close();
 			}
