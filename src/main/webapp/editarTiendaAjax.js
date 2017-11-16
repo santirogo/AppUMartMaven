@@ -23,8 +23,10 @@ $(document).ready(function(){
     
     $('#bNombre').click(function(){
         var opcion = 1;
-        var nombre = $('#nombre').val();
-        var celular = $('#celular').text();
+        var nombre = $('#nombree').val();
+        var celular = $('#celular').val();
+        console.log("nombre: "+nombre);
+        console.log("celular: "+celular);
         $.ajax({
             url:'EditarTiendaServlet',
             type:'post',
@@ -39,7 +41,7 @@ $(document).ready(function(){
     $('#bFondo').click(function(){
         var opcion = 2;
         var fondo = $('#fondo').val();
-        var celular = $('#celular').text();
+        var celular = $('#celular').val();
         $.ajax({
             url:'EditarTiendaServlet',
             type:'post',

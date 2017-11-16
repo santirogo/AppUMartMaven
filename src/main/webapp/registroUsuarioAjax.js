@@ -5,7 +5,9 @@
  */
 
 $(document).ready(function (){
+    
     $("#boton").click(function (){
+        console.log("entrooooo");
         correo = $("#correo").val();
         pass = $("#pass").val();
         pass2 = $("#pass2").val();
@@ -17,6 +19,7 @@ $(document).ready(function (){
                 data: {correo:correo},
                 dataType: 'json',
                 success: function(data){
+                    console.log("hola?");
                     if (data.universidad === "si") {
                         if(data.confirmacion === "ok"){
                             console.log("Entró para mostrar");
@@ -35,7 +38,7 @@ $(document).ready(function (){
     });
     
     $("#confirmar").click(function () {
-
+        console.log("Entroooo en confirmar");
         numero = $("#numero").val();
         correo = $("#correo").val();
         nombre = $("#nombre").val();

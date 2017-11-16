@@ -9,8 +9,14 @@ $(document).ready(function () {
         data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-            console.log("no hago nada");
-            
+           
+            if (data===null){
+                 console.log("Carro vacio");
+                
+                $("#carlos").append(
+                    "<p>" + "No tienes producto en el carrito" + "</p><br>"
+                    );
+            }else{
             
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
@@ -20,21 +26,17 @@ $(document).ready(function () {
                 $("#carlos").append(
 
                         "<div><p>" + data.Productos[i].nombre + " | " + data.Productos[i].cantidad + " | " + data.Productos[i].precio + "</p><button onclick=borrar('"+data.Productos[i].ID+ "')>x</button></div>"
-//                        "<form>",
-//                        "<input type='text' id='opcion' value='2' style='display: none'>",
-//                        "<input type='text' id='idprod' value='" + data.Productos[i].ID + "' style='display: none'>",
-//                        "<input type='submit' value='x'>",
-//                        "</form></div>"
-                         
                         
                         );
 
             }
+        
             
 
             $("#carlos").append(
                     "<p>" + data.Productos[0].Total + "</p><br>"
                     );
+        }
 
         },
         error: function () {
@@ -115,10 +117,6 @@ var map;
             
             console.log("borrando prod");
 
-//            $('#carlos').append(
-//                    "<p>" + data.Productos[data.Productos.length].Total + "</p><br>"
-//                    );
-
         },
         error: function () {
             $('#ack').val("ERROR FATAL");
@@ -126,4 +124,4 @@ var map;
     });
           
           
-      }
+}

@@ -11,6 +11,7 @@ import dao.EnviarMail;
 import dao.ProductoDAO;
 import dao.TiendaDAO;
 import dao.UsuarioDAO;
+import dao.VendedorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import vo.ProductoVO;
+import vo.VendedorVO;
 
 /**
  *
@@ -69,6 +71,7 @@ public class InfoCheckOutServlet extends HttpServlet {
             UsuarioDAO user = new UsuarioDAO();
             TiendaDAO tienda = new TiendaDAO();
             EnviarMail mail = new EnviarMail();
+            VendedorDAO vendedorDao= new VendedorDAO();
             HttpSession session = request.getSession();
             
             ArrayList<ProductoVO> CarroSesion = (ArrayList) session.getAttribute("carrito");
@@ -81,8 +84,10 @@ public class InfoCheckOutServlet extends HttpServlet {
             
             
             String opcion="";
+            String noti="";
 
             opcion = request.getParameter("opcion1");
+            noti = request.getParameter("boolean");
             String comentario = request.getParameter("comment");
             System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
             
@@ -134,9 +139,17 @@ public class InfoCheckOutServlet extends HttpServlet {
                     
                     String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
-                    mail.sendMailCheckout(correo,map);
+                    
+                    EnviarMail.sendMailCheckout(correo,map);
+                    
+                    if(noti.equals("true")){
+                        vendedorDao.notiVendedor(true, correo);
+                    }else {
+                        vendedorDao.notiVendedor(false, correo);
+                    }
                     
                     session.setAttribute("carrito", null);
+                    
                     System.out.println("-------------CORREO ENVIADO-------------");
                 
             }

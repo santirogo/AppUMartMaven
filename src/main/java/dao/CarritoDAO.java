@@ -74,6 +74,7 @@ public class CarritoDAO {
                         prod.setNombre(rs.getString(2));
                         prod.setCategoria(rs.getString(3));
                         prod.setPrecio(rs.getInt(4));
+                        prod.setRutaImagen(rs.getString(5));
                         prod.setCantidad((int) producto.get(2));
                         prod.setTienda(rs.getInt(7));
                         System.out.println("AIDI:" + rs.getInt(7));
@@ -107,6 +108,7 @@ public class CarritoDAO {
                             prod.setNombre(rs.getString(2));
                             prod.setCategoria(rs.getString(3));
                             prod.setPrecio(rs.getInt(4));
+                            prod.setRutaImagen(rs.getString(5));
                             prod.setCantidad((int) producto.get(2));
                             prod.setTienda(rs.getInt(7));
 
@@ -187,3 +189,5 @@ public class CarritoDAO {
     }
 
 }
+
+

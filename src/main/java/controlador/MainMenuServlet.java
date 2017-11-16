@@ -110,6 +110,7 @@ public class MainMenuServlet extends HttpServlet {
                         json.put("nombre", CarroSesion.get(i).getNombre());
                         json.put("cantidad", String.valueOf(CarroSesion.get(i).getCantidad()));
                         json.put("precio", String.valueOf(CarroSesion.get(i).getPrecio()));
+                        json.put("ruta", CarroSesion.get(i).getRutaImagen());
                         json.put("Total", x);
                         System.out.println("PRUEBA JSON NOMBRE: "+json.get("nombre"));
                         array.put(json);

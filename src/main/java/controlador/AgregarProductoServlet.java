@@ -54,8 +54,9 @@ public class AgregarProductoServlet extends HttpServlet {
             String nombre = request.getParameter("nombre"); 
             String categoria = request.getParameter("categoria");
             int precio = Integer.parseInt(request.getParameter("precio"));
-            int tienda = Integer.parseInt(request.getParameter("cantidad"));
+            int cant = Integer.parseInt(request.getParameter("cantidad"));
             int idTienda = Integer.parseInt(request.getParameter("tienda"));
+            String imag = request.getParameter("imagen");
             
             ProductoVO productoVO = new ProductoVO();
             JSONObject json = new JSONObject();
@@ -79,9 +80,9 @@ public class AgregarProductoServlet extends HttpServlet {
             }
             
             out.print(json);
-            productoVO.setCantidad(tienda);
+            productoVO.setCantidad(cant);
             productoVO.setTienda(idTienda);
-            productoVO.setRutaImagen("margarita.jpg");
+            productoVO.setRutaImagen(imag);
 
         
     }
@@ -183,6 +184,8 @@ public class AgregarProductoServlet extends HttpServlet {
             }
 
             out.print(json);
+
+        
 
     }
 

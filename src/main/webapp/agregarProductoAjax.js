@@ -12,6 +12,7 @@ $(document).ready(function () {
         var precio = $("#precio").val();
         var cantidad = $("#cantidad").val();
         var imagen = $('#imagen').val();
+        var tienda = $('#imagen').val();
 
         $.ajax({
             url: 'AgregarProductoServlet',
