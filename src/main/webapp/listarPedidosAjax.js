@@ -55,7 +55,9 @@ $(document).ready(function () {
 
 
 function sendID(id) {
-
+    
+    window.location.href = "InfoPedido.jsp";
+    
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
