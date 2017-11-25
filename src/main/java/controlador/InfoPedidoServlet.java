@@ -102,7 +102,7 @@ public class InfoPedidoServlet extends HttpServlet {
             
             
             
-            pedidoVO = pedidoDAO.infoPedido(id);
+            pedidoVO = pedidoDAO.infoPedido(this.id);
             
             
             
@@ -125,7 +125,7 @@ public class InfoPedidoServlet extends HttpServlet {
             
             out.print(mainJson);
             
-            if (check.equals("true")){
+            if (this.check.equals("true")){
             
             pedidoDAO.checker(pedidoVO.getID());
             

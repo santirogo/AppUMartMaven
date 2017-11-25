@@ -108,7 +108,7 @@ public class PedidosDAO {
     public PedidosVO infoPedido(String ID){
     
     PedidosVO p = new PedidosVO();
-        String consulta = "SELECT * FROM Pedidos where Vendedor='"+ID+"'";
+        String consulta = "SELECT * FROM Pedidos where ID='"+ID+"'";
         try {
             
             //----------------------------
