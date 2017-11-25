@@ -11,6 +11,7 @@
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="listarPedidosAjax.js"></script>
+        <script type="text/javascript" src="InfoPedidoAjax.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="Botones.css" />
         <title>Tus Pedidos</title>
