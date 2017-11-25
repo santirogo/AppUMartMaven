@@ -172,6 +172,8 @@ public class InfoCheckOutServlet extends HttpServlet {
                         pedidoVO.setProductos(ordenped);
                         pedidoVO.setComentario(comentario);
                         pedidoVO.setChecker(false);
+                        
+                        pedidoDAO.insert(pedidoVO);
                     
                 
             }
