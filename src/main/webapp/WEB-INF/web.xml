@@ -71,8 +71,8 @@
         <servlet-class>controlador.InfoPedidoServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListarPedidosSevlet</servlet-name>
-        <servlet-class>controlador.ListarPedidosSevlet</servlet-class>
+        <servlet-name>ListarPedidosServlet</servlet-name>
+        <servlet-class>controlador.ListarPedidosServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginUsuarioServlet</servlet-name>
