@@ -64,7 +64,7 @@ public class InfoPedidoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-            response.setContentType("application/json");
+            
             
             PedidosVO pedidoVO = new PedidosVO();
             PedidosDAO pedidoDAO = new PedidosDAO();
