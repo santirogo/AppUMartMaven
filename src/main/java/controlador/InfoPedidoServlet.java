@@ -73,10 +73,13 @@ public class InfoPedidoServlet extends HttpServlet {
             
             String id = request.getParameter("id");
             String check = request.getParameter("entrega");
+            String opcion = request.getParameter("opcion");
             
             pedidoVO = pedidoDAO.infoPedido(id);
             
             
+            
+            if(opcion.equals("1")){
             JSONObject json = new JSONObject();
             
 
@@ -99,6 +102,7 @@ public class InfoPedidoServlet extends HttpServlet {
             
             pedidoDAO.checker(pedidoVO.getID());
             
+            }
             }
             
     }

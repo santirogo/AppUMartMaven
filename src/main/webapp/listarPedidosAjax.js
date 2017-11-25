@@ -55,45 +55,19 @@ $(document).ready(function () {
 
 
 function sendID(id) {
-     window.location.href="InfoPedido.jsp";
+     
     
    var entrega="false";
+   var opcion ="0";
 
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data:{entrega:entrega,id:id},
+        data:{entrega:entrega,id:id,opcion:opcion},
         dataType: 'json',
-        success: function (data) {
-           
+        success: function () {
+           window.location.href="InfoPedido.jsp";
 
-            if (data !== null) {
-
-                for (var i = 0; i < data.pedidos.length; i++) {
-                    console.log(data.pedidos[i].id);
-                    console.log(data.pedidos[i].vendedor);
-                    console.log(data.pedidos[i].comprador);
-
-                        $('#pedido').append(
-                            "<div><p>Pedido de: " + data.pedidos[i].comprador + "</p><br><p>Productos: " + data.pedidos[i].productos + "</p><br><p>" + data.pedidos[i].comentario + "</p></div>"
-                            );
-                   
-                if(data.pedidos[i].checker==="false"){
-                    
-                    $('#pedido').append(
-                            "<div><button onclick=Entrega()>Confirmar Entrega</button></div>"
-                                );
-                    
-                }
-                }
-
-            } else {
-
-                $('#ped').append(
-                        "<div class='column nature' style='cursor:pointer'  id='res'>Error cargando pedido </div>",
-                        );
-
-            }
         },
         error: function () {
         }
@@ -101,20 +75,3 @@ function sendID(id) {
 
 }
 
-function Entrega(){
-    
-    var entrega="true";
-    
-    $.ajax({
-        url: 'ListarPedidosServlet',
-        type: 'get',
-        data:{entrega:entrega},
-        dataType: 'json',
-        success: function () {
-},
-        error: function () {
-        }
-    });
-    
-    
-}
