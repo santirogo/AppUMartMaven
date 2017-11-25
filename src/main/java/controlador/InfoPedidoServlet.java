@@ -24,6 +24,8 @@ import vo.PedidosVO;
  */
 @WebServlet(urlPatterns = {"/InfoPedidoServlet"})
 public class InfoPedidoServlet extends HttpServlet {
+            private String id;
+            private String check; 
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -63,24 +65,48 @@ public class InfoPedidoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
+            
+        
+            String idpedido= request.getParameter("id");
+            String checkpedido = request.getParameter("entrega");
+            this.id = idpedido;
+            this.check=checkpedido;
+        
+            
+            
+            
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-            
-            
-            PedidosVO pedidoVO = new PedidosVO();
+        
+        
+        
+        
+        
+        PedidosVO pedidoVO = new PedidosVO();
             PedidosDAO pedidoDAO = new PedidosDAO();
             JSONArray array = new JSONArray();
             
             
-            String id = request.getParameter("id");
-            String check = request.getParameter("entrega");
-            String opcion = request.getParameter("opcion");
+            
             
             pedidoVO = pedidoDAO.infoPedido(id);
             
             
             
-            if(opcion.equals("1")){
+            
             JSONObject json = new JSONObject();
             
 
@@ -104,22 +130,8 @@ public class InfoPedidoServlet extends HttpServlet {
             pedidoDAO.checker(pedidoVO.getID());
             
             }
-            }
-            
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+        
+        
     }
 
     /**

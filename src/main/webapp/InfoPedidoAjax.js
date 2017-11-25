@@ -5,13 +5,13 @@
  */
 $(document).ready(function () {
 
-    var opcion="1";
+    
+    
     $.ajax({
         url: 'InfoPedidoServlet',
-        type: 'get',
-        data:{opcion:opcion},
+        type: 'post',
         dataType: 'json',
-        success: function (data) {
+        success: function(data) {
 
             if (data !== null) {
 

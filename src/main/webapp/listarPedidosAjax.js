@@ -58,12 +58,12 @@ function sendID(id) {
      
     
    var entrega="false";
-   var opcion ="0";
+   
 
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data:{entrega:entrega,id:id,opcion:opcion},
+        data:{entrega:entrega,id:id},
         dataType: 'json',
         success: function () {
            window.location.href = "InfoPedido.jsp";
