@@ -67,8 +67,8 @@
         <servlet-class>controlador.CerrarSesionServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>InfoPedidoSevlet</servlet-name>
-        <servlet-class>controlador.InfoPedidoSevlet</servlet-class>
+        <servlet-name>InfoPedidoServlet</servlet-name>
+        <servlet-class>controlador.InfoPedidoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListarPedidosSevlet</servlet-name>
@@ -135,12 +135,12 @@
         <url-pattern>/CerrarSesionServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>InfoPedidoSevlet</servlet-name>
-        <url-pattern>/InfoPedidoSevlet</url-pattern>
+        <servlet-name>InfoPedidoServlet</servlet-name>
+        <url-pattern>/InfoPedidoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListarPedidosSevlet</servlet-name>
-        <url-pattern>/ListarPedidosSevlet</url-pattern>
+        <servlet-name>ListarPedidosServlet</servlet-name>
+        <url-pattern>/ListarPedidosServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

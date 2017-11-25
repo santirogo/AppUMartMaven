@@ -56,15 +56,18 @@ $(document).ready(function () {
 
 function sendID(id) {
     
-
+    var entrega="false";
+    
+    
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data: {id: id},
+        data: {id: id, entrega:entrega},
         dataType: 'json',
         success: function () {
             console.log("idcito del pedido enviado");
             window.location.href = "InfoPedido.jsp";
+            
         },
         error: function () {
             console.log("Error en el ajax");
