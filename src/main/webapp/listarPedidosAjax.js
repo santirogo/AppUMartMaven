@@ -66,7 +66,7 @@ function sendID(id) {
         data:{entrega:entrega,id:id,opcion:opcion},
         dataType: 'json',
         success: function () {
-           window.location.href= "InfoPedido.jsp";
+           window.location.href = "InfoPedido.jsp";
         },
         error: function () {
         }
