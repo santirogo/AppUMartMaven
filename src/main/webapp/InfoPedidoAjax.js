@@ -16,7 +16,7 @@ var entrega="false";
 
             if (data !== null) {
 
-                for (var i = 0; i < data.tiendas.length; i++) {
+                for (var i = 0; i < data.pedidos.length; i++) {
                     console.log(data.pedidos[i].id);
                     console.log(data.pedidos[i].vendedor);
                     console.log(data.pedidos[i].comprador);
