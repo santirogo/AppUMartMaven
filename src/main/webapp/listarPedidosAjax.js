@@ -55,16 +55,17 @@ $(document).ready(function () {
 
 
 function sendID(id) {
+     window.location.href="InfoPedido.jsp";
     
    var entrega="false";
 
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data:{entrega:entrega, id:id},
+        data:{entrega:entrega,id:id},
         dataType: 'json',
         success: function (data) {
-            window.location.href="InfoPedido.jsp";
+           
 
             if (data !== null) {
 
