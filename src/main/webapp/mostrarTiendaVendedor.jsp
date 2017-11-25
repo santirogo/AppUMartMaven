@@ -114,7 +114,7 @@
                     <ul>
                         <li><a href="mostrarProductosBodega.jsp">Ver Mis Productos</a></li>
                         <li><a href="editarTienda.jsp">Editar Mi Tienda</a></li>
-                        <li><a href="listarPedidos.jsp">Editar Mi Tienda</a></li>
+                        <li><a href="listarPedidos.jsp">Mis Pedidos</a></li>
                         <li><div onclick='cerrarSesion()' style="cursor: pointer" id="out"><a>Cerrar Sesion</a></div></li>
                     </ul>
                 </nav>
