@@ -36,7 +36,7 @@ $(document).ready(function () {
                     if (data.pedidos[i].checker === "false") {
 
                         $('#ped').append(
-                                "<div class='column nature' style='cursor:pointer' onclick='sendID('" + data.pedidos[i].id + "')' id='res'>" + data.pedidos[i].comprador + "</div>",
+                                "<div><button onclick='sendID('" + data.pedidos[i].id + "')' id='res'>" + data.pedidos[i].comprador + "</button></div>",
                                 );
                     }
                 }
