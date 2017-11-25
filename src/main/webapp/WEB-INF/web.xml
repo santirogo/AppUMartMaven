@@ -66,6 +66,14 @@
         <servlet-name>CerrarSesionServlet</servlet-name>
         <servlet-class>controlador.CerrarSesionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InfoPedidoSevlet</servlet-name>
+        <servlet-class>controlador.InfoPedidoSevlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarPedidosSevlet</servlet-name>
+        <servlet-class>controlador.ListarPedidosSevlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginUsuarioServlet</servlet-name>
         <url-pattern>/LoginUsuarioServlet</url-pattern>
@@ -125,6 +133,14 @@
     <servlet-mapping>
         <servlet-name>CerrarSesionServlet</servlet-name>
         <url-pattern>/CerrarSesionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InfoPedidoSevlet</servlet-name>
+        <url-pattern>/InfoPedidoSevlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarPedidosSevlet</servlet-name>
+        <url-pattern>/ListarPedidosSevlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
