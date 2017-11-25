@@ -8,7 +8,7 @@ $(document).ready(function () {
 var entrega="false";
 
     $.ajax({
-        url: 'ListarPedidosServlet',
+        url: 'InfoPedidoServlet',
         type: 'get',
         data:{entrega:entrega},
         dataType: 'json',
