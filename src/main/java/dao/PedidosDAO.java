@@ -38,7 +38,8 @@ public class PedidosDAO {
               
         try {
             //1.Establecer la consulta
-            String consulta = "INSERT INTO Pedidos VALUES(?,?,?,?,?,?,?)";
+            String consulta = "INSERT INTO Pedidos(ID, vendedor, comprador, productos, comentario, checker, calificado)"
+                    + "VALUES(?,?,?,?,?,?,?)";
             //2. Crear el PreparedStament
             PreparedStatement statement
                     = this.conexion.prepareStatement(consulta);
