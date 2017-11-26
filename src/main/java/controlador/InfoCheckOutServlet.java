@@ -165,7 +165,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                         
                         pedidoVO.setID(correo + (pedidoDAO.count(correo)+1));
                         pedidoVO.setVendedor(correo);
-                        pedidoVO.setComprador(usuario+" ("+correoSesion+")");
+                        pedidoVO.setComprador(correoSesion);
                         pedidoVO.setProductos(ordenped);
                         pedidoVO.setComentario(comentario);
                         pedidoVO.setChecker(false);

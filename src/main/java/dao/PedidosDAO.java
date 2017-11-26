@@ -151,7 +151,7 @@ public class PedidosDAO {
     
     public void checker(String ID){
     
-            String query = "UPDATE vendedores SET checker= true where ID='" + ID + "'";
+            String query = "UPDATE pedidos SET checker= true where ID='" + ID + "'";
         PreparedStatement preparedStmt = null;
         try {         
                     preparedStmt = this.conexion.prepareStatement(query);
