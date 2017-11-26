@@ -60,7 +60,7 @@
                 </section>
                 <section class="feature right">
                     <!--<a href="#" class="image icon fa-code"><img src="Pictures/VendedorLogo.png"></a>-->
-                    <a href="http:loginVendedor.jsp" class="image icon fa-code"><div id="Type"><button class="button" style="font-size: 20px; background-color: #e30020">Vendedor</button></div></a>
+                    <a href="loginVendedor.jsp" class="image icon fa-code"><div id="Type"><button class="button" style="font-size: 20px; background-color: #e30020">Vendedor</button></div></a>
                     <div class="content">
                         <!--<h3>Vendedor</h3>-->
                         <p>Para ingresar al sistema como un vendedor, haga click en esta opcion.
