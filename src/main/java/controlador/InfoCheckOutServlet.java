@@ -64,7 +64,7 @@ public class InfoCheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
             CarritoDAO carrito = new CarritoDAO();
@@ -149,11 +149,7 @@ public class InfoCheckOutServlet extends HttpServlet {
                     String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
                     
-                    try {
-                        EnviarMail.sendMailCheckout(correo,map);
-                    } catch (Exception ex) {
-                        Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    EnviarMail.sendMailCheckout(correo,map);
                     
                     if(noti.equals("true")){
                         vendedorDao.notiVendedor(true, correo);
@@ -179,9 +175,9 @@ public class InfoCheckOutServlet extends HttpServlet {
                 
             }
 
-        //} catch (Exception ex) {
-        //   Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
-        //}
+        } catch (Exception ex) {
+            Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
