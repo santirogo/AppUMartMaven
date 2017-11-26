@@ -149,7 +149,11 @@ public class InfoCheckOutServlet extends HttpServlet {
                     String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
                     
-                    EnviarMail.sendMailCheckout(correo,map);
+                    try {
+                        EnviarMail.sendMailCheckout(correo,map);
+                    } catch (Exception ex) {
+                        Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     
                     if(noti.equals("true")){
                         vendedorDao.notiVendedor(true, correo);
