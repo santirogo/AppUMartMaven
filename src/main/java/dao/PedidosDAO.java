@@ -27,8 +27,11 @@ public class PedidosDAO {
     private Connection conexion;
 
     public PedidosDAO() {
-        Conexion db = Conexion.getConexion();
-        this.conexion = db.getConnection();
+        try {
+            this.conexion = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(PedidosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void insert(PedidosVO pedido) {
