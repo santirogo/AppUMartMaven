@@ -64,7 +64,7 @@ public class InfoCheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             /* TODO output your page here. You may use following sample code. */
 
             CarritoDAO carrito = new CarritoDAO();
@@ -175,9 +175,9 @@ public class InfoCheckOutServlet extends HttpServlet {
                 
             }
 
-        } catch (Exception ex) {
-            Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //} catch (Exception ex) {
+        //   Logger.getLogger(InfoCheckOutServlet.class.getName()).log(Level.SEVERE, null, ex);
+        //}
     }
 
     /**
