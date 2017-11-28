@@ -88,6 +88,7 @@ public class InfoCheckOutServlet extends HttpServlet {
             
             
             
+            
             String opcion="";
 
             opcion = request.getParameter("opcion1");
