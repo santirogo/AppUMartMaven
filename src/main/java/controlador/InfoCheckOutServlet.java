@@ -89,10 +89,9 @@ public class InfoCheckOutServlet extends HttpServlet {
             
             
             String opcion="";
-            String noti="";
 
             opcion = request.getParameter("opcion1");
-            noti = request.getParameter("boolean");
+           
             String comentario = request.getParameter("comment");
             System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
             
@@ -151,11 +150,6 @@ public class InfoCheckOutServlet extends HttpServlet {
                     
                     EnviarMail.sendMailCheckout(correo,map);
                     
-                    if(noti.equals("true")){
-                        vendedorDao.notiVendedor(true, correo);
-                    }else {
-                        vendedorDao.notiVendedor(false, correo);
-                    }
                     
                     session.setAttribute("carrito", null);
                     

@@ -191,5 +191,36 @@ public class PedidosDAO {
     
     return null;
     }
+    
+    public boolean checkNoti(String correo){
+         
+        
+       try {
+            String query = "SELECT checker from Pedidos where vendedor=?";
+
+             PreparedStatement stmt = null;
+
+            stmt = this.conexion.prepareStatement(query);
+            
+            stmt.setString(1, correo);
+            ResultSet res = stmt.executeQuery();
+            
+            while(res.next()){
+            
+                if(res.getBoolean("checker")){
+                return res.getBoolean("checker");
+                        }
+            
+            }
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+         
+       return false;
+
+    }
+    
 
 }

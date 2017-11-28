@@ -13,28 +13,17 @@
         <script src="push.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
 
-        
+         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
         <script>
-            function donotification(access){
-                if (access==="1"){
-		Push.create("AppuNoti",
-                {
-			body: "Tienes pedidos pendientes!",
-			icon: "Pictures/checkout.png",
-			timeout: 9000,
-			onClick: function () {
-                                setBooleanFalse();
-				window.location="https://mail.google.com/mail/u/1/#inbox";
-				this.close();
-			}
-		});
-            }else{
-                console.log("no hay permiso para la notificacion");
-            }
-            }
-	</script>
-        
-        
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                    appId: "<%=System.getenv("ONESIGNAL_ID")%>",
+                    autoRegister: false,
+                    notifyButton: {
+                        enable: true /* Set to false to hide */
+                    }
+                }]);
+        </script>        
         <style>
             @font-face
             {
