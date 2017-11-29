@@ -76,7 +76,7 @@ public class MostrarTiendaServlet extends HttpServlet {
             
             boolean check = pDAO.checkNoti(correo);
             
-            if( check == true){
+            if( check == false){
                 sender.send();
             }
             

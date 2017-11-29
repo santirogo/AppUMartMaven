@@ -194,6 +194,8 @@ public class PedidosDAO {
     
     public boolean checkNoti(String correo){
          
+        ArrayList<Boolean> array = new ArrayList<>();
+        boolean x= true;
         
        try {
             String query = "SELECT checker from Pedidos where vendedor=?";
@@ -207,12 +209,19 @@ public class PedidosDAO {
             
             while(res.next()){
             
-                if(res.getBoolean("checker")){
-                return res.getBoolean("checker");
-                        }
+                x= res.getBoolean("checker");
+                array.add(x);
             
             }
             
+            for (int i = 0; i < array.size(); i++) {
+               
+                if (!array.get(i)) {
+                    return array.get(i);
+                }else if (i==array.size()) {
+                    return true;
+                }
+           }
             
         } catch (SQLException e) {
             e.printStackTrace();
