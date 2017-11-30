@@ -20,16 +20,13 @@ $(document).ready(function () {
                     console.log(data.pedidos[i].id);
                     console.log(data.pedidos[i].vendedor);
                     console.log(data.pedidos[i].comprador);
+                        
+                        $('#ped').append(
 
-                        $('#cliente').append(
-                            data.pedidos[i].comprador 
+                            "<center> <table style='border: none'><tr><th>Cliente</th><th></th><th id='cliente'>" +data.pedidos[i].comprador+ "</th></tr><tr><th></th><th></th><th></th></tr> <tr><th></th><th id='productos'>"+ data.pedidos[i].productos +"</th><th></th></tr>    <tr><th></th><th></th><th></th></tr>   <tr><th></th><th id='comentario'>"+ data.pedidos[i].comentario +"</th><th></th></tr>   </table>  </center> "
+
                             );
-                        $('#productos').append(
-                            data.pedidos[i].productos
-                            );
-                        $('#comentario').append(
-                            data.pedidos[i].comentario 
-                            );
+
                    
                 if(data.pedidos[i].checker==="false"){
                     

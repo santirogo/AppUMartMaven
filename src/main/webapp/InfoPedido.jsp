@@ -76,7 +76,7 @@
 
                         <div id="ped">
 
-                            <center>
+                            <!--<center>
                                 <table style="border: none">
                                     <tr><th>Cliente</th><th></th><th id="cliente"></th></tr>
                                     <tr><th></th><th></th><th></th></tr>
@@ -84,13 +84,13 @@
                                     <tr><th></th><th></th><th></th></tr>
                                     <tr><th></th><th id="comentario"></th><th></th></tr>
                                 </table>
-                            </center>  
-                            
-                            <div id="pedidos"></div>
-
-                        
-
+                            </center>  -->
                         </div>
+                        <div id="pedido"></div>
+
+
+
+
                     </div>
                 </div>
                 <button style=" background-color: #e30020; cursor: alias; font-size: 10px" onclick="cerrarSesion()"><i class="fa fa-power-off"></i> Cerrar Sesion</button>
