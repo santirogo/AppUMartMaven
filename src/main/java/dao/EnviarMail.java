@@ -45,7 +45,7 @@ public class EnviarMail {
         System.out.println("mail sessioooooon: "+mailSession.getProperty("mail.smtp.auth"));
 
         String nombre [] = toEmail.split(".");
-        
+        System.out.println("NOMBREEEEEEEEEEEEEE"+nombre[0]);
         Transport transport = mailSession.getTransport();
 
         MimeMessage message = new MimeMessage(mailSession);
