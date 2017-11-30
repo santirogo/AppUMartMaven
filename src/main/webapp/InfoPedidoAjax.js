@@ -57,7 +57,7 @@ function Entrega(id){
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data:{entrega:entrega},
+        data:{entrega:entrega,id:id},
         dataType: 'json',
         success: function () {
             window.location.href = "listarPedidos.jsp";
