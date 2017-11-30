@@ -128,6 +128,9 @@ public class InfoPedidoServlet extends HttpServlet {
             if (this.check.equals("true")){
             
             pedidoDAO.checker(this.id);
+             JSONObject yeison = new JSONObject();
+             yeison.put("check","check");
+             out.print(yeison);
             
             }
         

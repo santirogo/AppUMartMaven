@@ -59,8 +59,11 @@ function Entrega(id){
         type: 'get',
         data:{entrega:entrega, id:id},
         dataType: 'json',
-        success: function () {
+        success: function (data) {
+            console.log(data.check);
+            if(data.check==="check"){
             window.location.href = "mostrarTiendaVendedor.jsp";
+        }
 },
         error: function () {
         }
