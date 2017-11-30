@@ -123,16 +123,13 @@ public class InfoPedidoServlet extends HttpServlet {
             mainJson.put("pedidos",array);
             
             
-            out.print(mainJson);
+            
             
             if (this.check.equals("true")){
-            
             pedidoDAO.checker(this.id);
-             JSONObject yeison = new JSONObject();
-             yeison.put("check","check");
-             out.print(yeison);
-            
             }
+            
+            out.print(mainJson);
         
     }
 
