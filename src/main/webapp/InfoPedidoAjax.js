@@ -21,8 +21,14 @@ $(document).ready(function () {
                     console.log(data.pedidos[i].vendedor);
                     console.log(data.pedidos[i].comprador);
 
-                        $('#pedido').append(
-                            "<div><p>Pedido de: " + data.pedidos[i].comprador + "</p><br><p>Productos: " + data.pedidos[i].productos + "</p><br><p>" + data.pedidos[i].comentario + "</p></div>"
+                        $('#cliente').append(
+                            data.pedidos[i].comprador 
+                            );
+                        $('#productos').append(
+                            data.pedidos[i].productos
+                            );
+                        $('#comentario').append(
+                            data.pedidos[i].comentario 
                             );
                    
                 if(data.pedidos[i].checker==="false"){
