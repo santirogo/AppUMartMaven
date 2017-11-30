@@ -44,8 +44,6 @@ public class EnviarMail {
         Session mailSession = Session.getInstance(props, auth);
         System.out.println("mail sessioooooon: "+mailSession.getProperty("mail.smtp.auth"));
 
-        String nombre [] = toEmail.split(".");
-        System.out.println("NOMBREEEEEEEEEEEEEE"+nombre[0]);
         Transport transport = mailSession.getTransport();
 
         MimeMessage message = new MimeMessage(mailSession);
@@ -647,7 +645,7 @@ public class EnviarMail {
                 + "\n"
                 + "                                            <div style=\"Margin-left: 20px;Margin-right: 20px;\">\n"
                 + "                                                <div style=\"mso-line-height-rule: exactly;mso-text-raise: 4px;\">\n"
-                + "                                                    <h3 style=\"Margin-top: 0;Margin-bottom: 12px;font-style: normal;font-weight: normal;color: #281557;font-size: 18px;line-height: 26px;font-family: Avenir,sans-serif;\"><strong>¡Hola "+nombre[0]+"!</strong></h3>\n"
+                + "                                                    <h3 style=\"Margin-top: 0;Margin-bottom: 12px;font-style: normal;font-weight: normal;color: #281557;font-size: 18px;line-height: 26px;font-family: Avenir,sans-serif;\"><strong>¡Buenas veci!</strong></h3>\n"
                 + "                                                </div>\n"
                 + "                                            </div>\n"
                 + "\n"
