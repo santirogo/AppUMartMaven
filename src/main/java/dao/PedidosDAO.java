@@ -288,4 +288,42 @@ public class PedidosDAO {
     
     return null;
     }
+    
+    public boolean checkNoti(String correo){
+         
+        ArrayList<Boolean> array = new ArrayList<>();
+        boolean x= true;
+        
+       try {
+            String query = "SELECT checker from Pedidos where vendedor='"+correo+"'";
+
+             PreparedStatement stmt = null;
+
+            stmt = this.conexion.prepareStatement(query);
+            
+            ResultSet res = stmt.executeQuery();
+            
+            while(res.next()){
+            
+                x = res.getBoolean("checker");
+                array.add(x);
+            
+            }
+            
+            for (int i = 0; i < array.size(); i++) {
+               
+                if (!array.get(i)) {
+                    return array.get(i);
+                }else if (i==array.size()) {
+                    return true;
+                }
+           }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+         
+       return false;
+
+    }
 }

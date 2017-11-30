@@ -8,6 +8,18 @@
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
         <link rel="stylesheet" href="mainIndex.css"/>
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                    appId: "<%=System.getenv("ONESIGNAL_ID")%>",
+                    autoRegister: false, /* Set to true to automatically prompt visitors */
+                    notifyButton: {
+                        enable: true /* Set to false to hide */
+                    }
+                }]);
+        </script>
         <style>
             #Type{
                 text-align: center;

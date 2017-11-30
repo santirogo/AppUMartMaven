@@ -127,7 +127,7 @@ public class InfoPedidoServlet extends HttpServlet {
             
             if (this.check.equals("true")){
             
-            pedidoDAO.checker(pedidoVO.getID());
+            pedidoDAO.checker(this.id);
             
             }
         

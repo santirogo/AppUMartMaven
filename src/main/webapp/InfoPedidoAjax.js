@@ -5,7 +5,7 @@
  */
 $(document).ready(function () {
 
-    
+    var entrega="false";
     
     $.ajax({
         url: 'InfoPedidoServlet',
@@ -51,11 +51,12 @@ function Entrega(){
     var entrega="true";
     
     $.ajax({
-        url: 'ListarPedidosServlet',
+        url: 'InfoPedidoServlet',
         type: 'get',
         data:{entrega:entrega},
         dataType: 'json',
         success: function () {
+            window.location.href = "mostrarTiendaVendedor.jsp";
 },
         error: function () {
         }
