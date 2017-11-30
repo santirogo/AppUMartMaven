@@ -36,7 +36,7 @@ $(document).ready(function () {
                     if (data.pedidos[i].checker === "false") {
 
                         $('#ped').append(
-                                "<div><button style='margin-bottom: 10px' onclick=sendID('" + data.pedidos[i].id + "')>data.pedidos[i].comprador</button></div>",
+                                "<div><button style='margin-bottom: 10px' onclick=sendID('" + data.pedidos[i].id + "')>"+data.pedidos[i].comprador+"</button></div>",
                                 );
                     }
                 }
