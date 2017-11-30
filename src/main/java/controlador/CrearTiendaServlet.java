@@ -124,7 +124,7 @@ public class CrearTiendaServlet extends HttpServlet {
             String nombre = request.getParameter("nombre");
             String IDFondo = request.getParameter("fondo");
             
-            
+            System.out.println("NOMBREEEEE "+nombre);
             TiendaVO tiendaVO = new TiendaVO();
             tiendaVO.setId(tienda.calcularId());
             tiendaVO.setNombre(nombre);

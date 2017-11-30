@@ -2,7 +2,7 @@ $(document).ready(function () {
     
     $('#login').click(function () {
 
-        var nombre = $('#nombre').val();
+        var nombre = $('#nombrecito').val();
         var fondo = $('#Fond').val();
         $.ajax({ 
             url: 'CrearTiendaServlet',
@@ -14,7 +14,7 @@ $(document).ready(function () {
                 if (data.confirmacion === "ACK") {
                     console.log("DATOS CORRECTOS");
                     alert("Tienda creada exitosamente");
-                    
+                    window.location.href = "mostrarTiendaVendedor.jsp";
                 } else {
                     console.log("DATOS INCORRECTOS");
                     alert("Hubo un error al crear la tienda");

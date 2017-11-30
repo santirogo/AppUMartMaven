@@ -87,7 +87,7 @@
                             <form style="z-index: 2000">
                                 <div class="field">
                                     <label for="name">Nombre De La Tienda</label>
-                                    <input type="text" name="name" id="nombre"/>
+                                    <input type="text" name="name" id="nombrecito"/>
                                 </div>
                                 <div class="field">
                                     <label for="route">Direccion De La Imagen a Mostrar</label>

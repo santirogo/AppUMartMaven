@@ -39,7 +39,7 @@ public class TiendaDAO {
                     + " values (?, ?, ?, ?, ?)";
 
             PreparedStatement preparedStmt = this.conexion.prepareStatement(query);
-
+            System.out.println("Nombre en DAO: "+tienda.getNombre());
             preparedStmt.setInt(1, tienda.getId());
             preparedStmt.setString(2, tienda.getNombre());
             preparedStmt.setString(3, tienda.getVendedor());
