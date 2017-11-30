@@ -198,18 +198,17 @@ public class PedidosDAO {
         boolean x= true;
         
        try {
-            String query = "SELECT checker from Pedidos where vendedor=?";
+            String query = "SELECT checker from Pedidos where vendedor='"+correo+"'";
 
              PreparedStatement stmt = null;
 
             stmt = this.conexion.prepareStatement(query);
             
-            stmt.setString(1, correo);
             ResultSet res = stmt.executeQuery();
             
             while(res.next()){
             
-                x= res.getBoolean("checker");
+                x = res.getBoolean("checker");
                 array.add(x);
             
             }

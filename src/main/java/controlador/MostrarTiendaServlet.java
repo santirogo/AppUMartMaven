@@ -77,7 +77,10 @@ public class MostrarTiendaServlet extends HttpServlet {
             boolean check = pDAO.checkNoti(correo);
             
             if( check == false){
+                json.put("boolean", "false");
                 sender.send();
+            }else{
+                json.put("boolean", "true");
             }
             
             out.print(json);

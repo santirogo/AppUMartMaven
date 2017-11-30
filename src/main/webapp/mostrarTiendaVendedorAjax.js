@@ -9,7 +9,7 @@ $(document).ready(function () {
             console.log("Fondo: " + data.idfondo);
             console.log("Nombre: " + data.nombre);
             console.log("Puntuacion: " + data.puntuacion);
-           // console.log("Valor boolean: "+ data.boolean);
+            console.log("Valor boolean: "+ data.boolean);
             console.log("Correo: "+ data.correo);
 
             $('#div').append(
