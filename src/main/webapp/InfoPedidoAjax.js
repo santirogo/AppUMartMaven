@@ -50,6 +50,7 @@ $(document).ready(function () {
     });
 });
 
+
 function Entrega(id){
     
     var entrega="true";
