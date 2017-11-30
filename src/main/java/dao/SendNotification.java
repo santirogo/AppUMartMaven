@@ -43,7 +43,7 @@ public class SendNotification {
                     + "\"data\": {\"foo\": \"bar\"},"
                     
                     //+ "\"contents\": {\"en\": \"¡Tienes nuevos pedidos!\"}"
-                    + "\"template_id\": \"b3d24645-7bc4-4e77-bc16-779d5396e7e7\""//plantilla realizada en el dashboard de onesignal
+                    + "\"template_id\": \"31fca0a7-6632-4eab-85e9-9c2e052622a6\""//plantilla realizada en el dashboard de onesignal
                     
                     + "}";
 
