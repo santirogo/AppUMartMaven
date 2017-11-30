@@ -42,8 +42,8 @@ public class SendNotification {
                   //  +   "\"filters\": [{\"field\": \"tag\", \"key\": \""+valor+"\", \"relation\": \"=\", \"value\": \"1100\"}],"
                     + "\"data\": {\"foo\": \"bar\"},"
                     
-                    //+ "\"contents\": {\"en\": \"¡Tienes nuevos pedidos!\"}"
-                    + "\"template_id\": \"b3d24645-7bc4-4e77-bc16-779d5396e7e7\""//plantilla realizada en el dashboard de onesignal
+                    + "\"contents\": {\"en\": \"¡Tienes nuevos pedidos!\"}"
+                    //+ "\"template_id\": \"b3d24645-7bc4-4e77-bc16-779d5396e7e7\""//plantilla realizada en el dashboard de onesignal
                     
                     + "}";
 
