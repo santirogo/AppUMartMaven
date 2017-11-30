@@ -57,7 +57,6 @@ function Entrega(){
         data:{entrega:entrega},
         dataType: 'json',
         success: function () {
-            
             window.location.href = "mostrarTiendaVendedor.jsp";
 },
         error: function () {
