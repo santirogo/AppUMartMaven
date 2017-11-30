@@ -332,7 +332,7 @@
                 <img src="Pictures/AppuTexto.png" style="width: 30%; height: 30%; padding-top: 8px;">
             </div>
 
-            <center><button style="margin-top: 20px; background-color: #e30020; cursor: alias;" onclick="cerrarSesion()"><i class="fa fa-power-off"></i> Cerrar Sesion</button><button style="margin-top: 20px; background-color: #087eac; cursor: alias;" onclick="Calificaciones.jsp"><i class="fa fa-power-off"></i> Cerrar Sesion</button></center>
+            <center><button style="margin-top: 20px; background-color: #e30020; cursor: alias;" onclick="cerrarSesion()"><i class="fa fa-power-off"></i> Cerrar Sesion</button><button style="margin-top: 20px; background-color: #087eac; cursor: alias;" onclick="Calificaciones.jsp">Calificar vendedor</button></center>
             <!-- END MAIN -->
         </div>
         <script>
