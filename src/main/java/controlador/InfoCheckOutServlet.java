@@ -68,10 +68,9 @@ public class InfoCheckOutServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
 
             CarritoDAO carrito = new CarritoDAO();
-            //ProductoVO productos = new ProductoVO();
             PedidosVO pedidoVO= new PedidosVO();
             PedidosDAO pedidoDAO=new PedidosDAO();
-            
+            ProductoVO productos = new ProductoVO();
             ArrayList<ProductoVO> Arreglo = new ArrayList();
             UsuarioDAO user = new UsuarioDAO();
             TiendaDAO tienda = new TiendaDAO();
@@ -89,10 +88,10 @@ public class InfoCheckOutServlet extends HttpServlet {
             
             
             String opcion="";
-            String noti="";
+            //String noti="";
 
             opcion = request.getParameter("opcion1");
-            noti = request.getParameter("boolean");
+            //noti = request.getParameter("boolean");
             String comentario = request.getParameter("comment");
             System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
             
@@ -151,11 +150,11 @@ public class InfoCheckOutServlet extends HttpServlet {
                     
                     EnviarMail.sendMailCheckout(correo,map);
                     
-                    if(noti.equals("true")){
-                        vendedorDao.notiVendedor(true, correo);
-                    }else {
-                        vendedorDao.notiVendedor(false, correo);
-                    }
+//                    if(noti.equals("true")){
+//                        vendedorDao.notiVendedor(true, correo);
+//                    }else {
+//                        vendedorDao.notiVendedor(false, correo);
+//                    }
                     
                     session.setAttribute("carrito", null);
                     
