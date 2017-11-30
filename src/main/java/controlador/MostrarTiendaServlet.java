@@ -84,7 +84,6 @@ public class MostrarTiendaServlet extends HttpServlet {
             }
             
             out.print(json);
-            
         
     }
 
