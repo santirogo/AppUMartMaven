@@ -6,6 +6,20 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
         <link href="StyleBody.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+       
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                    appId: "<%=System.getenv("ONESIGNAL_ID")%>",
+                    autoRegister: false,
+                    notifyButton: {
+                        enable: true /* Set to false to hide */
+                    }
+                }]);
+        </script> 
+        
         <title>AppU-Mart</title>
         <style>
             #loader{

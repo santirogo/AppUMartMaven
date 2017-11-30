@@ -14,19 +14,7 @@
         <script type="text/javascript" src="mostrarTiendaVendedorAjax.js"></script>
         <script src="push.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
-        <link rel="manifest" href="/manifest.json">
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-       
-        <script>
-            var OneSignal = window.OneSignal || [];
-            OneSignal.push(["init", {
-                    appId: "<%=System.getenv("ONESIGNAL_ID")%>",
-                    autoRegister: false,
-                    notifyButton: {
-                        enable: true /* Set to false to hide */
-                    }
-                }]);
-        </script>        
+               
         <style>
             @font-face
             {
