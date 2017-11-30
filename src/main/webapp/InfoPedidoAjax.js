@@ -31,7 +31,7 @@ $(document).ready(function () {
                 if(data.pedidos[i].checker==="false"){
                     
                     $('#pedido').append(
-                            "<div><button onclick=Entrega('+"+data.pedidos[i].id+"')>Confirmar Entrega</button></div>"
+                            "<div><button onclick=Entrega('"+data.pedidos[i].id+"')>Confirmar Entrega</button></div>"
                                 );
                     
                 }
