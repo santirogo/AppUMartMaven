@@ -5,11 +5,15 @@
  */
 package controlador;
 
+import dao.PedidosDAO;
+import dao.SendNotification;
 import dao.TiendaDAO;
 import dao.VendedorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +43,7 @@ public class MostrarTiendaServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
             this.t=new TiendaDAO();
@@ -48,6 +52,8 @@ public class MostrarTiendaServlet extends HttpServlet {
             String correo = (String)mySession.getAttribute("correo");
             String buleano= request.getParameter("boolean");
             
+            SendNotification sender = new SendNotification();
+            PedidosDAO pDAO = new PedidosDAO();
             VendedorDAO vDAO = new VendedorDAO();
             String celular = vDAO.buscarCelVendedor(correo);
             System.out.println("ceeeelluuuullaaarr de vendeeedoorr"+celular);
@@ -68,20 +74,16 @@ public class MostrarTiendaServlet extends HttpServlet {
             json.put("correo",correo);
             
             
-            boolean check = vDAO.checkBoolean(correo);
+            boolean check = pDAO.checkNoti(correo);
             
-            if( check == true){
-                json.put("boolean", "true");
-            }else{
+            if( check == false){
                 json.put("boolean", "false");
+                sender.send();
+            }else{
+                json.put("boolean", "true");
             }
             
             out.print(json);
-            
-            if(buleano.equals("false")){ 
-                boolean noti = false;
-                vDAO.notiVendedor(noti, correo);
-            }
         
     }
 
@@ -97,7 +99,11 @@ public class MostrarTiendaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(MostrarTiendaServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -111,7 +117,11 @@ public class MostrarTiendaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(MostrarTiendaServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
