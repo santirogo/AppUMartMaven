@@ -13,7 +13,6 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <title>Pedido Nuevo</title>
 
-
         <style>
 
             @media screen and (max-width: 480px) {
