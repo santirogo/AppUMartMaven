@@ -14,7 +14,7 @@ $(document).ready(function () {
 
             $('#div').append(
                     //"<div class='perfil'><img src=" + data.idfondo + " width='100' height='100'></div><br>",-->
-                    "<div class='avatar' id='perfilres' style='background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.idfondo + "); background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.idfondo + "); background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.idfondo + "); background-size: auto, 100%;'></div>"
+                    "<div class='avatar' id='perfilres' style='background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(" + data.idfondo + "); background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.idfondo + "); background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.idfondo + "); background-size: auto, 100%;'></div>"
                     );
             $('#nombre').append(
                     "<h1 id='nombre2'>" + data.nombre + "</h1>"
