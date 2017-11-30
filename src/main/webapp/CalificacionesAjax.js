@@ -16,7 +16,7 @@ $(document).ready(function(){
                 
                 $('#pedidos').append(
                         //"<div style='cursor:pointer' onclick='sendName(" + data.pedidos[i].id + ")'><a href ='seleccionProducto.jsp'><img id='perfil' src=Pictures/" + data.pedidos[i].idfondo + "><p id='titulo_uno'>" + data.pedidos[i].nombre + "</p><p id='descripcion'>Vendedor: " + data.pedidos[i].vendedor + "</p><p id='descripcion2'>Puntuación: " + data.pedidos[i].puntuacion + "</p></a></div>",
-                        "<div class='column nature' id='res'><p>ID del pedido: "+ data.pedidos[i].id +"</p><br><p>Vendedor: "+ data.pedidos[i].vendedor +"</p><br><p>Comprador: "+ data.pedidos[i].comprador +"</p><br><p>Productos: "+ data.pedidos[i].productos +"</p><br><input id='calificacion' type='number' name='quantity' min='0' max='5' step='0.5'><br><button type='button' onclick=\"sendID('"+data.pedidos[i].vendedor+"',"+data.pedidos[i].id + ")\">Calificar!</button></div>",
+                        "<div class='column nature' id='res'><p>ID del pedido: "+ data.pedidos[i].id +"</p><br><p>Vendedor: "+ data.pedidos[i].vendedor +"</p><br><p>Comprador: "+ data.pedidos[i].comprador +"</p><br><p>Productos: "+ data.pedidos[i].productos +"</p><br><input id='calificacion' type='number' name='quantity' min='0' max='5' step='0.5'><br><button type='button' onclick=\"sendID('"+data.pedidos[i].vendedor+"','"+data.pedidos[i].id + "')\">Calificar!</button></div>",
                         );
             }
         },
