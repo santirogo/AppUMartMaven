@@ -7,19 +7,19 @@
         <link href="StyleBody.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
         <link rel="manifest" href="/manifest.json">
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-       
+    <head>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
         <script>
             var OneSignal = window.OneSignal || [];
             OneSignal.push(["init", {
-                    appId: "<%=System.getenv("ONESIGNAL_ID")%>",
-                    autoRegister: false,
+                    appId: "ONESIGNAL_ID",
+                    autoRegister: false, /* Set to true to automatically prompt visitors */
                     notifyButton: {
                         enable: true /* Set to false to hide */
                     }
                 }]);
-        </script> 
-        
+        </script>
+
         <title>AppU-Mart</title>
         <style>
             #loader{
@@ -99,7 +99,7 @@
         <!--<div id="boton" style="vertical-align:middle;">Usuario</div>
         <div id="boton">Vendedor</div>    width:487px ; height: 121;  -->
         <div style="position: absolute; left: 10%; top: 12%;"><img src="Pictures/Usuario.png"  width="487px" height="121"></div>
-        
+
         <div style="margin-top: 17%;">
             <a href="loginUsuario.jsp"><div class="avatar" style="left: 15%; vertical-align: middle;"></div></a>
             <a href="loginVendedor.jsp"><div class="avatar2" style="right: 15%; vertical-align: middle;"></div></a>
