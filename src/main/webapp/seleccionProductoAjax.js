@@ -77,7 +77,7 @@ $(document).ready(function () {
 
             $("#encabezado").append(data.empresa);
             $("#xx").append(data.empresa);
-            $("#Perfil").append("<div class='perfil' id='perfilres' style='background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.logo + "); background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.logo + "); background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.logo + "); background-size: auto, 100%;'></div>");
+            $("#Perfil").append("<div class='perfil' id='perfilres' style='background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(" + data.logo + "); background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.logo + "); background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%),url(Pictures/" + data.logo + "); background-size: auto, 100%;'></div>");
             for (var i = 0; i < data.arreglo.length; i++) {
                 console.log("Imagen: " + data.arreglo[i].ruta);
                 console.log("Nombre: " + data.arreglo[i].nombre);
