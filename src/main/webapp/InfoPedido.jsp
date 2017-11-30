@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="main.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="InfoPedidosAjax.js"></script>
+        <script type="text/javascript" src="InfoPedidoAjax.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <title>Pedido Nuevo</title>
