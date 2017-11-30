@@ -1,4 +1,6 @@
 <%@page import="vo.VendedorVO"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -13,7 +15,7 @@
         <script src="push.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <link rel="manifest" href="/manifest.json">
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
        
         <script>
             var OneSignal = window.OneSignal || [];
