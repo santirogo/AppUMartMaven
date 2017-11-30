@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="mainIndex.css"/>
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <link rel="manifest" href="/manifest.json">
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
         <script>
             var OneSignal = window.OneSignal || [];
             OneSignal.push(["init", {
