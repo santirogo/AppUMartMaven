@@ -12,7 +12,7 @@
         <script>
             var OneSignal = window.OneSignal || [];
             OneSignal.push(["init", {
-                    appId: "ONESIGNAL_ID",
+                    appId: "<%=System.getenv("ONESIGNAL_ID")%>",
                     autoRegister: false, /* Set to true to automatically prompt visitors */
                     notifyButton: {
                         enable: true /* Set to false to hide */
