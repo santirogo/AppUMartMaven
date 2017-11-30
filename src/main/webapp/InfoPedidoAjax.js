@@ -28,7 +28,7 @@ $(document).ready(function () {
                 if(data.pedidos[i].checker==="false"){
                     
                     $('#pedido').append(
-                            "<div><button onclick=Entrega()>Confirmar Entrega</button></div>"
+                            "<div><button onclick=Entrega('+"+data.pedidos[i].id+"')>Confirmar Entrega</button></div>"
                                 );
                     
                 }
@@ -47,14 +47,14 @@ $(document).ready(function () {
     });
 });
 
-function Entrega(){
+function Entrega(id){
     
     var entrega="true";
     
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data:{entrega:entrega},
+        data:{entrega:entrega, id:id},
         dataType: 'json',
         success: function () {
             window.location.href = "mostrarTiendaVendedor.jsp";
