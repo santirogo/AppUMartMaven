@@ -12,25 +12,7 @@
         <script type="text/javascript" src="mostrarTiendaVendedorAjax.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
 
-	<script>
-            function donotification(access){
-                if (access==="1"){
-			Push.create("AppuNoti",
-                {
-			body: "Tienes pedidos pendientes!",
-			icon: "Pictures/checkout.png",
-			timeout: 9000,
-			onClick: function () {
-                                setBooleanFalse();
-				window.location="https://mail.google.com/mail/u/1/#inbox";
-				this.close();
-			}
-		});
-		}else{
-			console.log("no hay permiso para la notificacion");
-		}
-            }
-	</script>
+	
 	    
         <style>
             @font-face
