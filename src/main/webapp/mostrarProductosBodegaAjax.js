@@ -18,7 +18,7 @@ $(document).ready(function () {
                         //"<a>Categoría: " + data.productos[i].categoria + "</a><br>",
                         //"<a>Precio Unitario: " + data.productos[i].precio + "</a><br>",
                         //"<a>Cantidad: " + data.productos[i].cantidad + "</a><br>",
-                        "<div class='column nature' id='res'><div class='content1'> <center><img src=Pictures/Prod/" + data.productos[i].imagen + " alt='Imagen Sin Ruta' style='width:100%;'></center> <div class='content2'> <center><p class='empresa'>" + data.productos[i].nombre + "</p> </center><center><p class='puntuacion' id='p" + i + "'>Precio Unitario: " + "$ " + data.productos[i].precio + "<p class='empresa'>Categoria: " + data.productos[i].categoria + "</p><p class='empresa'>Cantidad: " + data.productos[i].cantidad + "</p></center></p></div></div></div>",
+                        "<div class='column nature' id='res'><div class='content1'> <center><img src=" + data.productos[i].imagen + " alt='Imagen Sin Ruta' style='width:100%;'></center> <div class='content2'> <center><p class='empresa'>" + data.productos[i].nombre + "</p> </center><center><p class='puntuacion' id='p" + i + "'>Precio Unitario: " + "$ " + data.productos[i].precio + "<p class='empresa'>Categoria: " + data.productos[i].categoria + "</p><p class='empresa'>Cantidad: " + data.productos[i].cantidad + "</p></center></p></div></div></div>",
                         );
 
             }
