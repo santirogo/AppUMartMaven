@@ -12,7 +12,9 @@
         <script type="text/javascript" src="mostrarTiendaVendedorAjax.js"></script>
         <script src="push.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
-         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+       
         <script>
             var OneSignal = window.OneSignal || [];
             OneSignal.push(["init", {
