@@ -10,6 +10,7 @@ $(document).ready(function () {
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'post',
+        data:{entrega:entrega},
         dataType: 'json',
         success: function(data) {
 
@@ -19,15 +20,18 @@ $(document).ready(function () {
                     console.log(data.pedidos[i].id);
                     console.log(data.pedidos[i].vendedor);
                     console.log(data.pedidos[i].comprador);
+                        
+                        $('#ped').append(
 
-                        $('#pedido').append(
-                            "<div><p>Pedido de: " + data.pedidos[i].comprador + "</p><br><p>Productos: " + data.pedidos[i].productos + "</p><br><p>" + data.pedidos[i].comentario + "</p></div>"
+                            "<center> <table style='border: none'><tr><th>Cliente</th><th></th><th id='cliente'>" +data.pedidos[i].comprador+ "</th></tr><tr><th></th><th></th><th></th></tr> <tr><th></th><th id='productos'>"+ data.pedidos[i].productos +"</th><th></th></tr>    <tr><th></th><th></th><th></th></tr>   <tr><th></th><th id='comentario'>"+ data.pedidos[i].comentario +"</th><th></th></tr>   </table>  </center> "
+
                             );
+
                    
                 if(data.pedidos[i].checker==="false"){
                     
                     $('#pedido').append(
-                            "<div><button onclick=Entrega()>Confirmar Entrega</button></div>"
+                            "<div><button onclick=Entrega('"+data.pedidos[i].id+"')>Confirmar Entrega</button></div>"
                                 );
                     
                 }
@@ -46,17 +50,19 @@ $(document).ready(function () {
     });
 });
 
-function Entrega(){
+
+function Entrega(id){
     
     var entrega="true";
     
     $.ajax({
         url: 'InfoPedidoServlet',
         type: 'get',
-        data:{entrega:entrega},
+        data:{entrega:entrega,id:id},
         dataType: 'json',
         success: function () {
-            window.location.href = "mostrarTiendaVendedor.jsp";
+            window.location.href = "listarPedidos.jsp";
+        
 },
         error: function () {
         }
