@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="main.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="listarPedidosAjax.js"></script>
+        <script type="text/javascript" src="InfoPedidosAjax.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
         <title>Pedido Nuevo</title>
@@ -78,15 +78,17 @@
 
                             <center>
                                 <table style="border: none">
-                                    <tr><th>Cliente</th><th></th><th id="cliente">david.acevedo@correo.usa.edu.co</th></tr>
+                                    <tr><th>Cliente</th><th></th><th id="cliente"></th></tr>
                                     <tr><th></th><th></th><th></th></tr>
-                                    <tr><th></th><th id="productos">| Producto: Hamburguesa | Cantidad: 2 | Precio: 6000</th><th></th></tr>
+                                    <tr><th></th><th id="productos"></th><th></th></tr>
                                     <tr><th></th><th></th><th></th></tr>
-                                    <tr><th></th><th id="comentario">Comentario: Hola, buenas tardes</th><th></th></tr>
+                                    <tr><th></th><th id="comentario"></th><th></th></tr>
                                 </table>
                             </center>  
+                            
+                            <div id="pedidos"></div>
 
-                        <button onclick=Entrega()>Confirmar Entrega</button>
+                        
 
                         </div>
                     </div>
